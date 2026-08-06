@@ -1,0 +1,1053 @@
+<!-- trailpulse.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="TrailPulse — UX/UI + Frontend Dev Case Study (React)"
+    />
+    <meta name="author" content="Stephen Hughes" />
+    <title>SHUX Design | TrailPulse</title>
+
+    <!-- Google Fonts FIRST -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap + site CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+
+    <style>
+      /* ========================= GENERAL CASE STUDY HELPERS ========================= */
+
+      .trailpulse-case section.container,
+      .trailpulse-case section.container-xl,
+      .trailpulse-case section.container-fluid {
+        padding-top: 2.8rem;
+        padding-bottom: 2.8rem;
+      }
+
+      .section-intro {
+        max-width: 900px;
+        margin: 0 auto 1rem;
+      }
+
+      .text-max {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      .hero-wrapper {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .hero-wrapper img,
+      .feature-img,
+      .feature-img-wide,
+      .diagram-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .feature-img,
+      .diagram-img {
+        border-radius: 0.35rem;
+      }
+
+      .case-figure {
+        max-width: 1050px;
+        margin: 0 auto;
+      }
+
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", monospace;
+        font-size: 0.95em;
+      }
+
+      .mini-label {
+        display: inline-block;
+        margin-bottom: 0.8rem;
+        padding: 0.35rem 0.8rem;
+        font-size: 0.85rem;
+        border: 1px solid #111;
+        border-radius: 999px;
+        letter-spacing: 0.03em;
+        background: transparent;
+      }
+
+      .section-divider {
+        margin: 4rem auto;
+        width: 120px;
+        border-top: 2px solid #111;
+        opacity: 0.2;
+      }
+
+      /* ========================= COLOUR CHIPS ========================= */
+
+      .chip {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        vertical-align: middle;
+      }
+
+      .chip-yellow {
+        background: #ffedc1;
+      }
+
+      .chip-deepgreen {
+        background: #076335;
+      }
+
+      .chip-lightgreen {
+        background: #c4f3d4;
+      }
+
+      .chip-orange {
+        background: #fda93c;
+      }
+
+      .chip-black {
+        background: #000;
+      }
+
+      /* ========================= CAROUSEL STYLE USED ACROSS CASE STUDIES ========================= */
+
+      .carousel-outside {
+        position: relative;
+        padding: 0 4rem;
+      }
+
+      .carousel-outside .carousel-inner {
+        max-width: 950px;
+        margin: 0 auto;
+      }
+
+      .carousel-outside .carousel-inner img {
+        width: 100%;
+        height: auto;
+        max-height: 75vh;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+
+      .carousel-outside .carousel-control-prev,
+      .carousel-outside .carousel-control-next {
+        width: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+
+      .carousel-outside .carousel-control-prev {
+        left: 0;
+        transform: translate(-60%, -50%);
+      }
+
+      .carousel-outside .carousel-control-next {
+        right: 0;
+        transform: translate(60%, -50%);
+      }
+
+      .carousel-outside .carousel-control-prev-icon,
+      .carousel-outside .carousel-control-next-icon {
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: none !important;
+      }
+
+      .carousel-indicators {
+        position: static;
+        margin-top: 1rem;
+        margin-bottom: 0;
+      }
+
+      .carousel-outside .carousel-indicators [data-bs-target] {
+        background-color: #000;
+        opacity: 0.35;
+      }
+
+      .carousel-outside .carousel-indicators .active {
+        opacity: 1;
+      }
+
+      .carousel-caption-custom {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        text-align: center;
+      }
+
+      /* ========================= VIDEO FLOW SECTIONS ========================= */
+
+      .flow-row {
+        margin-bottom: 5rem;
+      }
+
+      .flow-video {
+        width: 100%;
+        display: block;
+        border: 1px solid #111;
+        border-radius: 0;
+        box-shadow: none;
+        background: #000;
+      }
+
+      .flow-copy {
+        max-width: 520px;
+      }
+
+      .flow-copy h5 {
+        margin-bottom: 0.8rem;
+      }
+
+      /* ========================= SMALL CARDS ========================= */
+
+      .tp-card {
+        border: 1px solid #111;
+        background: transparent;
+        padding: 1.25rem;
+        height: 100%;
+      }
+
+      .tp-card h5,
+      .tp-card h6 {
+        margin-bottom: 0.75rem;
+      }
+
+      .architecture-caption {
+        color: #000;
+        font-weight: 700;
+      }
+
+      /* ========================= ANIMATION HELPERS ========================= */
+
+      .animate-left {
+        animation: slideInLeft 0.6s ease both;
+      }
+
+      .animate-right {
+        animation: slideInRight 0.6s ease both;
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-16px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(16px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ========================= RESPONSIVE ========================= */
+
+      @media (max-width: 991.98px) {
+        .carousel-outside .carousel-inner {
+          max-width: 100%;
+        }
+
+        .carousel-outside .carousel-inner img {
+          max-height: 62vh;
+        }
+
+        .flow-row {
+          margin-bottom: 4rem;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .carousel-outside {
+          padding: 0 2rem;
+        }
+
+        .carousel-outside .carousel-control-prev,
+        .carousel-outside .carousel-control-next {
+          display: none;
+        }
+
+        .carousel-outside .carousel-inner img {
+          max-height: 52vh;
+        }
+
+        .trailpulse-case section.container,
+        .trailpulse-case section.container-xl,
+        .trailpulse-case section.container-fluid {
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-background"></div>
+
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="trailpulse-case">
+      <!-- ========================= PAGE HEADER ========================= -->
+      <header class="starter-template text-center mt-5">
+        <h1>TrailPulse</h1>
+        <p class="lead">
+          A focused Irish hiking companion built with <strong>React</strong>,
+          combining <strong>interactive maps</strong>,
+          <strong>weather insights</strong>, and
+          <strong>community features</strong> for better trail decisions.
+        </p>
+        <p class="text-muted mb-0">Project duration: Mar ’25 – Apr ’25</p>
+        <p class="text-muted">
+          Role: UX/UI design, frontend development, dashboard, authentication
+        </p>
+      </header>
+
+      <!-- ========================= HERO ========================= -->
+      <section class="container" id="section-hero">
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-12 hero-wrapper">
+            <img
+              src="images/CaseStudy/trailpulsecasestudy/trailpulsehero.png"
+              class="img-fluid"
+              alt="TrailPulse hero mockups"
+            />
+          </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label">Overview</span>
+            <h3 class="text-center">A Local Hiking Companion for Ireland</h3>
+            <p class="section-intro">
+              TrailPulse was created to solve a simple problem: Irish hiking
+              information is often spread across separate websites, generic
+              apps, weather sources, review pages, and trail lists. The app
+              brings trail browsing, mapping, live weather, reviews, tips, and
+              community features into one focused React experience.
+            </p>
+            <p class="small text-muted mb-0">
+              The project was developed as a group application, with my main
+              contribution focused on the Landing/Home page, authentication
+              screens, dashboard, dashboard navigation, visual styling, and the
+              logged-in user experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ========================= PROJECT ROLE ========================= -->
+      <section class="container" id="section-role">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-lg-4">
+            <article class="tp-card">
+              <h5>Main Areas I Worked On</h5>
+              <ul class="mb-0">
+                <li>Landing/Home page</li>
+                <li>Login and Signup pages</li>
+                <li>Dashboard interface</li>
+                <li>Dashboard sidebar navigation</li>
+                <li>Responsive styling and UI consistency</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <article class="tp-card">
+              <h5>Team App Features</h5>
+              <ul class="mb-0">
+                <li>Trail browsing and filtering</li>
+                <li>Interactive map views</li>
+                <li>Live weather checks</li>
+                <li>Reviews and hiking tips</li>
+                <li>Contact and feedback form</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <article class="tp-card">
+              <h5>Dashboard Features</h5>
+              <ul class="mb-0">
+                <li>Firebase forum section</li>
+                <li>Trail difficulty charts</li>
+                <li>Dog-friendly trail charts</li>
+                <li>ArcGIS trail dataset integration</li>
+                <li>Logged-in user navigation</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ========================= STACK & ARCHITECTURE ========================= -->
+      <section class="container" id="section-architecture">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <span class="mini-label">Architecture</span>
+            <h3 class="mb-3">Stack &amp; Architecture</h3>
+          </div>
+
+          <div class="col-12 col-lg-10">
+            <p class="mb-3">
+              TrailPulse is a React single-page app that combines client-side
+              routing, a lightweight UI system, map rendering, live weather
+              lookups, dashboard data visualisation, and community interaction.
+            </p>
+
+            <ul class="mb-4">
+              <li>
+                <strong>Framework:</strong> React SPA with
+                <span class="mono">react-router-dom</span> for page navigation.
+              </li>
+              <li>
+                <strong>UI Layer:</strong> Bootstrap, custom
+                <span class="mono">App.css</span>, React Icons, FontAwesome, and
+                Framer Motion.
+              </li>
+              <li>
+                <strong>Authentication:</strong> Login/Signup flow supported by
+                a small Node.js backend.
+              </li>
+              <li>
+                <strong>Maps:</strong> Leaflet /
+                <span class="mono">react-leaflet</span> with MapTiler / OSM map
+                tiles.
+              </li>
+              <li>
+                <strong>Weather:</strong> OpenWeather API requests using
+                <span class="mono">Axios</span>.
+              </li>
+              <li>
+                <strong>Dashboard Data:</strong> ArcGIS Get Ireland Active Trail
+                Routes dataset used for difficulty and dog-friendly chart data.
+              </li>
+              <li>
+                <strong>Community:</strong> Firebase Realtime Database for
+                dashboard forum posts and comments.
+              </li>
+              <li>
+                <strong>Visualisations:</strong> Chart.js /
+                <span class="mono">react-chartjs-2</span> wrapped in Bootstrap
+                carousel layouts.
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12">
+            <figure class="mb-0">
+              <img
+                src="images/CaseStudy/trailpulsecasestudy/trailpulsesystemdiagram.png"
+                class="img-fluid w-100 d-block"
+                alt="TrailPulse high-level architecture diagram"
+                loading="lazy"
+              />
+              <figcaption class="small text-center mt-2 architecture-caption">
+                TrailPulse system diagram showing the React frontend, routing,
+                backend authentication, Firebase forum data, maps, weather, and
+                chart data flow.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ========================= DESIGN OVERVIEW ========================= -->
+      <section class="container-xl" id="section-design">
+        <div class="row align-items-center gy-3 flex-lg-row-reverse">
+          <div class="col-12 col-md-7 animate-right text-center">
+            <img
+              src="images/CaseStudy/trailpulsecasestudy/designassets.png"
+              class="img-fluid feature-img"
+              alt="Figma wireframes and early layout"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="col-12 col-md-5 animate-left">
+            <span class="mini-label">Design</span>
+            <h3>Design Overview — Figma to React</h3>
+            <p>
+              The visual direction began in Figma, where the group planned the
+              main routes, page hierarchy, and a consistent outdoor-themed UI.
+              The goal was to make the app feel local, simple, friendly, and
+              easy to scan.
+            </p>
+            <ul class="mb-2">
+              <li>
+                <strong>Structure:</strong> clear navigation, responsive grids,
+                and repeated page patterns.
+              </li>
+              <li>
+                <strong>Palette:</strong>
+                <span class="chip chip-yellow" title="#FFEDC1"></span>
+                <span class="chip chip-deepgreen" title="#076335"></span>
+                <span class="chip chip-lightgreen" title="#C4F3D4"></span>
+                <span class="chip chip-orange" title="#FDA93C"></span>
+                <span class="chip chip-black" title="#000000"></span>
+              </li>
+              <li>
+                <strong>Interaction:</strong> subtle motion, card-based content,
+                hover states, and simple form feedback.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ========================= IA / FOLDER SETUP / FRONTEND / BACKEND CAROUSEL ========================= -->
+      <section class="container" id="section-project-structure">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label">Project Structure</span>
+            <h3>
+              Information Architecture, Folder Setup &amp; Build Structure
+            </h3>
+            <p class="section-intro">
+              This carousel shows the planning structure behind TrailPulse:
+              information architecture, folder setup, frontend organisation, and
+              backend authentication setup. It explains how the app moved from
+              planned user flows into a working React project.
+            </p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 case-figure">
+            <div
+              id="tpStructureCarousel"
+              class="carousel slide carousel-outside"
+              data-bs-ride="false"
+              data-bs-interval="false"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="images/CaseStudy/trailpulsecasestudy/trailinfoarc.png"
+                    class="d-block mx-auto diagram-img"
+                    alt="TrailPulse information architecture"
+                    loading="lazy"
+                  />
+                  <div class="carousel-caption-custom">
+                    <strong>Information Architecture</strong> — public pages,
+                    dashboard access, auth routes, and main user journeys.
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <img
+                    src="images/CaseStudy/trailpulsecasestudy/trailfront.png"
+                    class="d-block mx-auto diagram-img"
+                    alt="TrailPulse folder setup"
+                    loading="lazy"
+                  />
+                  <div class="carousel-caption-custom">
+                    <strong>Frontend Folder Structure</strong> — React pages,
+                    reusable components, routing, styling, dashboard, and
+                    API-facing components.
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <img
+                    src="images/CaseStudy/trailpulsecasestudy/trailback.png"
+                    class="d-block mx-auto diagram-img"
+                    alt="TrailPulse frontend structure"
+                    loading="lazy"
+                  />
+                  <div class="carousel-caption-custom">
+                    <strong>Backend Folder Structure</strong> - Node.js
+                    authentication server supporting the login and signup flow.
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#tpStructureCarousel"
+                data-bs-slide="prev"
+                aria-label="Previous"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </button>
+
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#tpStructureCarousel"
+                data-bs-slide="next"
+                aria-label="Next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </button>
+
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#tpStructureCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Information architecture"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#tpStructureCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Folder setup"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#tpStructureCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Frontend setup"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ========================= KEY FLOWS WITH VIDEOS ========================= -->
+      <section class="container-fluid py-5" id="section-key-flows">
+        <div class="container">
+          <div class="starter-template text-center mb-5">
+            <span class="mini-label">User Flows</span>
+            <h3 class="mb-2">Key User Flows</h3>
+            <p class="section-intro mb-0">
+              These short clips show the main TrailPulse interactions, from the
+              public landing experience through to dashboard, reviews, weather,
+              trail browsing, and hiking tips.
+            </p>
+          </div>
+        </div>
+
+        <div class="container-xl">
+          <!-- 1. LANDING PAGE -->
+          <div class="row align-items-center g-4 flow-row">
+            <div class="col-12 col-lg-8 animate-left text-center">
+              <video
+                class="flow-video"
+                playsinline
+                muted
+                loop
+                controls
+                preload="metadata"
+              >
+                <source
+                  src="videos/trailpulsevideos/trailpulselanding.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="col-12 col-lg-4 animate-right">
+              <div class="flow-copy">
+                <h5>1) Landing Page</h5>
+                <p>
+                  The landing page introduces the TrailPulse brand, sets the
+                  visual tone, and directs users toward sign-up, login, and the
+                  main public pages.
+                </p>
+                <ul class="mb-0">
+                  <li>Brand introduction</li>
+                  <li>Clear public navigation</li>
+                  <li>Responsive hero and feature sections</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. DASHBOARD -->
+          <div
+            class="row align-items-center g-4 flow-row flex-lg-row-reverse mt-5"
+          >
+            <div class="col-12 col-lg-8 animate-right text-center">
+              <video
+                class="flow-video"
+                playsinline
+                muted
+                loop
+                controls
+                preload="metadata"
+              >
+                <source
+                  src="videos/trailpulsevideos/traildashboard.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="col-12 col-lg-4 animate-left">
+              <div class="flow-copy">
+                <h5>2) Dashboard</h5>
+                <p>
+                  The dashboard gives logged-in users a more personalised view,
+                  with sidebar navigation, forum interaction, charts, and quick
+                  access to hiking tools.
+                </p>
+                <ul class="mb-0">
+                  <li>Private dashboard layout</li>
+                  <li>Dashboard sidebar navigation</li>
+                  <li>Forum and chart sections</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. CONTACT FORM -->
+          <div class="row align-items-center g-4 flow-row mt-5">
+            <div class="col-12 col-lg-8 animate-left text-center">
+              <video
+                class="flow-video"
+                playsinline
+                muted
+                loop
+                controls
+                preload="metadata"
+              >
+                <source
+                  src="videos/trailpulsevideos/trailcontactform.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="col-12 col-lg-4 animate-right">
+              <div class="flow-copy">
+                <h5>3) Contact Form</h5>
+                <p>
+                  The contact page allows users to submit feedback or enquiries,
+                  with required form fields and a simple branch/location map
+                  section.
+                </p>
+                <ul class="mb-0">
+                  <li>Required input fields</li>
+                  <li>Feedback and enquiry form</li>
+                  <li>Location/map context</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. REVIEWS -->
+          <div
+            class="row align-items-center g-4 flow-row flex-lg-row-reverse mt-5"
+          >
+            <div class="col-12 col-lg-8 animate-right text-center">
+              <video
+                class="flow-video"
+                playsinline
+                muted
+                loop
+                controls
+                preload="metadata"
+              >
+                <source
+                  src="videos/trailpulsevideos/trailreviews.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="col-12 col-lg-4 animate-left">
+              <div class="flow-copy">
+                <h5>4) Trail Reviews</h5>
+                <p>
+                  The reviews section allows users to read trail feedback and
+                  interact with review content through add, edit, and delete
+                  style actions.
+                </p>
+                <ul class="mb-0">
+                  <li>Review form</li>
+                  <li>Review cards</li>
+                  <li>Add, edit, and delete interactions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. WEATHER -->
+          <div class="row align-items-center g-4 flow-row mt-5">
+            <div class="col-12 col-lg-8 animate-left text-center">
+              <video
+                class="flow-video"
+                playsinline
+                muted
+                loop
+                controls
+                preload="metadata"
+              >
+                <source
+                  src="videos/trailpulsevideos/trailweather.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="col-12 col-lg-4 animate-right">
+              <div class="flow-copy">
+                <h5>5) Weather</h5>
+                <p>
+                  The weather flow lets users select a trail and then check live
+                  weather data, including temperature, wind, sunrise, and sunset
+                  conditions.
+                </p>
+                <ul class="mb-0">
+                  <li>Trail search / selection</li>
+                  <li>OpenWeather API request</li>
+                  <li>Hiking suitability context</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. HIKES -->
+          <div
+            class="row align-items-center g-4 flow-row flex-lg-row-reverse mt-5"
+          >
+            <div class="col-12 col-lg-8 animate-right text-center">
+              <video
+                class="flow-video"
+                playsinline
+                muted
+                loop
+                controls
+                preload="metadata"
+              >
+                <source
+                  src="videos/trailpulsevideos/trailhikes.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="col-12 col-lg-4 animate-left">
+              <div class="flow-copy">
+                <h5>6) Hikes / Trails</h5>
+                <p>
+                  The trails flow shows how users browse Irish hikes, filter the
+                  trail list, view trail cards, and interact with the map.
+                </p>
+                <ul class="mb-0">
+                  <li>Trail list</li>
+                  <li>Filters</li>
+                  <li>Interactive Leaflet map</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. TIPS -->
+          <div class="row align-items-center g-4 flow-row mt-5">
+            <div class="col-12 col-lg-8 animate-left text-center">
+              <video
+                class="flow-video"
+                playsinline
+                muted
+                loop
+                controls
+                preload="metadata"
+              >
+                <source
+                  src="videos/trailpulsevideos/trailtips.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="col-12 col-lg-4 animate-right">
+              <div class="flow-copy">
+                <h5>7) Hiking Tips</h5>
+                <p>
+                  The tips page gives users quick hiking guidance through
+                  card-based content, icons, animations, and short practical
+                  advice.
+                </p>
+                <ul class="mb-0">
+                  <li>Flip-card style tips</li>
+                  <li>Icon-led guidance</li>
+                  <li>Simple safety and preparation advice</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ========================= OUTCOMES ========================= -->
+      <!-- ========================= OUTCOMES / LEARNINGS / CHALLENGES ========================= -->
+      <section class="container" id="section-outcomes">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 text-center">
+            <span class="mini-label">Outcomes</span>
+            <h3>Outcomes, Learnings &amp; Challenges</h3>
+            <p class="section-intro">
+              TrailPulse resulted in a working React hiking application that
+              brought together trail content, weather checks, interactive maps,
+              dashboard interaction, reviews, tips, and data visualisations in
+              one connected user experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-12 col-md-4">
+            <article class="tp-card">
+              <h5>Outcomes</h5>
+              <ul class="mb-0">
+                <li>
+                  Built a dedicated hiking interface focused on Irish trails.
+                </li>
+                <li>
+                  Connected multiple frontend features into one consistent React
+                  app.
+                </li>
+                <li>
+                  Created a dashboard area with charts, forum content, and
+                  logged-in navigation.
+                </li>
+                <li>
+                  Used APIs and external services to support maps, weather, and
+                  trail insights.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <article class="tp-card">
+              <h5>Learnings</h5>
+              <ul class="mb-0">
+                <li>
+                  Improved my understanding of React routing and component
+                  structure.
+                </li>
+                <li>
+                  Learned how to manage frontend and backend folders separately.
+                </li>
+                <li>
+                  Worked with live data sources and asynchronous API calls.
+                </li>
+                <li>
+                  Gained more experience designing dashboard-style layouts and
+                  navigation.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <article class="tp-card">
+              <h5>Challenges</h5>
+              <ul class="mb-0">
+                <li>Keeping map, weather, and chart data reliable.</li>
+                <li>Making team-built pages feel visually consistent.</li>
+                <li>
+                  Balancing functionality with a simple, beginner-friendly
+                  codebase.
+                </li>
+                <li>
+                  Handling API issues when external data was slow or
+                  inconsistent.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ========================= LINKS / CTAs ========================= -->
+      <section class="container text-center" id="section-links">
+        <h4 class="mb-3">Explore</h4>
+        <p class="section-intro">View the repository on Github.</p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a
+            href="https://github.com/stephenmphughes/TrailPulseFrontandBack.git"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-dark"
+          >
+            Open Repo
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER  -->
+    <div id="footer-placeholder"></div>
+
+    <!-- ========================= SCRIPTS ========================= -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/nav.js" defer></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const structureCarousel = document.querySelector(
+          "#tpStructureCarousel"
+        );
+
+        if (structureCarousel && window.bootstrap) {
+          new bootstrap.Carousel(structureCarousel, {
+            interval: false,
+            ride: false,
+            touch: true,
+          });
+        }
+
+        const host = document.getElementById("navbar-placeholder");
+        setTimeout(() => {
+          if (!host || host.children.length) return;
+          console.warn(
+            "[trailpulse.html] navbar-placeholder is empty. Check assets/nav.js path and console errors."
+          );
+        }, 100);
+      });
+    </script>
+  </body>
+</html>

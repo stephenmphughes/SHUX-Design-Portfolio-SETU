@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Form</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="formstyle.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="images/navbarlogo.svg"
+            alt="SHUX Logo"
+            width="40"
+            height="40"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">CONTACT</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >PROJECTS</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="prototypes.html">Prototypes</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://docs.google.com/presentation"
+                    target="_blank"
+                    >Case Studies</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">In Motion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Intro Section -->
+    <div id="intro" class="container-fluid text-center">
+      <div class="d-flex justify-content-center align-items-center"></div>
+
+      <!-- Multistep Form -->
+      <div class="container mt-5 mb-5">
+        <form
+          id="multiStepForm"
+          method="POST"
+          action="contact-form-handler.php"
+        >
+          <!-- Step 1 -->
+          <div class="form-step active">
+            <h1>Step 1</h1>
+            <h2>Which Option Describes You Best?</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="recruiter" class="card text-center mt-3">
+                  <div class="card-body">
+                    <img
+                      src="images/Recruiter.svg"
+                      alt="Recruiter Icon"
+                      class="img-fluid mb-3"
+                      style="max-height: 150px"
+                    />
+                    <h5 class="card-title">I'm Looking for a Full-Time Employee</h5>
+                    <input
+                      type="radio"
+                      name="userType"
+                      value="recruiter"
+                      id="recruiter"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+              <div class="col-md-6">
+                <label for="freelancer" class="card text-center mt-3">
+                  <div class="card-body">
+                    <img
+                      src="images/freelanceform.svg"
+                      alt="Freelancer Icon"
+                      class="img-fluid mb-3"
+                      style="max-height: 150px"
+                    />
+                    <h5 class="card-title">I'm Looking for a Freelancer</h5>
+                    <input
+                      type="radio"
+                      name="userType"
+                      value="freelancer"
+                      id="freelancer"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <button type="button" class="btn btn-outline-primary next-btn">
+                Next
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="form-step">
+            <h1>Step 2</h1>
+            <h2>Tell Us About Yourself</h2>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="companyName" class="form-label">Company Name</label>
+                <input
+                  type="text"
+                  name="companyName"
+                  placeholder="Company Name"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="companyLocation" class="form-label"
+                  >Company Location</label
+                >
+                <select name="companyLocation" class="form-select" required>
+                  <option value="" disabled selected>
+                    Company Location (Select County)
+                  </option>
+                  <option value="Dublin">Dublin</option>
+                  <option value="Cork">Cork</option>
+                  <option value="Galway">Galway</option>
+                </select>
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-12">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <button
+                type="button"
+                class="btn btn-outline-primary prev-btn mt-2"
+              >
+                Previous
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary next-btn mt-2"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="form-step">
+            <h1>Step 3</h1>
+            <h2>Describe Your Project</h2>
+            <textarea
+              name="textMessage"
+              placeholder="Tell us more about your project..."
+              class="form-control mb-3"
+              rows="5"
+              required
+            ></textarea>
+            <div class="text-center mt-4">
+              <button
+                type="button"
+                class="btn btn-outline-primary prev-btn mt-2"
+              >
+                Previous
+              </button>
+              <button type="submit" class="btn btn-outline-success mt-2">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    <!-- FOOTER for Tablet + Desktop larger screens-->
+    <footer class="custom-ft-color text-light py-5 d-none d-md-block">
+      <div class="container-footer">
+        <!-- Logo -->
+        <div class="row align-items-center justify-content-center mb-2">
+          <div class="col-auto">
+            <a href="index.html">
+              <img
+                class="img-fluid"
+                src="Images/navbarlogo.svg"
+                alt="Logo"
+                style="max-width: 80px"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="row mt-3 justify-content-center mb-2">
+          <div class="col">
+            <ul class="list-unstyled d-flex justify-content-center mb-0">
+              <li class="me-3" style="margin-right: -32px">
+                <a href="https://www.instagram.com" target="_blank">
+                  <img
+                    src="Images/Instagram.svg"
+                    alt="Instagram Logo"
+                    width="50"
+                    height="50"
+                  />
+                </a>
+              </li>
+              <li class="me-3" style="margin-left: 32px">
+                <a href="https://www.behance.net/" target="_blank">
+                  <img
+                    src="Images/Behance.svg"
+                    alt="Behance Logo"
+                    width="50"
+                    height="50"
+                  />
+                </a>
+              </li>
+              <li style="margin-left: 32px">
+                <a href="https://dribbble.com/" target="_blank">
+                  <img
+                    src="Images/Dribble.svg"
+                    alt="Dribble Logo"
+                    width="50"
+                    height="50"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--FOOTER Menu -->
+        <div class="row mt-3 justify-content-center mb-4">
+          <div class="col">
+            <ul class="list-unstyled d-flex justify-content-center mb-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  style="margin-right: 25px"
+                  aria-current="page"
+                  href="about.html"
+                  >ABOUT</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  style="margin-right: 25px"
+                  aria-current="page"
+                  href="contact.html"
+                  >CONTACT</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  style="margin-right: 25px"
+                  aria-current="page"
+                  href="Socials-page-3.html"
+                  >PROTOTYPES</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  style="margin-right: 25px"
+                  aria-current="page"
+                  href="https://docs.google.com/presentation/d/137bnrauEuwIBBkl87wZV9DKkpTsZLmF0Xsgyc4BFR2k/edit?usp=sharing"
+                  target="_blank"
+                  >CASE STUDIES</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  style="margin-right: 25px"
+                  aria-current="page"
+                  href="#"
+                  >IN MOTION</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER FOR MOBILE with block on large screens -->
+    <footer class="custom-ft-color text-light py-5 d-lg-none d-md-none">
+      <div class="container-footer">
+        <!-- Logo -->
+        <div class="row align-items-center justify-content-center mb-4">
+          <div class="col-auto text-center">
+            <a href="index.html">
+              <img
+                class="img-fluid"
+                src="Images/navbarlogo.svg"
+                alt="Logo"
+                style="max-width: 80px"
+              />
+            </a>
+          </div>
+        </div>
+        <!-- Menu -->
+        <div class="row justify-content-center mb-4">
+          <div class="col text-center">
+            <ul class="list-unstyled mb-0">
+              <li class="nav-item mb-2">
+                <a class="nav-link" aria-current="page" href="about.html"
+                  >ABOUT</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a class="nav-link" aria-current="page" href="contact.html"
+                  >CONTACT</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a class="nav-link" aria-current="page" href="prototypes.html"
+                  >PROTOTYPES</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="https://docs.google.com/presentation/d/137bnrauEuwIBBkl87wZV9DKkpTsZLmF0Xsgyc4BFR2k/edit?usp=sharing"
+                  target="_blank"
+                  >CASE STUDIES</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="row justify-content-center mb-4">
+          <!-- Added margin-bottom -->
+          <div class="col text-center">
+            <ul class="list-unstyled d-inline-flex mb-0">
+              <li class="me-3 mb-3 mb-md-0">
+                <a href="https://www.instagram.com" target="_blank">
+                  <img
+                    src="Images/Instagram.svg"
+                    alt="Instagram"
+                    width="50"
+                    height="50"
+                  />
+                </a>
+              </li>
+              <li class="me-3 mb-3 mb-md-0">
+                <a href="https://www.facebook.com" target="_blank">
+                  <img
+                    src="Images/Behance.svg"
+                    alt="Facebook"
+                    width="50"
+                    height="50"
+                  />
+                </a>
+              </li>
+              <li class="mb-3 mb-md-0">
+                <a href="tel:+353833511436" target="_blank">
+                  <img
+                    src="Images/Dribble.svg"
+                    alt="Whatsapp"
+                    width="50"
+                    height="50"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- Script for Navigation -->
+    <script>
+      const steps = document.querySelectorAll(".form-step");
+      const nextBtns = document.querySelectorAll(".next-btn");
+      const prevBtns = document.querySelectorAll(".prev-btn");
+      let currentStep = 0;
+
+      nextBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const inputs = steps[currentStep].querySelectorAll(
+            "input[required], select[required]"
+          );
+          let allValid = true;
+          inputs.forEach((input) => {
+            if (!input.checkValidity()) {
+              allValid = false;
+              input.classList.add("is-invalid");
+            } else {
+              input.classList.remove("is-invalid");
+            }
+          });
+          if (allValid) {
+            steps[currentStep].classList.remove("active");
+            currentStep++;
+            steps[currentStep].classList.add("active");
+          }
+        });
+      });
+
+      prevBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          steps[currentStep].classList.remove("active");
+          currentStep--;
+          steps[currentStep].classList.add("active");
+        });
+      });
+    </script>
+
+    <!-- Bootstrap Script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

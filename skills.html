@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skills</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Your about page styles (contains postcard classes) -->
+    <link href="aboutstyle.css" rel="stylesheet" />
+    <!-- Optional (for page-background, fonts, etc) -->
+    <link href="mystyle.css" rel="stylesheet" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Tiny helpers for inline icons next to headings */
+      .icon-row {
+        display: inline-flex;
+        gap: 8px;
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+      .icon-inline {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+      }
+      @media (max-width: 576px) {
+        .icon-inline {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-background"></div>
+
+    <!-- Navbar (injected) -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container py-4">
+      <div class="h1 text-center text-dark" id="pageHeaderTitle">Skills</div>
+
+      <!-- Figma -->
+      <article class="postcard light yellow">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/skillsImages/figmaskills.svg" alt="Figma" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title yellow">
+            <a href="#">Figma</a>
+          </h1>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            With 2 years experience using Figma, I have developed a professional
+            command of the tool across all key areas, including prototyping,
+            interactive flows, responsive design, auto layout, component
+            variants, and effective project organisation. I’m confident working
+            with design systems, managing spacing with precision, and building
+            clean, developer-friendly files.
+          </div>
+        </div>
+      </article>
+
+      <!-- HTML & CSS -->
+      <article class="postcard light blue">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/skillsImages/htmlcssskills.svg" alt="HTML" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue">
+            <a href="#">HTML &amp; CSS</a>
+          </h1>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            I have strong proficiency in writing clean, semantic HTML and maintainable CSS. I’m confident working with modern layout techniques like Flexbox and Grid, and I pay close attention to responsive design, accessibility (ARIA roles, alt text, tab navigation), and cross-browser compatibility. I regularly use custom properties (CSS variables), media queries, and structured class naming (like BEM) to create scalable stylesheets that are easy for developers to follow and extend.
+        </div>
+      </article>
+
+      <!-- JavaScript, Bootstrap & React -->
+      <article class="postcard light red">
+        <a class="postcard__img_link" href="#">
+          <img
+            class="postcard__img"
+            src="images/skillsImages/devskills.svg"
+            alt="JavaScript"
+          />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title red">
+            <a href="#">JavaScript, Bootstrap &amp; React</a>
+          </h1>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            I use JavaScript for interactivity like form validation, DOM manipulation, and working with APIs. Bootstrap helps me build responsive layouts quickly with its grid system and components, while I apply custom styles for consistency. In React, I build scalable UIs using components, props, and state, and I’ve created single-page apps with React Router and API integration. My code is clean, modular, and easy to maintain.
+          </div>
+        </div>
+      </article>
+
+      <!-- Adobe Suite -->
+      <article class="postcard light green">
+        <a class="postcard__img_link" href="#">
+          <img
+            class="postcard__img"
+            src="images/skillsImages/adobeskills.svg"
+            alt="Photoshop"
+          />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title green">
+            <a href="#">Adobe Photoshop, Illustrator &amp; InDesign</a>
+          </h1>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            From designing logos and posters to refining layouts for print and digital use, I have strong creative and technical skills across Adobe Photoshop, Illustrator, and InDesign. I can confidently produce professional visual assets that complement UX deliverables and brand identities.
+          </div>
+        </div>
+      </article>
+
+      <!-- Databases & DevOpsSec -->
+      <article class="postcard light yellow">
+        <a class="postcard__img_link" href="#">
+          <img
+            class="postcard__img"
+            src="images/skillsImages/databasedevopsskills.svg"
+            alt="Databases"
+          />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title yellow">
+            <a href="#">Databases &amp; DevOpsSec (Foundational)</a>
+          </h1>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            Relational schemas and CRUD basics; Git for versioning; fundamentals
+            of CI/CD. Security awareness: SSH, basic firewall/ports, and
+            enabling HTTPS—aimed at safe, reliable deployments.
+          </div>
+        </div>
+      </article>
+
+      <!-- OOSE & CAOSN -->
+      <article class="postcard light blue">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="images/skillsImages/oosecaosnskills.svg" alt="OOSE" />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue">
+            <a href="#">OOSE &amp; CAOSN (Foundational)</a>
+          </h1>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            I have a solid understanding of relational databases, including how to structure schemas and perform CRUD operations to manage data effectively. I've also worked with version control systems like Git and understand the fundamentals of CI/CD pipelines. On the security side, I’m familiar with core DevOpsSec practices like securing cloud deployments using SSH keys, configuring firewalls and ports, and enabling HTTPS with SSL certificates — all to ensure safe and reliable application delivery.
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/nav.js" defer></script>
+    <script src="assets/footer.js" defer></script>
+  </body>
+</html>

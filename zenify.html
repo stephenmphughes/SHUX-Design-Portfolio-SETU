@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Zenify UX Case Study" />
+    <meta name="author" content="Stephen Hughes" />
+    <title>SHUX Design | Zenify</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- Global helpers --- */
+      .case-figure {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .feature-img-wide {
+        width: 100%;
+        height: auto;
+      }
+      .section-intro {
+        max-width: 900px;
+        margin: 0 auto 1rem;
+      }
+
+      /* First hero image slightly smaller than full width */
+      .hero-wrapper {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      .hero-wrapper img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Alternating section spacing */
+      section.container {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      }
+
+      /* --- Carousel outside controls (clean icons, centered vertically) --- */
+      .carousel-outside {
+        position: relative;
+        padding: 0 4rem; /* room for outside controls */
+      }
+
+      .carousel-outside .carousel-inner img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      /* Center controls vertically and push just outside the image */
+      .carousel-outside .carousel-control-prev,
+      .carousel-outside .carousel-control-next {
+        width: auto;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%); /* vertical centering */
+        opacity: 1;
+        filter: none;
+      }
+
+      /* Nudge them outside horizontally */
+      .carousel-outside .carousel-control-prev {
+        left: 0;
+        transform: translate(-60%, -50%);
+      }
+      .carousel-outside .carousel-control-next {
+        right: 0;
+        transform: translate(60%, -50%);
+      }
+
+      /* Use plain Bootstrap chevrons — no circle, no padding */
+      .carousel-outside .carousel-control-prev-icon,
+      .carousel-outside .carousel-control-next-icon {
+        background-color: transparent; /* remove black circle */
+        background-size: 100% 100%;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      /* Dots */
+      .carousel-outside .carousel-indicators [data-bs-target] {
+        background-color: #000;
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 991.98px) {
+        .carousel-outside {
+          padding: 0 3rem;
+        }
+        .carousel-outside .carousel-control-prev {
+          transform: translate(-50%, -50%);
+        }
+        .carousel-outside .carousel-control-next {
+          transform: translate(50%, -50%);
+        }
+      }
+      @media (max-width: 575.98px) {
+        .carousel-outside {
+          padding: 0 2.25rem;
+        }
+        /* If you want them visible on phones, delete the next two lines */
+        .carousel-outside .carousel-control-prev,
+        .carousel-outside .carousel-control-next {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-background"></div>
+
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Header -->
+    <header class="starter-template text-center mt-5">
+      <h1>Zenify</h1>
+      <p class="lead">
+        A web & mobile platform for youth mental wellbeing built on three
+        pillars: <strong>Meditation</strong>, <strong>Movement</strong>, and
+        <strong>Music</strong>.
+      </p>
+      <p class="text-muted mb-0">Project duration: May ’23 – Sep ’23</p>
+      <p class="text-muted">Role: UX Designer (end-to-end)</p>
+    </header>
+
+    <!-- =========================
+         1) PROJECT OVERVIEW (CENTERED)
+         Row 1: smaller hero image
+         Row 2: overview text
+         ========================= -->
+    <section class="container" id="section-product">
+      <!-- Row 1: Smaller hero image -->
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-12 hero-wrapper">
+          <img
+            src="images/CaseStudy/zenifycasestudy/zenifyheromockups.png"
+            class="img-fluid"
+            alt="Zenify hero mockups"
+          />
+        </div>
+      </div>
+      <!-- Row 2: Text -->
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <h3 class="text-center">The Product</h3>
+          <p class="section-intro text-center">
+            Zenify is an online and app-based platform aimed at improving young
+            people’s mental health. It blends guided practices and tools across
+            Meditation, Movement, and Music to build daily habits in a
+            youth-friendly, cost-conscious way.
+          </p>
+          <h6 class="text-center">My Responsibilities</h6>
+          <p class="text-center mb-0">
+            User research & interviews, personas, problem statements,
+            competitive audit, IA & wireframes, low/high-fidelity prototypes,
+            usability testing, accessibility, responsive design.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PROBLEM (ALTERNATING: text left, image right)
+         ========================= -->
+    <section class="container" id="section-problem">
+      <div class="row align-items-center">
+        <div class="col-md-6 animate-left">
+          <h3>The Problem</h3>
+          <p>
+            Stress, anxiety, and depression are rising among young people. Many
+            lack accessible, structured, and engaging ways to practise wellbeing
+            at home. Zenify set out to deliver a clear, easy-to-use experience
+            that supports daily practice and self-management.
+          </p>
+        </div>
+        <div class="col-md-6 animate-right text-center">
+          <img
+            src="images/CaseStudy/Zenify/problem.png"
+            class="img-fluid feature-img"
+            alt="Problem framing"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         2) PERSONAS (CENTERED)
+         Row 1: text
+         Row 2: carousel with outside controls
+         ========================= -->
+    <section class="container" id="section-personas">
+      <!-- Text row -->
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <h3 class="text-center mb-3">Understanding the Users — Personas</h3>
+
+          <div class="mb-4">
+            <h5>Paul (21)</h5>
+            <p class="mb-2">
+              <strong>Problem statement:</strong> Paul is a uni student who
+              needs cost-effective meditation to manage exam stress and social
+              anxiety when meeting new people.
+            </p>
+            <ul class="mb-2">
+              <li>
+                <strong>Profile:</strong> Outgoing but under pressure; classes
+                are expensive.
+              </li>
+              <li>
+                <strong>Goals:</strong> Meet friends; reduce social anxiety.
+              </li>
+              <li>
+                <strong>Frustrations:</strong> Balancing study/social life;
+                class costs.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5>Maria (17)</h5>
+            <p class="mb-2">
+              <strong>Problem statement:</strong> Maria (ASD) wants to interact
+              with music and technology to relax and meditate after school.
+            </p>
+            <ul class="mb-2">
+              <li>
+                <strong>Profile:</strong> iPad apps fan; music therapy helped
+                but costly.
+              </li>
+              <li>
+                <strong>Goals:</strong> Daily routine; meditative interaction
+                with music.
+              </li>
+              <li>
+                <strong>Frustrations:</strong> Self-meditation without direction
+                feels repetitive.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel row -->
+      <div class="row justify-content-center text-center mt-3">
+        <div class="col-12 case-figure">
+          <div
+            id="personasCarousel"
+            class="carousel slide carousel-outside"
+            data-bs-ride="false"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/userpersonabob.png"
+                  class="d-block w-100"
+                  alt="User persona: Paul"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/userpersonamaria.png"
+                  class="d-block w-100"
+                  alt="User persona: Maria"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#personasCarousel"
+              data-bs-slide="prev"
+              aria-label="Previous"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#personasCarousel"
+              data-bs-slide="next"
+              aria-label="Next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#personasCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Paul"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#personasCarousel"
+                data-bs-slide-to="1"
+                aria-label="Maria"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         RESEARCH & INSIGHTS (ALTERNATING: image left, text right)
+         ========================= -->
+    <section class="container" id="section-research">
+      <div class="row align-items-center flex-md-row-reverse">
+        <div class="col-md-6 animate-right">
+          <h3>Research & Insights</h3>
+          <p>
+            Research combined surveys, interviews, and a competitive audit of
+            meditation and music-therapy apps to understand needs and barriers.
+          </p>
+          <ul>
+            <li>Simple navigation and predictable controls across screens.</li>
+            <li>
+              Concise layouts for mobile; clear visual feedback during sessions.
+            </li>
+            <li>
+              Persistent access to primary areas (Meditation, Movement, Music).
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 animate-left text-center">
+          <img
+            src="images/CaseStudy/Zenify/competitive-audit.png"
+            class="img-fluid feature-img"
+            alt="Competitive audit summary"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         3) USER JOURNEY MAP (CENTERED)
+         Heading + desc, then carousel (outside controls)
+         ========================= -->
+    <section class="container" id="section-journey">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-10">
+          <h3>User Journey Map</h3>
+          <p class="section-intro">
+            Mapping typical scenarios highlighted key moments for guidance,
+            feedback, and habit-building across daily routines.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-12 case-figure">
+          <div
+            id="journeyCarousel"
+            class="carousel slide carousel-outside"
+            data-bs-ride="false"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/journeymapbob.png"
+                  class="d-block w-100"
+                  alt="User journey map part 1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/journeymapmaria.png"
+                  class="d-block w-100"
+                  alt="User journey map part 2"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#journeyCarousel"
+              data-bs-slide="prev"
+              aria-label="Previous"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#journeyCarousel"
+              data-bs-slide="next"
+              aria-label="Next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#journeyCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Journey 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#journeyCarousel"
+                data-bs-slide-to="1"
+                aria-label="Journey 2"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         STARTING THE DESIGN (ALTERNATING: text left, image right)
+         ========================= -->
+    <section class="container" id="section-starting-design">
+      <div class="row align-items-center">
+        <div class="col-md-6 animate-left">
+          <h3>Starting the Design</h3>
+          <ul>
+            <li>
+              <strong>Digital wireframes</strong> set structure for web +
+              mobile.
+            </li>
+            <li>
+              <strong>Low-fidelity prototype</strong> linked core flows for
+              early testing.
+            </li>
+            <li>
+              <strong>Usability study</strong> captured prioritised findings.
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 animate-right text-center">
+          <img
+            src="images/CaseStudy/Zenify/wireframes-lowfi.png"
+            class="img-fluid feature-img"
+            alt="Digital wireframes & low-fi prototypes"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     4) COMPETITIVE AUDIT (CENTERED) — Modal + external link
+     ========================= -->
+    <section class="container" id="section-competitive">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-10">
+          <h3>Competitive Audit</h3>
+          <p class="section-intro">
+            View the full audit (long, horizontal document). Open in a popup for
+            scroll/zoom, or in a new tab.
+          </p>
+          <div class="d-flex justify-content-center gap-3">
+            <button
+              class="btn btn-dark"
+              data-bs-toggle="modal"
+              data-bs-target="#auditModal"
+            >
+              Open in Popup
+            </button>
+            <a
+              class="btn btn-outline-dark"
+              href="https://docs.google.com/spreadsheets/d/1TZwYuJNnVIdRZDnpFb24mInY0rMvZegjYeLip8keWTs/edit?usp=sharing"
+              target="_blank"
+              rel="noopener"
+            >
+              Open in New Tab
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="auditModal"
+        tabindex="-1"
+        aria-labelledby="auditModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="auditModalLabel">
+                Competitive Audit
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="ratio ratio-audit">
+                <!-- Embed Google Sheets directly -->
+                <iframe
+                  id="auditFrame"
+                  src="https://docs.google.com/spreadsheets/d/1TZwYuJNnVIdRZDnpFb24mInY0rMvZegjYeLip8keWTs/preview"
+                  title="Zenify competitive audit"
+                  style="border: 0; width: 100%; height: 80vh"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="small mt-2">
+                If the file doesn't render,
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1TZwYuJNnVIdRZDnpFb24mInY0rMvZegjYeLip8keWTs/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener"
+                  >open it in a new tab</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         REFINING THE DESIGN (ALTERNATING: image left, text right)
+         ========================= -->
+    <section class="container" id="section-refining">
+      <div class="row align-items-center flex-md-row-reverse">
+        <div class="col-md-6 animate-right">
+          <h3>Refining the Design</h3>
+          <ul>
+            <li>Darker background tones for improved content legibility.</li>
+            <li>
+              Web app: side menu with accordion drop-downs (always present).
+            </li>
+            <li>Carousel buttons on web for mouse-first interaction.</li>
+            <li>Landing page created to entice first-time users.</li>
+          </ul>
+          <p>These changes fed into the high-fidelity prototype.</p>
+        </div>
+        <div class="col-md-6 animate-left text-center">
+          <img
+            src="images/CaseStudy/zenifycasestudy/zenifybeforeafter1.png"
+            class="img-fluid feature-img"
+            alt="Before & after mockups"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     5) USABILITY STUDY FINDINGS (CENTERED) — Carousel (outside controls)
+     ========================= -->
+    <section class="container" id="section-usability">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-10">
+          <h3>Usability Study — Findings & Prioritised Insights</h3>
+          <p class="section-intro">
+            Key issues and prioritisation that shaped the next iteration.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-12 case-figure">
+          <div
+            id="usabilityCarousel"
+            class="carousel slide carousel-outside"
+            data-bs-ride="false"
+          >
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/zenifyusability1.png"
+                  class="d-block w-100"
+                  alt="Zenify usability finding 1"
+                />
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/zenifyusability2.png"
+                  class="d-block w-100"
+                  alt="Zenify usability finding 2"
+                />
+              </div>
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/zenifyusability3.png"
+                  class="d-block w-100"
+                  alt="Zenify usability finding 3"
+                />
+              </div>
+              <!-- Slide 4 -->
+              <div class="carousel-item">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/zenifyusability4.png"
+                  class="d-block w-100"
+                  alt="Zenify usability finding 4"
+                />
+              </div>
+              <!-- Slide 5 -->
+              <div class="carousel-item">
+                <img
+                  src="images/CaseStudy/zenifycasestudy/zenifyprioritisedinsights.png"
+                  class="d-block w-100"
+                  alt="Zenify prioritised insights"
+                />
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#usabilityCarousel"
+              data-bs-slide="prev"
+              aria-label="Previous"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#usabilityCarousel"
+              data-bs-slide="next"
+              aria-label="Next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#usabilityCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Finding 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#usabilityCarousel"
+                data-bs-slide-to="1"
+                aria-label="Finding 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#usabilityCarousel"
+                data-bs-slide-to="2"
+                aria-label="Finding 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#usabilityCarousel"
+                data-bs-slide-to="3"
+                aria-label="Finding 4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#usabilityCarousel"
+                data-bs-slide-to="4"
+                aria-label="Prioritised insights"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         HIGH-FIDELITY PROTOTYPE (ALTERNATING: text left, image right)
+         ========================= -->
+    <section class="container text-center text-md-start" id="section-prototype">
+      <div class="row align-items-center">
+        <div class="col-md-6 animate-left">
+          <h3 class="mb-3">High-Fidelity Prototype</h3>
+          <p>
+            Explore the refined flows and visual design in the clickable
+            prototype.
+          </p>
+          <a href="#" class="btn btn-dark mt-2" target="_blank"
+            >Open Prototype</a
+          >
+          <p class="small text-muted mt-3 mb-0">
+            Incorporates improvements from usability testing.
+          </p>
+        </div>
+        <div class="col-md-6 animate-right text-center">
+          <img
+            src="images/CaseStudy/zenifycasestudy/zenifyprototypeoverview.png"
+            class="img-fluid feature-img mt-3 mt-md-0"
+            alt="High fidelity screens"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         ACCESSIBILITY (ALTERNATING: image left, text right)
+         ========================= -->
+    <section class="container" id="section-accessibility">
+      <div class="row align-items-center flex-md-row-reverse">
+        <div class="col-md-6 animate-right">
+          <h3>Accessibility Considerations</h3>
+          <ul>
+            <li>Colour-contrast checks throughout.</li>
+            <li>Persistent, predictable navigation (web side menu).</li>
+            <li>Large, tappable targets; clear labels and icon sizing.</li>
+          </ul>
+        </div>
+        <div class="col-md-6 animate-left text-center">
+          <img
+            src="images/CaseStudy/zenifycasestudy/zenifyaccesibilityconsiderations.png"
+            class="img-fluid feature-img"
+            alt="Accessibility"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         INFORMATION ARCHITECTURE (ALTERNATING: text left, image right)
+         ========================= -->
+    <section class="container" id="section-ia">
+      <div class="row align-items-center">
+        <div class="col-md-6 animate-left">
+          <h3>Information Architecture</h3>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h6 class="mt-2">Top-Level</h6>
+              <ul>
+                <li>Home (Landing / Sign Up CTA)</li>
+                <li>Meditation (Mindfulness, Yoga, Breathing, Affirmations)</li>
+                <li>Movement (Stretching, Running)</li>
+                <li>Music (Player, Artist Profile, Lyric Digest)</li>
+                <li>
+                  Tools (Energy Tracker, Sleep Quality, Weekly Schedule, Mood
+                  Journal, Targets)
+                </li>
+                <li>Account (Login, Sign Up, Profile, Settings)</li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6">
+              <h6 class="mt-2">Key Elements</h6>
+              <ul>
+                <li>Media player (audio; planned video)</li>
+                <li>Quick links on Home for faster access</li>
+                <li>Graphs/pie charts for Sleep Quality (planned)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 animate-right text-center">
+          <img
+            src="images/CaseStudy/zenifycasestudy/zenifyinformationarcitecture.png"
+            class="img-fluid feature-img"
+            alt="Sitemap"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         OUTCOMES (ALTERNATING: image left, text right)
+         ========================= -->
+    <section class="container" id="section-outcomes">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-10">
+          <h3>Outcomes &amp; Next Steps</h3>
+          <p class="section-intro">
+            Zenify was developed as a calm digital wellbeing concept spanning
+            both mobile and web. The final outcome demonstrates how the same
+            core experience can adapt across devices while maintaining a
+            consistent visual identity, clear interaction patterns, and a softer
+            wellness-led interface. The next stage would involve expanding the
+            prototypes into a more complete design system, refining
+            microinteractions, and testing the experience with users to validate
+            ease of use, emotional tone, and feature clarity.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- =========================
+         Prototype Embeds
+         ========================= -->
+    <section class="container-fluid px-0" id="section-prototypes">
+      <div class="text-center mb-5">
+        <h3>Interactive Prototype</h3>
+        <p class="section-intro">Explore the Zenify prototype below</p>
+      </div>
+
+      <div class="prototype-block">
+        <div class="container">
+          <div class="figma-full-wrap">
+            <iframe
+              class="figma-full"
+              src="https://embed.figma.com/proto/5l6uO2mrzriUjhOSdIL8e3/ZENIFY-APP?page-id=0%3A1&node-id=0-1878&viewport=1266%2C200%2C0.51&scaling=scale-down&content-scaling=fixed&starting-point-node-id=0%3A1878&embed-host=share"
+              allowfullscreen
+              loading="lazy"
+              title="Zenify Mobile App Prototype"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap & Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/nav.js" defer></script>
+    <script src="assets/footer.js" defer></script>
+    <script src="js/animation.js"></script>
+  </body>
+</html>

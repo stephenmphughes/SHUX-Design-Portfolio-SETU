@@ -1,0 +1,1039 @@
+<!-- edhub.html — Flagship UX Case Study (matches your site's navbar + background pattern) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="description" content="edHub — UX Case Study" />
+    <meta name="author" content="Stephen Hughes" />
+    <title>SHUX Design | edHub</title>
+
+    <!-- Google Fonts first -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Then Bootstrap and your site CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Your site background is styled in mystyle.css (keep this div) -->
+    <div class="page-background"></div>
+
+    <!-- Your injected navbar goes here (assets/nav.js populates this) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- ============================== PAGE CONTENT ============================== -->
+    <main class="edhub-case">
+      <!-- Header -->
+      <header class="starter-template text-center mt-5">
+        <h1>edHub</h1>
+        <p class="lead">
+          Unified, accessibility-first lesson planning for primary education —
+          AI-assisted and aligned to EAA.
+        </p>
+        <p class="text-muted mb-0">
+          Role: UX research, IA, UI/brand, prototyping
+        </p>
+        <p class="text-muted">Duration: Concept → MVP roadmap</p>
+      </header>
+
+      <!-- HERO full-bleed -->
+      <section class="container-fluid" id="hero">
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-12 col-lg-10">
+            <figure class="mb-0">
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhubhero.png"
+                class="img-fluid d-block"
+                alt="edHub hero mockups (Home, Lesson Centre, Assessments)"
+              />
+              <figcaption class="text-center mt-2">
+                From wireframe to prototype: Lesson-Planning Centre, Home,
+                Assessments.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview (text L / image R) -->
+      <section class="container" id="overview">
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h3>Overview & Problem</h3>
+            <p class="copy">
+              Teachers juggle multiple tools to plan lessons and differentiate
+              for AEN learners. Accessibility is inconsistent, and with the
+              European Accessibility Act, inclusive design becomes baseline.
+              edHub centralises planning, resources, differentiation, and
+              accessibility checks in one responsive workspace.
+            </p>
+            <ul class="mb-0">
+              <li><strong>Time drain:</strong> scattered tools and rework.</li>
+              <li>
+                <strong>Differentiation gap:</strong> limited support for
+                learning profiles.
+              </li>
+              <li>
+                <strong>Accessibility:</strong> need built-in checks and
+                supports (EAA-aligned).
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhubfishbone.png"
+              class="feature-img tight"
+              alt="Overview visuals and value props"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== USERS & PERSONAS ====================== -->
+      <section class="container" id="users">
+        <!-- Title -->
+        <div class="row">
+          <div class="col-12 text-center mb-4">
+            <h3>Users & Personas</h3>
+            <p class="copy mx-auto" style="max-width: 70ch">
+              Five personas guided edHub’s UX and business direction —
+              representing principals, teachers, policy makers, and students
+              with varying needs and accessibility requirements.
+            </p>
+          </div>
+        </div>
+
+        <!-- ======= DESKTOP / LARGE SCREENS: CAROUSEL (lg+) ======= -->
+        <div class="d-none d-lg-block">
+          <div
+            id="personaCarousel"
+            class="carousel slide"
+            data-bs-ride="false"
+            aria-label="Persona carousel"
+          >
+            <div class="carousel-inner">
+              <!-- PERSONA 1 -->
+              <div class="carousel-item active">
+                <div class="text-center mb-3">
+                  <h5 class="mb-1">The Forward-Thinking Principal</h5>
+                  <p class="small text-muted mb-2">
+                    Mr. Dunne — Principal, Clonmel
+                  </p>
+                  <p class="copy mx-auto" style="max-width: 75ch">
+                    Mr Dunne is a busy principal in a large school in Clonmel.
+                    Passionate about fostering a supportive and innovative
+                    school culture, he balances admin, staff meetings, and
+                    parent communication. While not teaching directly, he
+                    understands classroom pressures and seeks solutions that
+                    benefit staff and students. As a father of three, he
+                    empathises with parents seeking exceptional educational
+                    environments.
+                  </p>
+                </div>
+                <img
+                  src="images/CaseStudy/edhubcasestudy/edhubPersona1.png"
+                  class="d-block w-100 img-fluid"
+                  alt="Persona 1 — The Forward-Thinking Principal"
+                />
+              </div>
+
+              <!-- PERSONA 2 -->
+              <div class="carousel-item">
+                <div class="text-center mb-3">
+                  <h5 class="mb-1">The Educational Multi-Tasker</h5>
+                  <p class="small text-muted mb-2">
+                    Ms. Byrne — Primary Teacher
+                  </p>
+                  <p class="copy mx-auto" style="max-width: 75ch">
+                    Ms Byrne is a passionate and caring primary school teacher
+                    whose class includes kinetic, visual, and auditory learners,
+                    plus children with ADHD and ASD. She looks for ways to make
+                    lessons engaging and adaptable, but time is tight — she
+                    wants a tool that simplifies planning and differentiation
+                    without sacrificing quality.
+                  </p>
+                </div>
+                <img
+                  src="images/CaseStudy/edhubcasestudy/edhubPersona2.png"
+                  class="d-block w-100 img-fluid"
+                  alt="Persona 2 — The Educational Multi-Tasker"
+                />
+              </div>
+
+              <!-- PERSONA 3 -->
+              <div class="carousel-item">
+                <div class="text-center mb-3">
+                  <h5 class="mb-1">The Policy Maker</h5>
+                  <p class="small text-muted mb-2">
+                    Ms. Smyth — Dept. of Education
+                  </p>
+                  <p class="copy mx-auto" style="max-width: 75ch">
+                    Former teacher turned policy maker advocating for smarter
+                    resource use and digital transformation. She listens to
+                    teachers’ concerns and supports fair, evidence-based policy
+                    that modernises Ireland’s education infrastructure
+                    responsibly.
+                  </p>
+                </div>
+                <img
+                  src="images/CaseStudy/edhubcasestudy/edhubPersona3.png"
+                  class="d-block w-100 img-fluid"
+                  alt="Persona 3 — The Policy Maker"
+                />
+              </div>
+
+              <!-- PERSONA 4 -->
+              <div class="carousel-item">
+                <div class="text-center mb-3">
+                  <h5 class="mb-1">The Adapting Young Learner</h5>
+                  <p class="small text-muted mb-2">Anna — Age 9</p>
+                  <p class="copy mx-auto" style="max-width: 75ch">
+                    Displaced by conflict, Anna is settling into Irish school
+                    life but faces language and resource challenges. Bright and
+                    determined, she benefits from accessible, visual, and
+                    well-paced learning material.
+                  </p>
+                </div>
+                <img
+                  src="images/CaseStudy/edhubcasestudy/edhubPersona4.png"
+                  class="d-block w-100 img-fluid"
+                  alt="Persona 4 — The Adapting Young Learner"
+                />
+              </div>
+
+              <!-- PERSONA 5 -->
+              <div class="carousel-item">
+                <div class="text-center mb-3">
+                  <h5 class="mb-1">The Energetic School Kid</h5>
+                  <p class="small text-muted mb-2">Jake — Age 8</p>
+                  <p class="copy mx-auto" style="max-width: 75ch">
+                    A curious, hands-on learner who struggles with long seated
+                    lessons but thrives with movement, visuals, and
+                    project-based tasks. He illustrates the need for
+                    personalised, kinetic lesson planning.
+                  </p>
+                </div>
+                <img
+                  src="images/CaseStudy/edhubcasestudy/edhubPersona5.png"
+                  class="d-block w-100 img-fluid"
+                  alt="Persona 5 — The Energetic School Kid"
+                />
+              </div>
+            </div>
+
+            <!-- Controls (outside, mid-height) -->
+            <button
+              class="carousel-control-prev users-outside-prev"
+              type="button"
+              data-bs-target="#personaCarousel"
+              data-bs-slide="prev"
+              aria-label="Previous"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <button
+              class="carousel-control-next users-outside-next"
+              type="button"
+              data-bs-target="#personaCarousel"
+              data-bs-slide="next"
+              aria-label="Next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#personaCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-label="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#personaCarousel"
+                data-bs-slide-to="1"
+                aria-label="2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#personaCarousel"
+                data-bs-slide-to="2"
+                aria-label="3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#personaCarousel"
+                data-bs-slide-to="3"
+                aria-label="4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#personaCarousel"
+                data-bs-slide-to="4"
+                aria-label="5"
+              ></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======= MOBILE / TABLET: STACKED (no cards) ======= -->
+        <div class="d-lg-none">
+          <div class="row gx-0 gy-5">
+            <div class="col-12">
+              <div class="px-3">
+                <h6>The Forward-Thinking Principal</h6>
+                <p class="small text-muted mb-2">
+                  Mr. Dunne — Principal, Clonmel
+                </p>
+                <p>
+                  Leads a busy school; seeks solutions that ease teacher
+                  workload and promote innovation.
+                </p>
+              </div>
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhubPersona1.png"
+                class="w-100 d-block"
+                alt="Persona 1"
+              />
+            </div>
+
+            <div class="col-12">
+              <div class="px-3">
+                <h6>The Educational Multi-Tasker</h6>
+                <p class="small text-muted mb-2">Ms. Byrne — Primary Teacher</p>
+                <p>
+                  Mixed-ability class; needs faster tools for differentiated,
+                  engaging lessons.
+                </p>
+              </div>
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhubPersona2.png"
+                class="w-100 d-block"
+                alt="Persona 2"
+              />
+            </div>
+
+            <div class="col-12">
+              <div class="px-3">
+                <h6>The Policy Maker</h6>
+                <p class="small text-muted mb-2">
+                  Ms. Smyth — Dept. of Education
+                </p>
+                <p>
+                  Drives digital transformation with accountability and teacher
+                  input.
+                </p>
+              </div>
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhubPersona3.png"
+                class="w-100 d-block"
+                alt="Persona 3"
+              />
+            </div>
+
+            <div class="col-12">
+              <div class="px-3">
+                <h6>The Adapting Young Learner</h6>
+                <p class="small text-muted mb-2">Anna — Age 9</p>
+                <p>
+                  Resilient, facing language barriers; benefits from visual,
+                  paced materials.
+                </p>
+              </div>
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhubPersona4.png"
+                class="w-100 d-block"
+                alt="Persona 4"
+              />
+            </div>
+
+            <div class="col-12">
+              <div class="px-3">
+                <h6>The Energetic School Kid</h6>
+                <p class="small text-muted mb-2">Jake — Age 8</p>
+                <p>
+                  Hands-on learner; excels with movement and project-based
+                  tasks.
+                </p>
+              </div>
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhubPersona5.png"
+                class="w-100 d-block"
+                alt="Persona 5"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== BRAND BOARD ====================== -->
+      <section class="container" id="brand-board">
+        <!-- Intro -->
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h3>Brand Board and Components</h3>
+            <p class="copy">
+              Branding decisions for edHub aim to convey calmness, focus, and
+              inclusivity—qualities vital in ed-tech. The direction balances
+              professionalism with friendliness and accessibility, keeping
+              interfaces clear and engaging.
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhubComponents.png"
+              class="img-fluid feature-img"
+              alt="edHub colour palette overview"
+            />
+            <figcaption class="small mt-2 text-muted">
+              Primary blue with optimistic muted yellow accent; supporting
+              neutrals.
+            </figcaption>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Colour Palette -->
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h5 class="mb-2">Colour Palette</h5>
+            <p>
+              Blue is highly favourable in education—its calmness supports focus
+              and creativity. We chose a distinct blue that isn’t overtly
+              saturated to keep the UI modern and unique. A muted yellow accent
+              adds optimism and energy, supporting concentration and visual
+              balance.
+            </p>
+            <p class="mono mb-0">
+              #0081A7 • #670643 • #F9D978 • #2D3748 • #FBFAF8
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhubColourPallete.png"
+              class="img-fluid feature-img"
+              alt="edHub swatches for primary, accent, and neutrals"
+            />
+            <figcaption class="small mt-2 text-muted">
+              Primary, accent, and neutral swatches used across the system.
+            </figcaption>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Fonts -->
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h5 class="mb-2">Fonts</h5>
+            <p>
+              <strong>Poppins</strong> (Bold &amp; Regular) was chosen for a
+              clean, friendly aesthetic with excellent legibility and a
+              polished, contemporary feel. Its geometric forms and generous
+              spacing read clearly at small sizes and scale well across UI
+              components.
+            </p>
+            <p class="mono mb-0">Aa Bb Cc — Poppins Bold / Poppins Regular</p>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhubFonts.png"
+              class="img-fluid feature-img"
+              alt="Poppins typography samples: Bold and Regular"
+            />
+            <figcaption class="small mt-2 text-muted">
+              Typography specimens illustrating hierarchy and legibility.
+            </figcaption>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Bento Grid -->
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h5 class="mb-2">Bento Grid Design Trend</h5>
+            <p>
+              Bento Grids present multiple elements in a structured, modular
+              layout. They improve scanability, keep the interface organised,
+              and allow related content to be grouped without visual
+              clutter—useful for dashboards and resource hubs.
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhubBentogrids.png"
+              class="img-fluid feature-img"
+              alt="Bento grid examples used in edHub UI"
+            />
+            <figcaption class="small mt-2 text-muted">
+              Modular tiles for quick scanning and tidy content grouping.
+            </figcaption>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Glassmorphism / Styles -->
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h5 class="mb-2">
+              Glassmorphism, Gradients, Active/ Hover States &amp; Visual Style
+            </h5>
+            <p class="mb-0">
+              Subtle frosted-glass layers and soft shadows create depth and
+              focus without distraction. Used sparingly, this glassmorphism
+              aesthetic helps important elements stand out, encourages
+              interaction, and contributes to a polished, approachable brand
+              identity.
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhubStyles.png"
+              class="img-fluid feature-img"
+              alt="Glassmorphism styling examples for edHub"
+            />
+            <figcaption class="small mt-2 text-muted">
+              Depth and hierarchy through frosted panels and soft elevation.
+            </figcaption>
+          </div>
+        </div>
+      </section>
+      <!-- ====================== SWOT (Corner Letters, No Fill) ====================== -->
+      <section class="container" id="swot-corner">
+        <div class="row g-3">
+          <!-- Strengths -->
+          <div class="col-12 col-md-6">
+            <article class="swot-card h-100">
+              <div class="swot-badge" aria-hidden="true">S</div>
+              <h5 class="swot-title">Strengths</h5>
+              <ul class="mb-0">
+                <li>
+                  Access to large databases of resources and content for lesson-
+                  planning
+                </li>
+                <li>
+                  Teacher-first, Ireland-specific focus adds sharper value
+                  because of the cirriculum and Irish language
+                </li>
+                <li>
+                  Use of AI tools to generate lesson plans for Twinkl and
+                  TeachMateAI.com; but depth and capabilities of their AI are
+                  limited
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Weaknesses -->
+          <div class="col-12 col-md-6">
+            <article class="swot-card h-100">
+              <div class="swot-badge" aria-hidden="true">W</div>
+              <h5 class="swot-title">Weaknesses</h5>
+              <ul class="mb-0">
+                <li>
+                  Lack of accessibility features - None of the platforms
+                  examined currently offer accessibility options for users with
+                  different abilities.</li>
+                </li>
+
+                <li>
+                  Limited support for diverse learning styles - None of the
+                  platforms examined offer features for creating lesson plans
+                  that cater to AEN students.
+                </li>
+                <li>
+                  Two competitors have websites which are not mobile-responsive.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Opportunities -->
+          <div class="col-12 col-md-6">
+            <article class="swot-card h-100">
+              <div class="swot-badge" aria-hidden="true">O</div>
+              <h5 class="swot-title">Opportunities</h5>
+              <ul class="mb-0">
+                <li>edHub is designed to fill the gap left by competitors as we consider comprehensive accessibility features, and the ability to customise learning plans for AEN students a key component of our software.</li>
+                <li>Additionally, collaborating with trusted publishers and educational bodies could provide a platform for scaling and gaining credibility quickly.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Threats -->
+          <div class="col-12 col-md-6">
+            <article class="swot-card h-100">
+              <div class="swot-badge" aria-hidden="true">T</div>
+              <h5 class="swot-title">Threats</h5>
+              <ul class="mb-0">
+                <li>TeachMateAI.com and Twinkl are large, global platforms with an established user base</li>
+                <li>
+                    Scoilnet is funded by the Irish Department of Education, giving them strong brand recognition within Ireland’s teaching
+                    community
+                </li>
+                <li>Fast imitation of features by larger competitors.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+  <!-- ====================== COMPETITOR ANALYSIS (SWOT-Style Cards) ====================== -->
+<section class="container" id="competitor-cards">
+    <div class="row g-3">
+      <!-- Primary Planning Tool -->
+      <div class="col-12 col-md-6">
+        <article class="swot-card h-100">
+          <h5 class="swot-title">Primary Planning Tool</h5>
+          <ul class="mb-0">
+            <li><strong>Price:</strong> €60/yr (single), €85/teacher/yr (school)</li>
+            <li><strong>Strengths:</strong> Cloud storage; responsive; simple menus; Irish version.</li>
+            <li><strong>Weaknesses:</strong> No accessibility features; no support for diverse learning styles.</li>
+          </ul>
+        </article>
+      </div>
+  
+      <!-- Twinkl -->
+      <div class="col-12 col-md-6">
+        <article class="swot-card h-100">
+          <h5 class="swot-title">Twinkl</h5>
+          <ul class="mb-0">
+            <li><strong>Price:</strong> 30-day free trial; from £4.49/mo</li>
+            <li><strong>Strengths:</strong> AI tool suite; straightforward menus; help chatbot.</li>
+            <li><strong>Weaknesses:</strong> No accessibility; not fully responsive; limited diverse-style content.</li>
+          </ul>
+        </article>
+      </div>
+  
+      <!-- TeachMateAI -->
+      <div class="col-12 col-md-6">
+        <article class="swot-card h-100">
+          <h5 class="swot-title">TeachMateAI</h5>
+          <ul class="mb-0">
+            <li><strong>Price:</strong> €7.99/mo • €84/yr</li>
+            <li><strong>Strengths:</strong> Large global trust; responsive; free AI tools; simple UI.</li>
+            <li><strong>Weaknesses:</strong> No accessibility; no diverse-style lesson support.</li>
+          </ul>
+        </article>
+      </div>
+  
+      <!-- Scoilnet -->
+      <div class="col-12 col-md-6">
+        <article class="swot-card h-100">
+          <h5 class="swot-title">Scoilnet</h5>
+          <ul class="mb-0">
+            <li><strong>Price:</strong> €4.99/mo • €34.99/yr</li>
+            <li><strong>Strengths:</strong> 24k+ resources; teacher uploads; Irish-language option.</li>
+            <li><strong>Weaknesses:</strong> No accessibility; not fully responsive; limited diverse-style content.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+
+      <!-- IA (full-bleed + bullets) -->
+      <section class="container" id="ia">
+        <div class="full-bleed-wrap">
+          <figure class="mb-0">
+            <img
+              src="images/edhub/ia-sitemap.png"
+              alt="Information Architecture & sitemap"
+            />
+            <figcaption class="text-center mt-2">
+              IA: Home, Lesson Centre, Assessments, Students, Resources,
+              Settings.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-12 col-lg-10">
+            <ul class="copy">
+              <li>
+                <strong>Lesson Centre:</strong> templates, AI-seed, reading-age
+                & tone controls, accessibility preview.
+              </li>
+              <li>
+                <strong>Resources:</strong> library with filters (topic, level,
+                style, accessibility tags).
+              </li>
+              <li>
+                <strong>Assessments:</strong> quick checks, student notes,
+                exports for reporting.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design System / Accessibility (text L / image R) -->
+      <section class="container" id="design-system">
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h3>Design System & Accessibility</h3>
+            <ul class="copy">
+              <li>
+                <strong>Tokens:</strong> spacing (4/8/12), type scale, semantic
+                colours.
+              </li>
+              <li>
+                <strong>Components:</strong> cards, forms, tabs, tables
+                (keyboard/ARIA), toasts.
+              </li>
+              <li>
+                <strong>Accessibility:</strong> AA+ contrast, focus order, skip
+                links, reduced motion, SR labels.
+              </li>
+            </ul>
+            <div class="d-flex gap-2 mt-2">
+              <span class="chip chip-blue" title="#0081A7"></span>
+              <span class="chip chip-plum" title="#670643"></span>
+              <span class="chip chip-yellow" title="#F9D978"></span>
+              <span class="chip chip-slate" title="#2D3748"></span>
+              <span class="chip chip-cream" title="#FBFAF8"></span>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/edhub/brand-board.png"
+              class="feature-img"
+              alt="Brand board & tokens"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Flows (alternating) -->
+       <!-- Key Flows (alternating with video) -->
+      <!-- Key Flows (full width, video 2/3, text 1/3) -->
+<!-- ================== KEY FLOWS ================== -->
+<section class="container-fluid py-5" id="flows">
+  <div class="container-xl">
+
+    <!-- Header -->
+    <div class="row text-center mb-4">
+      <div class="col-12 col-lg-10 mx-auto">
+        <h3>Key Flows</h3>
+        <p class="copy mx-auto">
+          Onboarding, lesson planning, student feedback, subjects navigation, and AI assistance.
+        </p>
+      </div>
+    </div>
+
+    <!-- 1) ONBOARDING -->
+    <div class="row g-4 align-items-center flow-row">
+      <div class="col-12 col-lg-8">
+        <video
+          class="flow-video"
+          playsinline
+          muted
+          loop
+          controls
+        >
+          <source src="videos/edhubvideos/edHubOnboardingHome.mp4" type="video/mp4" />
+          <!-- If still .mov, change the src and type accordingly -->
+        </video>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h5>1) Onboarding</h5>
+        <ul class="mb-0">
+          <li>Teachers land into a personalised dashboard after sign-up.</li>
+          <li>Guided steps configure class, subjects, and planning preferences.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2) PLAN LESSONS -->
+    <div class="row g-4 align-items-center flow-row flex-lg-row-reverse mt-5">
+      <div class="col-12 col-lg-8">
+        <video
+          class="flow-video"
+          playsinline
+          muted
+          loop
+          controls
+        >
+          <source src="videos/edhubvideos/EdhubLessonPlan.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h5>2) Plan Lessons</h5>
+        <ul class="mb-0">
+          <li>AI-seeded templates aligned to Irish curriculum content.</li>
+          <li>Teacher adjusts reading age, tone, and differentiation in-place.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3) STUDENT FEEDBACK -->
+    <div class="row g-4 align-items-center flow-row mt-5">
+      <div class="col-12 col-lg-8">
+        <video
+          class="flow-video"
+          playsinline
+          muted
+          loop
+          controls
+        >
+          <source src="videos/edhubvideos/EdHubStudentFeedback.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h5>3) Student Feedback</h5>
+        <ul class="mb-0">
+          <li>Log quick observations and track patterns over time.</li>
+          <li>Export summaries for parent meetings or SEN reviews.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4) SUBJECTS -->
+    <div class="row g-4 align-items-center flow-row flex-lg-row-reverse mt-5">
+      <div class="col-12 col-lg-8">
+        <video
+          class="flow-video"
+          playsinline
+          muted
+          loop
+          controls
+        >
+          <source src="videos/edhubvideos/EdhubSubjects.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h5>4) Subjects</h5>
+        <ul class="mb-0">
+          <li>Browse subjects with a simple, consistent layout.</li>
+          <li>Jump into plans, resources, and assessments in a few clicks.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5) AI ASSISTANT – ASK EDY -->
+    <div class="row g-4 align-items-center flow-row mt-5">
+      <div class="col-12 col-lg-8">
+        <video
+          class="flow-video"
+          playsinline
+          muted
+          loop
+          controls
+        >
+          <source src="videos/edhubvideos/EdHubAskEdy.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h5>5) AI Assistant – Ask Edy</h5>
+        <ul class="mb-0">
+          <li>Ask Edy to clarify topics or generate starting points.</li>
+          <li>Teacher reviews and edits before anything reaches students.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6) GENERAL FLOW (own full-width block) -->
+<section class="container-fluid py-5" id="general-flow">
+  <div class="container-xl text-center">
+    <h3>6) General Flow</h3>
+    <p class="copy mx-auto mb-4">
+      High-level walkthrough of a typical day using edHub, from login to evidence.
+    </p>
+
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <video
+        class="flow-video"
+        playsinline
+        muted
+        loop
+        controls
+      >
+        <source src="videos/edhubvideos/EdhubGeneralFlow.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</section>
+
+
+
+      
+
+      <!-- Outcomes (text L / image R) -->
+      <section class="container" id="outcomes">
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h3>Outcomes & Impact</h3>
+            <ul class="copy">
+              <li>Responsive, accessibility-led planning experience.</li>
+              <li>
+                Differentiation at the point of planning (not afterthought).
+              </li>
+              <li>
+                Cleaner evidence tracking (notes, exports, light analytics).
+              </li>
+            </ul>
+            <p class="mb-0 small text-muted">
+              Next: SUS, time-on-task, and classroom pilots.
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/edhub/outcomes.png"
+              class="feature-img"
+              alt="Outcome snapshots"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Business Plan Highlights (image R / text L) -->
+      <section class="container" id="business">
+        <div class="row align-items-center gy-4 flex-lg-row-reverse">
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/edhub/finance.png"
+              class="feature-img"
+              alt="Pricing & Year 1 snapshot"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <h3>Business Plan Highlights</h3>
+            <ul class="copy">
+              <li>
+                <strong>Positioning:</strong> teacher-centric planning tool with
+                AI assist & accessibility leadership.
+              </li>
+              <li>
+                <strong>Pricing:</strong> competitor band ~€6–7 per
+                teacher/month; competitive entry.
+              </li>
+              <li>
+                <strong>Year-1 model:</strong> seasonality spike around
+                back-to-school; micro-finance option modelled.
+              </li>
+              <li>
+                <strong>Go-to-Market:</strong> pilot schools, principal
+                networks, teacher communities, CPD sessions.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roadmap (text L / image R) -->
+      <section class="container" id="roadmap">
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6">
+            <h3>Roadmap</h3>
+            <ul class="copy">
+              <li>
+                <strong>Phase 1 — MVP:</strong> core Lesson Centre, resources,
+                AI seeds, accessibility baseline, QA.
+              </li>
+              <li>
+                <strong>Phase 2 — Expansion:</strong> OCR, grading/translation
+                APIs, infra scaling, richer analytics.
+              </li>
+              <li>
+                <strong>Phase 3 — Launch:</strong> “Ask Edy”, deeper grading,
+                advanced OCR, marketing & roll-out.
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <img
+              src="images/edhub/roadmap.png"
+              class="feature-img"
+              alt="Three-stage roadmap graphic"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Links / CTAs -->
+      <section class="container text-center" id="links">
+        <h4 class="mb-3">Explore</h4>
+        <p class="copy mx-auto">
+          Pitch deck, business plan, and interactive prototype.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a
+            href="documents/edhub-pitch.pdf"
+            target="_blank"
+            class="btn btn-dark"
+            >Pitch (PDF)</a
+          >
+          <a
+            href="documents/edhub-business-plan.pdf"
+            target="_blank"
+            class="btn btn-outline-dark"
+            >Business Plan (PDF)</a
+          >
+          <a
+            href="https://www.figma.com/proto/your-edhub-prototype"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline-dark"
+            >Prototype</a
+          >
+        </div>
+      </section>
+      
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts (same as your other pages) -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/nav.js" defer></script>
+
+    <!-- Optional: console warning if the navbar didn't inject (no fallback HTML injected) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const host = document.getElementById("navbar-placeholder");
+        setTimeout(() => {
+          if (!host || host.children.length) return;
+          console.warn(
+            "[edhub.html] navbar-placeholder is empty. Check assets/nav.js path and console errors."
+          );
+        }, 100);
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const myCarousel = document.querySelector("#personaCarousel");
+        if (myCarousel) {
+          const carousel = new bootstrap.Carousel(myCarousel, {
+            interval: false, // ⛔ disables automatic cycling
+            ride: false,
+          });
+        }
+      });
+    </script>
+    <script src="assets/footer.js" defer></script>
+  </body>
+</html>

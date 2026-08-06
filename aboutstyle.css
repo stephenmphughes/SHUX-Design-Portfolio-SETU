@@ -1,0 +1,753 @@
+/* NAVBAR MENU ICON */
+span.navbar-toggler-icon {
+  background-image: url(images/menu-motion_svgrepo.com.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 45px;
+  height: 45px;
+}
+.navbar-brand {
+  margin-left: 30px;
+  padding: 10px;
+}
+/* NAVBAR MENU ICON*/
+.navbar-toggler {
+  margin-right: 30px;
+  padding: 10px;
+}
+/* NAVBAR EXPAND*/
+.navbar-expand-lg {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-color: black;
+}
+/* NAVIGATION LINK COLOR*/
+a.nav-link {
+  color: #f4f7fb;
+}
+/* NAV DROPDOWN MENU*/
+.dropdown-menu {
+  border-radius: 0%;
+  top: 125%;
+}
+/* BODY*/
+body {
+  background-color: #000000;
+}
+/* Background Image - Stays Fixed While Scrolling */
+.page-background {
+  z-index: -1; /* Moves background behind content */
+  background-image: url("images/gradientbackground.jpg"); /* Your local image */
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* Ensures background stays still */
+  position: fixed; /* Keeps it in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+
+/* Ensure Body & HTML Allow Scrolling */
+html,
+body {
+  height: 100%; /* Ensure the full document takes up space */
+  overflow-y: auto; /* Allows vertical scrolling */
+}
+
+/*FOOTER */
+footer {
+  background-color: #000;
+  width: 100vw !important; /* Forces full width */
+  max-width: 100% !important; /* Ensures it doesn't inherit any container width */
+  margin: 0; /* Removes any unwanted margins */
+  padding: 2rem 0; /* Adds padding for spacing */
+}
+
+/* Fonts */
+.oxanium {
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.darker-grotesque {
+  font-family: "Darker Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+.instrument-sans {
+  font-family: "Instrument Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+/* Font Styles */
+h1 {
+  font-family: "Oxanium";
+  font-size: 40px;
+  font-weight: 600;
+  color: black;
+}
+
+/* Responsive Font Size for h1 */
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 992px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+  }
+}
+
+/* h2 Styles */
+h2 {
+  font-family: "Oxanium";
+  font-weight: 600;
+  color: black;
+  font-size: 24px;
+}
+
+/* Responsive Font Size for h2 */
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 992px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 18px;
+  }
+}
+
+/* p Styles */
+p {
+  font-family: "Instrument Sans";
+  font-size: 18px;
+}
+
+/* Responsive Font Size for p */
+@media (max-width: 1200px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  p {
+    font-size: 12px;
+  }
+}
+
+/* .lead Styles */
+.lead {
+  font-family: "Instrument Sans";
+  font-size: 24px;
+  font-weight: 450;
+}
+
+/* Responsive Font Size for .lead */
+@media (max-width: 1200px) {
+  .lead {
+    font-size: 22px;
+  }
+}
+@media (max-width: 992px) {
+  .lead {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .lead {
+    font-size: 18px;
+  }
+}
+
+/* This pen */
+.dark {
+  background: #110f16;
+}
+
+.light {
+  background: transparent;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+#pageHeaderTitle {
+  margin: 2rem 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Oxanium", serif;
+}
+
+/* Cards */
+.postcard {
+  flex-wrap: wrap;
+  display: flex;
+
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-width: 5px;
+  border: 5px;
+  background-color: #000;
+  border: 5px #000;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+
+  &.dark {
+    background-color: #18151f;
+  }
+  &.light {
+    background-color: #ffffff;
+  }
+
+  .t-dark {
+    color: #18151f;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1,
+  .h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .small {
+    font-size: 80%;
+  }
+
+  .postcard__title {
+    font-size: 1.75rem;
+  }
+  /* UNIVERSITY LOGO IMAGES */
+  .postcard__img {
+    width: 70%;
+    object-fit: fill;
+    position: center;
+    margin: 0 auto; /* Centers horizontally */
+  }
+
+  .postcard__img_link {
+    display: contents;
+  }
+
+  .postcard__bar {
+    width: 50px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #000;
+    transition: width 0.2s ease;
+  }
+
+  .postcard__text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postcard__preview-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: 100%;
+  }
+
+  .postcard__tagbox {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 14px;
+    margin: 20px 0 0 0;
+    padding: 0;
+    justify-content: center;
+
+    .tag__item {
+      display: inline-block;
+      background: rgba(83, 83, 83, 0.4);
+      border-radius: 3px;
+      padding: 2.5px 10px;
+      margin: 0 5px 5px 0;
+      cursor: default;
+      user-select: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: rgba(83, 83, 83, 0.8);
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(-30deg, #eec5f9a5, transparent 50%);
+    opacity: 100;
+  }
+
+  &:hover .postcard__bar {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .postcard {
+    flex-wrap: inherit;
+
+    .postcard__title {
+      font-size: 2rem;
+    }
+
+    .postcard__tagbox {
+      justify-content: start;
+    }
+
+    .postcard__img {
+      max-width: 300px;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+      margin: 0 auto; /* Centers horizontally */
+    }
+
+    .postcard__text {
+      padding: 3rem;
+      width: 100%;
+    }
+
+    .media.postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: #18151f;
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+
+    &:hover .postcard__img {
+      transform: scale(1.1);
+    }
+
+    &:nth-child(2n + 1) {
+      flex-direction: row;
+    }
+
+    &:nth-child(2n + 0) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-child(2n + 1) .postcard__text::before {
+      left: -12px !important;
+      transform: rotate(4deg);
+    }
+
+    &:nth-child(2n + 0) .postcard__text::before {
+      right: -12px !important;
+      transform: rotate(-4deg);
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .postcard__text {
+    padding: 2rem 3.5rem;
+  }
+
+  .postcard__text:before {
+    content: "";
+    position: absolute;
+    display: block;
+
+    top: -5%;
+    height: 130%;
+    width: 5px;
+  }
+}
+
+.postcard.light.yellow {
+  border: 5px solid black; /* 5px thick black border */
+}
+.postcard.light.blue {
+  border: 5px solid black; /* 5px thick black border */
+}
+.postcard.light.red {
+  border: 5px solid black; /* 5px thick black border */
+}
+.postcard.light.green {
+  border: 5px solid black; /* 5px thick black border */
+}
+.card.border-dark {
+  border: 5px solid black; /* 5px thick black border */
+  border-radius: 0%;
+}
+.card-img-top {
+  border-radius: 0%;
+}
+
+/* --- UX Circle Carousel Styles --- */
+
+/* Center the UX Circle inside each slide */
+.ux-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh; /* Takes up most of the viewport */
+  width: 100vw;
+  background: transparent;
+  position: relative;
+}
+
+/* Circular text box */
+.ux-circle {
+  width: 530px;
+  height: 530px;
+  background-color: rgba(255, 255, 255, 0.933);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.724); /* Drop shadow */
+  position: relative;
+  margin: auto;
+
+  /* Border Fix */
+  border: 5px solid black; /* Ensures border is applied */
+}
+
+/* Text inside the circle */
+.ux-text {
+  color: black;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.2;
+  max-width: 80%;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Spinning outer border */
+
+.ux-spinning-border {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top: 3px solid rgba(0, 0, 0, 0.6);
+  border-right: 3px solid rgba(0, 0, 0, 0.6);
+  animation: ux-spin 10s linear infinite;
+}
+
+@keyframes ux-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* --- Responsive Design for UX Circle & Carousel --- */
+
+/* Large Tablets & Small Laptops */
+@media (max-width: 1024px) {
+  .ux-circle {
+    width: 420px;
+    height: 420px;
+  }
+  .ux-spinning-border {
+    width: 400px;
+    height: 400px;
+  }
+  .ux-text {
+    font-size: 0.8rem;
+  }
+  .uxCarousel {
+    height: 500px; /* Reduce overall height */
+  }
+  .carousel-inner {
+    height: 500px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .ux-circle {
+    width: 350px;
+    height: 350px;
+  }
+  .ux-spinning-border {
+    width: 330px;
+    height: 330px;
+  }
+  .ux-text {
+    font-size: 0.75rem;
+  }
+  .uxCarousel {
+    height: 450px;
+  }
+  .carousel-inner {
+    height: 450px;
+  }
+}
+
+/* Small Tablets & Large Phones */
+@media (max-width: 600px) {
+  .ux-circle {
+    width: 300px;
+    height: 300px;
+  }
+  .ux-spinning-border {
+    width: 280px;
+    height: 280px;
+  }
+  .ux-text {
+    font-size: 0.70rem;
+  }
+  .uxCarousel {
+    height: 400px;
+  }
+  .carousel-inner {
+    height: 400px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .ux-circle {
+    width: 260px;
+    height: 260px;
+  }
+  .ux-spinning-border {
+    width: 240px;
+    height: 240px;
+  }
+  .ux-text {
+    font-size: 0.50rem;
+  }
+  .uxCarousel {
+    height: 350px;
+  }
+  .carousel-inner {
+    height: 350px;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 360px) {
+  .ux-circle {
+    width: 220px;
+    height: 220px;
+  }
+  .ux-spinning-border {
+    width: 200px;
+    height: 200px;
+  }
+  .ux-text {
+    font-size: 0.7rem;
+  }
+  .uxCarousel {
+    height: 320px;
+  }
+  .carousel-inner {
+    height: 320px;
+  }
+}
+/* --- H2 media queries --- */
+@media (max-width: 1024px) {
+  .ux-text h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ux-text h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ux-text h2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ux-text h2 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .ux-text h2 {
+    font-size: 0.75rem;
+  }
+}
+
+
+
+
+
+/* --- Bootstrap Carousel Customization --- */
+
+/* Make carousel take full height by default */
+.uxCarousel {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure full-page scaling */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+/* Responsive Bootstrap Carousel */
+.carousel-inner {
+  height: 600px; /* Default height */
+  display: flex;
+  align-items: center; /* Centers content vertically */
+}
+
+/* Remove default arrow styles */
+.carousel-control-prev,
+.carousel-control-next {
+  background: none;
+  border: none;
+}
+
+/* Custom Carousel Arrows */
+.carousel-arrow {
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.carousel-arrow:hover {
+  opacity: 1;
+}
+.ux-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.ux-icon {
+  margin-bottom: 1rem;
+}
+
+.ux-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ux-icon img {
+  width: 60px;
+  height: auto;
+}
+
+/* 25% smaller on screens smaller than 1020px */
+@media (max-width: 1020px) {
+  .ux-icon img {
+    width: 40px;
+  }
+}
+
+/* Smaller again on screens smaller than 750px */
+@media (max-width: 750px) {
+  .ux-icon img {
+    width: 30px;
+  }
+}
+/* Case Studies page — keep Bootstrap card look (full-bleed image + strong border) */
+#caseStudiesPage .card {
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 0;
+  overflow: hidden; /* make image edges flush */
+}
+#caseStudiesPage .card .card-img-top {
+  width: 100% !important;
+  height: auto;
+  margin: 0 !important;
+  display: block;
+}
+/* Optional: subtle hover motion */
+#caseStudiesPage .card img { transition: transform .25s ease; }
+#caseStudiesPage .card:hover img { transform: translateY(-2px); }
+
+/* Match your button aesthetic on this page only */
+#caseStudiesPage .btn.btn-dark {
+  border: 3px solid #000;
+  border-radius: 0;
+  background: #fff;
+  color: #000;
+}
+#caseStudiesPage .btn.btn-dark:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Tabs (pills) visual style */
+#caseFilters .nav-link {
+  border: 2px solid #000;
+  border-radius: 0;
+  color: #111;
+  background: transparent;
+}
+#caseFilters .nav-link.active {
+  background: #fff;
+  color: #000;
+  border-color: #000;
+}
+@media (max-width: 576px) {
+  #caseFilters { flex-wrap: wrap; }
+}
+

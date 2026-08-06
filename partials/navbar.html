@@ -1,0 +1,64 @@
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <!-- Row 1, Col 1 (logo) -->
+    <a class="navbar-brand" href="index.html">
+      <img src="images/navbarlogo.svg" alt="SHUX Logo" width="40" height="40" />
+    </a>
+
+    <!-- Row 1, Col 2 (toggler) -->
+    <button
+      class="navbar-toggler ms-auto"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
+      aria-controls="mainNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Row 2 (menu) -->
+    <div
+      class="collapse navbar-collapse justify-content-lg-center mt-3 mt-lg-0"
+      id="mainNav"
+    >
+      <ul
+        class="navbar-nav flex-column flex-lg-row align-items-start align-items-lg-center gap-2 gap-lg-3 mx-auto"
+      >
+        <!-- Case Studies (landing page with filters UX / Web) -->
+        <li class="nav-item">
+          <a class="nav-link" href="case-studies.html">CASE STUDIES</a>
+        </li>
+
+        <!-- Prototypes (Figma embeds) -->
+        <li class="nav-item">
+          <a class="nav-link" href="prototypes.html">PROTOTYPES</a>
+        </li>
+
+        <!-- About (ONLY Skills + Education) -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            >ABOUT</a
+          >
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="skills.html">Skills</a></li>
+            <li>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- CV (PDF) -->
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html">CV</a>
+        </li>
+
+        <!-- Contact (mailto page or page with buttons) -->
+      </ul>
+    </div>
+  </div>
+</nav>

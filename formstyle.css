@@ -1,0 +1,200 @@
+ /* NAVBAR MENU ICON */
+ span.navbar-toggler-icon {
+  background-image: url(images/menu-motion_svgrepo.com.svg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  width: 45px; 
+  height: 45px; 
+}
+.navbar-brand {
+  margin-left: 30px; 
+  padding: 10px; 
+}
+/* NAVBAR MENU ICON*/
+.navbar-toggler {
+  margin-right: 30px; 
+  padding: 10px; 
+}
+/* NAVBAR EXPAND*/
+.navbar-expand-lg {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-color: black;
+}
+/* NAVIGATION LINK COLOR*/
+a.nav-link {color: #f4f7fb;}
+/* NAV DROPDOWN MENU*/
+.dropdown-menu {border-radius: 0%;
+    top: 125%;
+    ;}
+
+/* BODY*/
+body {
+  background-color: #F0C97B;
+}
+/* INTRO CLASS THAT INCLUDES BACKGROUND IMAGE OF GRID*/
+#intro {
+  background-image: url("images/Backgroundimage.jpg");
+ /* background-size: ; **MAY NEED TO CHANGE */
+  background-repeat: repeat-y;
+  background-position: top;
+}
+/*FOOTER */ 
+footer{
+  background-color: #000;
+}
+/* Form Section */
+form {
+    font-family: "Oxanium", serif;
+    font-weight: 600;
+    font-style: normal;
+    border-radius: 0px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 0;
+    border-color: #000;
+    border-width: 2.5px;
+    font-size: 16px;
+    font-family: "Oxanium", sans-serif;
+}
+
+textarea.form-control {
+    height: auto;
+    min-height: 60px;
+    resize: none;
+    padding: 0.75rem;
+}
+
+/* Multistep Form Navigation Buttons */
+.btn-outline-primary,
+.btn-outline-success {
+    border-radius: 0;
+    font-family: "Oxanium";
+    font-weight: 600;
+    font-size: 18px;
+    border-width: 4px;
+    width: 220px;
+    height: 70px;
+}
+
+.btn-outline-primary {
+    color: #111112;
+    border-color: #000;
+}
+
+.btn-outline-primary:hover {
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+}
+
+.btn-outline-success {
+    color: #111112;
+    border-color: #111112;
+    background-color: #fff;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #005d16;
+    border-color: #005d16;
+}
+
+/* Card Styles for Step 1 */
+.card {
+    border: 5px solid black; /* Solid black border */
+    border-radius: 0; /* No radius */
+    background-color: transparent; /* Transparent background by default */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.card:hover,
+.card.active {
+    background-color: white; /* White background on hover or active */
+    transform: scale(1.05); /* Slight scale-up effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow on hover */
+}
+
+.card img {
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Form Step Display */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+/* Headings */
+h1 {
+    font-family: "Oxanium", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: black;
+}
+
+h2 {
+    font-family: "Oxanium", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: black;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .btn-outline-primary,
+    .btn-outline-success {
+        width: 180px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Radio Button Styles */
+input[type="radio"] {
+    width: 16px; /* Adjust size */
+    height: 16px; /* Adjust size */
+    transform: scale(1.5); /* Scale up */
+    cursor: pointer; /* Add pointer cursor for better UX */
+    appearance: none; /* Remove default styles */
+    border: 2px solid black; /* Solid black border */
+    border-radius: 50%; /* Make circular */
+    background-color: transparent; /* Transparent background */
+    outline: none; /* Remove focus outline */
+    transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+
+/* Change appearance when selected */
+input[type="radio"]:checked {
+    background-color: black; /* Black fill */
+    border-color: black; /* Match the border */
+}
+
+/* Add hover effect for better UX */
+input[type="radio"]:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Validation Feedback for Radio Buttons */
+label.is-invalid {
+    border: 2px solid #dc3545; /* Red border */
+    padding: 10px; /* Optional: Add padding for better visual feedback */
+    border-radius: 5px;
+    background-color: #f8d7da; /* Light red background */
+}

@@ -1,0 +1,1339 @@
+<!-- buasports.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="JerseyProducts (Bua Sports) — Technical Web Dev Case Study"
+    />
+    <meta name="author" content="Stephen Hughes" />
+    <title>SHUX Design | JerseyProducts (Bua Sports)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Helpers to match your other case studies */
+      .case-figure {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .feature-img,
+      .feature-img-wide {
+        width: 100%;
+        height: auto;
+      }
+      .section-intro {
+        max-width: 900px;
+        margin: 0 auto 1rem;
+      }
+      .hero-wrapper {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      .hero-wrapper img {
+        width: 100%;
+        height: auto;
+      }
+      section.container {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", monospace;
+        font-size: 0.95em;
+      }
+      .kbd {
+        padding: 0.2rem 0.35rem;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 0.25rem;
+        background: rgba(0, 0, 0, 0.03);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+      }
+
+      /* Carousel controls outside image (same pattern you use) */
+      .carousel-outside {
+        position: relative;
+        padding: 0 4rem;
+      }
+      .carousel-outside .carousel-inner img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+      .carousel-outside .carousel-control-prev,
+      .carousel-outside .carousel-control-next {
+        width: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+      .carousel-outside .carousel-control-prev {
+        left: 0;
+        transform: translate(-60%, -50%);
+      }
+      .carousel-outside .carousel-control-next {
+        right: 0;
+        transform: translate(60%, -50%);
+      }
+      .carousel-outside .carousel-indicators [data-bs-target] {
+        background-color: #000;
+      }
+
+      @media (max-width: 575.98px) {
+        .carousel-outside {
+          padding: 0 2.25rem;
+        }
+        .carousel-outside .carousel-control-prev,
+        .carousel-outside .carousel-control-next {
+          display: none;
+        }
+      }
+      .project-access-box {
+  border: 1px solid #111;
+  padding: 2rem 1.5rem;
+  background: transparent;
+}
+
+.project-access-box p {
+  max-width: 30ch;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="page-background"></div>
+
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Header -->
+    <header class="starter-template text-center mt-5">
+      <h1>JerseyProducts (Bua Sports)</h1>
+      <p class="lead">
+        A small, production-like admin system for
+        <strong>GAA jersey products</strong> and <strong>stock orders</strong>,
+        with Rails API, React UI, image uploads via Active Storage, and
+        PostgreSQL.
+      </p>
+      <p class="text-muted mb-0">Project duration: Jan ’25 – Apr ’25</p>
+      <p class="text-muted">
+        Role: Full-stack (Rails API, React UI, testing, deployment)
+      </p>
+    </header>
+
+    <!-- ========================= OVERVIEW ========================= -->
+    <section class="container" id="section-overview">
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-12 hero-wrapper">
+          <img
+            src="images/CaseStudy/buasportscasestudy/buaheromockup.png"
+            class="img-fluid"
+            alt="Admin app overview mockups"
+          />
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <h3 class="text-center">Overview</h3>
+          <p class="section-intro text-center">
+            Goal: deliver a lean back-office for managing jersey inventory with
+            reliable CRUD, clean JSON contracts, and deployable infrastructure
+            on EC2. The system ships a
+            <span class="mono">Rails (API-only)</span> backend, two clients
+            (primary <span class="mono">React</span>; secondary
+            <span class="mono">HTML</span> form client), and
+            <span class="mono">Active Storage</span> for images, all backed by
+            <span class="mono">PostgreSQL</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= STACK & ARCHITECTURE ========================= -->
+    <section class="container" id="section-architecture">
+      <div class="row align-items-center">
+        <div class="col-md-6 animate-left">
+          <h3>Stack & Architecture</h3>
+          <ul>
+            <li>
+              <strong>Backend:</strong> Ruby on Rails (API-only), namespaced
+              controllers <span class="mono">Api::V1</span>, JSON via
+              serializers.
+            </li>
+            <li>
+              <strong>Frontend:</strong> React client (primary UX), plus a
+              minimal HTML form client for parity.
+            </li>
+            <li>
+              <strong>Storage:</strong> Active Storage image uploads on
+              <span class="mono">Product</span> via
+              <span class="mono">has_one_attached :image</span>.
+            </li>
+            <li><strong>DB:</strong> PostgreSQL for dev/test/prod.</li>
+            <li>
+              <strong>Infra:</strong> AWS EC2 (Ubuntu), CORS configured; Rails +
+              client processes.
+            </li>
+          </ul>
+          <div class="mt-3">
+            <span class="badge bg-dark me-2">Rails API</span>
+            <span class="badge bg-dark me-2">React</span>
+            <span class="badge bg-dark me-2">PostgreSQL</span>
+            <span class="badge bg-dark me-2">Active Storage</span>
+            <span class="badge bg-dark">AWS EC2</span>
+          </div>
+        </div>
+        <div class="col-md-6 animate-right text-center">
+          <img
+            src="images/CaseStudy/buasportscasestudy/buasportssystemdiagram.png"
+            class="img-fluid feature-img"
+            alt="High-level architecture diagram"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== (1) DESIGN OVERVIEW — HTML • CSS • React ========== -->
+    <section class="container" id="section-design-overview">
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-12 col-lg-10">
+          <h3>Design Overview — HTML • CSS • React</h3>
+          <p class="section-intro">
+            A lightweight design system guides structure (HTML semantics),
+            visual language (Bootstrap + custom CSS), and interaction patterns
+            (React pages with shared UI). The admin UI prioritises legibility,
+            quick scanning, and predictable CRUD flows.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6>HTML (Semantics)</h6>
+          <ul>
+            <li>
+              Landmarks: <span class="mono">&lt;header&gt;</span>,
+              <span class="mono">&lt;main&gt;</span>,
+              <span class="mono">&lt;nav&gt;</span>,
+              <span class="mono">&lt;footer&gt;</span>
+            </li>
+            <li>Accessible forms: labels, required fields, clear error text</li>
+            <li>Meaningful alt text for jersey images</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>CSS (Architecture)</h6>
+          <ul>
+            <li>Bootstrap 5.3 utilities + custom card/form styling</li>
+            <li>Consistent typography and color usage</li>
+            <li>Responsive grid; image dimensions set to reduce CLS</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>React (UI Model)</h6>
+          <ul>
+            <li>Page-driven UI with shared pieces (Navbar, Footer, List)</li>
+            <li>
+              Local state via <span class="mono">useState</span>, fetch for data
+            </li>
+            <li>UI states: loading/empty/error/success across pages</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= API SURFACE ========================= -->
+    <section class="container" id="section-api">
+      <h3 class="mb-3 text-center">API Surface (examples)</h3>
+      <p class="section-intro text-center">
+        RESTful JSON endpoints used by the React client.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <!-- Desktop / Tablet (md and up): Brutalist table -->
+          <div class="table-responsive d-none d-md-block api-brutal">
+            <table class="api api--brutal">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Path</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">GET</td>
+                  <td class="mono">/api/v1/products</td>
+                  <td>List products (includes image URL via serializer)</td>
+                </tr>
+                <tr>
+                  <td class="mono">POST</td>
+                  <td class="mono">/api/v1/products</td>
+                  <td>
+                    Create product (supports multipart with
+                    <span class="mono">image</span>)
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mono">PUT</td>
+                  <td class="mono">/api/v1/products/:id</td>
+                  <td>Update product fields</td>
+                </tr>
+                <tr>
+                  <td class="mono">DELETE</td>
+                  <td class="mono">/api/v1/products/:id</td>
+                  <td>Delete product</td>
+                </tr>
+                <tr>
+                  <td class="mono">GET</td>
+                  <td class="mono">/api/v1/stock_orders</td>
+                  <td>
+                    List orders (eager-loads <span class="mono">product</span>)
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mono">POST</td>
+                  <td class="mono">/api/v1/stock_orders</td>
+                  <td>Create order for a product</td>
+                </tr>
+                <tr>
+                  <td class="mono">DELETE</td>
+                  <td class="mono">/api/v1/stock_orders/:id</td>
+                  <td>Delete order</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mobile (under md): Brutalist card list -->
+          <div
+            class="api-mobile d-md-none"
+            aria-label="API endpoints (mobile list)"
+          >
+            <div class="api-card">
+              <div class="api-row">
+                <div class="api-key">Method</div>
+                <div class="api-val mono">GET</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Path</div>
+                <div class="api-val mono">/api/v1/products</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Purpose</div>
+                <div class="api-val">
+                  List products (includes image URL via serializer)
+                </div>
+              </div>
+            </div>
+
+            <div class="api-card">
+              <div class="api-row">
+                <div class="api-key">Method</div>
+                <div class="api-val mono">POST</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Path</div>
+                <div class="api-val mono">/api/v1/products</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Purpose</div>
+                <div class="api-val">
+                  Create product (supports multipart with
+                  <span class="mono">image</span>)
+                </div>
+              </div>
+            </div>
+
+            <div class="api-card">
+              <div class="api-row">
+                <div class="api-key">Method</div>
+                <div class="api-val mono">PUT</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Path</div>
+                <div class="api-val mono">/api/v1/products/:id</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Purpose</div>
+                <div class="api-val">Update product fields</div>
+              </div>
+            </div>
+
+            <div class="api-card">
+              <div class="api-row">
+                <div class="api-key">Method</div>
+                <div class="api-val mono">DELETE</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Path</div>
+                <div class="api-val mono">/api/v1/products/:id</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Purpose</div>
+                <div class="api-val">Delete product</div>
+              </div>
+            </div>
+
+            <div class="api-card">
+              <div class="api-row">
+                <div class="api-key">Method</div>
+                <div class="api-val mono">GET</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Path</div>
+                <div class="api-val mono">/api/v1/stock_orders</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Purpose</div>
+                <div class="api-val">
+                  List orders (eager-loads <span class="mono">product</span>)
+                </div>
+              </div>
+            </div>
+
+            <div class="api-card">
+              <div class="api-row">
+                <div class="api-key">Method</div>
+                <div class="api-val mono">POST</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Path</div>
+                <div class="api-val mono">/api/v1/stock_orders</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Purpose</div>
+                <div class="api-val">Create order for a product</div>
+              </div>
+            </div>
+
+            <div class="api-card">
+              <div class="api-row">
+                <div class="api-key">Method</div>
+                <div class="api-val mono">DELETE</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Path</div>
+                <div class="api-val mono">/api/v1/stock_orders/:id</div>
+              </div>
+              <div class="api-row">
+                <div class="api-key">Purpose</div>
+                <div class="api-val">Delete order</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-2 small text-muted">
+            Serializers format output; strong params whitelist fields like
+            <span class="mono">name</span>,
+            <span class="mono">description</span>,
+            <span class="mono">price</span>,
+            <span class="mono">available</span>, and
+            <span class="mono">image</span>. StockOrders eager-load products to
+            avoid N+1.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= DATA MODEL & SERIALIZERS ========================= -->
+    <section class="container-xl" id="section-data">
+      <div class="row align-items-center gy-3 gx-3 gx-lg-4 flex-lg-row-reverse">
+        <!-- Text: 1/3 on lg, a bit wider on xxl -->
+        <div class="col-12 col-lg-4 col-xxl-5 animate-right">
+          <h3>Data Model & Serializers</h3>
+          <h6 class="mt-2">Entities</h6>
+          <ul>
+            <li>
+              <strong>Product</strong> —
+              <span class="mono"
+                >name, description, price, available, image</span
+              >
+            </li>
+            <li>
+              <strong>StockOrder</strong> —
+              <span class="mono">product_id, quantity, sizes, comment</span>
+            </li>
+          </ul>
+          <h6 class="mt-2">Serializers</h6>
+          <ul>
+            <li>
+              <span class="mono">ProductSerializer</span>: adds
+              <span class="mono">image_url</span> (served via blob paths)
+            </li>
+            <li>
+              <span class="mono">StockOrderSerializer</span>: includes
+              <span class="mono">product_name</span>
+            </li>
+            <li>
+              Eager loading: <span class="mono">includes(:product)</span> on
+              order lists
+            </li>
+          </ul>
+        </div>
+
+        <!-- Image: 2/3 on lg, a touch smaller on xxl -->
+        <div class="col-12 col-lg-8 col-xxl-7 animate-left">
+          <img
+            src="images/CaseStudy/buasportscasestudy/jerseyproducts-data-model-serializers.png"
+            class="img-fluid w-100 d-block"
+            alt="ERD: Products and StockOrders"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CORE ADMIN FLOWS — Dashboard • Create • Edit • Order • Orders List ========== -->
+    <section class="container" id="section-core-flows">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-10">
+          <h3>Core Admin Flows</h3>
+          <p class="section-intro">
+            From viewing products to creating stock orders — the day-to-day
+            admin path in five quick steps.
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 case-figure">
+          <!-- Desktop/Tablet: Carousel (visible md and up) -->
+          <div class="d-none d-md-block">
+            <div
+              id="coreFlowsCarousel"
+              class="carousel slide carousel-outside"
+              data-bs-ride="false"
+              aria-labelledby="coreFlowsHeading"
+            >
+              <div class="carousel-inner">
+                <!-- 1) View Products (Dashboard) -->
+                <div class="carousel-item active">
+                  <img
+                    src="images/CaseStudy/buasportscasestudy/dashboardproductview.png"
+                    class="d-block w-100 bg-transparent"
+                    alt="Dashboard showing products grid with images, prices, availability"
+                    loading="lazy"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h6 class="bg-dark px-2 py-1 d-inline-block rounded">
+                      1. View Products (Dashboard)
+                    </h6>
+                    <p class="small">
+                      Scan cards quickly: image, name, price, availability, and
+                      actions.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 2) Create Product -->
+                <div class="carousel-item">
+                  <img
+                    src="images/CaseStudy/buasportscasestudy/flow-create-product.png"
+                    class="d-block w-100 bg-transparent"
+                    alt="Create Product form with name, description, price, availability and image upload"
+                    loading="lazy"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h6 class="bg-dark px-2 py-1 d-inline-block rounded">
+                      2. Create Product
+                    </h6>
+                    <p class="small">
+                      Minimal form with validation and image upload preview.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 3) Edit Product -->
+                <div class="carousel-item">
+                  <img
+                    src="images/CaseStudy/buasportscasestudy/flow-edit-product.png"
+                    class="d-block w-100 bg-transparent"
+                    alt="Edit Product screen with prefilled fields and update/delete actions"
+                    loading="lazy"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h6 class="bg-dark px-2 py-1 d-inline-block rounded">
+                      3. Edit Product
+                    </h6>
+                    <p class="small">
+                      Prefilled form fetched via ID; update or delete safely.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 4) Create Stock Order -->
+                <div class="carousel-item">
+                  <img
+                    src="images/CaseStudy/buasportscasestudy/flow-stockorder-create.png"
+                    class="d-block w-100 bg-transparent"
+                    alt="Create Stock Order form selecting product, quantity and sizes"
+                    loading="lazy"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h6 class="bg-dark px-2 py-1 d-inline-block rounded">
+                      4. Create Stock Order
+                    </h6>
+                    <p class="small">
+                      Select a jersey, set quantity/sizes, add optional comment.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 5) View Stock Orders (with delete) -->
+                <div class="carousel-item">
+                  <img
+                    src="images/CaseStudy/buasportscasestudy/viewstockorder.png"
+                    class="d-block w-100 bg-transparent"
+                    alt="Stock Orders table showing order id, product, quantity, sizes, comment and delete button"
+                    loading="lazy"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h6 class="bg-dark px-2 py-1 d-inline-block rounded">
+                      5. View Stock Orders
+                    </h6>
+                    <p class="small">
+                      Eager-loaded product names; quick delete to tidy old
+                      orders.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#coreFlowsCarousel"
+                data-bs-slide="prev"
+                aria-label="Previous"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#coreFlowsCarousel"
+                data-bs-slide="next"
+                aria-label="Next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </button>
+
+              <!-- Indicators -->
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#coreFlowsCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="View Products"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#coreFlowsCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Create Product"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#coreFlowsCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Edit Product"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#coreFlowsCarousel"
+                  data-bs-slide-to="3"
+                  aria-label="Create Stock Order"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#coreFlowsCarousel"
+                  data-bs-slide-to="4"
+                  aria-label="View Stock Orders"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile: Stacked images with captions (visible below md) -->
+          <div class="d-block d-md-none mt-3 text-center">
+            <figure class="mb-4">
+              <img
+                src="images/CaseStudy/buasportscasestudy/dashboardproductview.png"
+                class="img-fluid bg-transparent"
+                alt="Dashboard showing products grid with images, prices, availability"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>1. View Products (Dashboard)</strong><br />
+                Scan cards quickly: image, name, price, availability, and
+                actions.
+              </figcaption>
+            </figure>
+
+            <figure class="mb-4">
+              <img
+                src="images/CaseStudy/buasportscasestudy/flow-create-product.png"
+                class="img-fluid bg-transparent"
+                alt="Create Product form with name, description, price, availability and image upload"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>2. Create Product</strong><br />
+                Minimal form with validation and image upload preview.
+              </figcaption>
+            </figure>
+
+            <figure class="mb-4">
+              <img
+                src="images/CaseStudy/buasportscasestudy/flow-edit-product.png"
+                class="img-fluid bg-transparent"
+                alt="Edit Product screen with prefilled fields and update/delete actions"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>3. Edit Product</strong><br />
+                Prefilled form fetched via ID; update or delete safely.
+              </figcaption>
+            </figure>
+
+            <figure class="mb-4">
+              <img
+                src="images/CaseStudy/buasportscasestudy/flow-stockorder-create.png"
+                class="img-fluid bg-transparent"
+                alt="Create Stock Order form selecting product, quantity and sizes"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>4. Create Stock Order</strong><br />
+                Select a jersey, set quantity/sizes, add optional comment.
+              </figcaption>
+            </figure>
+
+            <figure class="mb-2">
+              <img
+                src="images/CaseStudy/buasportscasestudy/viewstockorder.png"
+                class="img-fluid bg-transparent"
+                alt="Stock Orders table showing order id, product, quantity, sizes, comment and delete button"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>5. View Stock Orders</strong><br />
+                Eager-loaded product names; quick delete to tidy old orders.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= TESTING & VALIDATION ========================= -->
+    <section class="container" id="section-testing">
+      <div class="row align-items-start gy-4 mb-4">
+        <!-- Copy/story -->
+        <div class="col-lg-4">
+          <h3>Testing &amp; Validation</h3>
+          <ul class="mb-3">
+            <li>
+              <strong>Models (Minitest):</strong> Product requires
+              <span class="mono">name</span>; StockOrder requires
+              <span class="mono">quantity</span>.
+            </li>
+            <li>
+              <strong>Serializers:</strong>
+              <span class="mono">ProductSerializer</span> emits
+              <span class="mono">image_url</span>;
+              <span class="mono">StockOrderSerializer</span> adds
+              <span class="mono">product_name</span>.
+            </li>
+            <li>
+              <strong>Controllers (API):</strong> Happy/edge paths for
+              <span class="mono">index/create/update/delete</span>.
+            </li>
+            <li>
+              <strong>React (Jest + RTL):</strong> Lists render, create/edit
+              flows submit, delete removes items.
+            </li>
+            <li>
+              <strong>Manual (Insomnia):</strong> CRUD sanity mirrors real
+              client calls.
+            </li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2 small">
+            <span class="badge bg-dark">Rails: 15+ tests, 0 failures</span>
+            <span class="badge bg-dark">React: 17 tests, 0 failures</span>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="col-lg-8">
+          <!-- 600px and up: dropdown viewer -->
+          <div class="show-above-600">
+            <div id="testViewer" class="test-viewer">
+              <div class="test-viewer-header">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-brutalist dropdown-toggle w-100"
+                    type="button"
+                    id="testViewerToggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Select test evidence
+                  </button>
+
+                  <ul
+                    class="dropdown-menu brutalist-menu"
+                    aria-labelledby="testViewerToggle"
+                  >
+                    <!-- 1 (active by default) -->
+                    <li>
+                      <a
+                        class="dropdown-item brutalist-item active"
+                        href="#"
+                        data-src="images/CaseStudy/buasportscasestudy/jest-summary.png"
+                        data-title="React: Jest + RTL"
+                        data-caption="All component tests passing."
+                      >
+                        <strong>React: Jest + RTL</strong><br />
+                        <small>All suites passed</small>
+                      </a>
+                    </li>
+                    <!-- 2 -->
+                    <li>
+                      <a
+                        class="dropdown-item brutalist-item"
+                        href="#"
+                        data-src="images/CaseStudy/buasportscasestudy/rails-tests-summary.png"
+                        data-title="Rails test suite"
+                        data-caption="Models &amp; integration passing."
+                      >
+                        <strong>Rails test suite</strong><br />
+                        <small>Green results</small>
+                      </a>
+                    </li>
+                    <!-- 3 -->
+                    <li>
+                      <a
+                        class="dropdown-item brutalist-item"
+                        href="#"
+                        data-src="images/CaseStudy/buasportscasestudy/rails-controller-tests.png"
+                        data-title="Controllers"
+                        data-caption="CRUD endpoints covered."
+                      >
+                        <strong>Controllers</strong><br />
+                        <small>CRUD coverage</small>
+                      </a>
+                    </li>
+                    <!-- 4 -->
+                    <li>
+                      <a
+                        class="dropdown-item brutalist-item"
+                        href="#"
+                        data-src="images/CaseStudy/buasportscasestudy/api-get-products.png"
+                        data-title="API: GET /products"
+                        data-caption="JSON:API payload verified."
+                      >
+                        <strong>API: GET /products</strong><br />
+                        <small>200 OK</small>
+                      </a>
+                    </li>
+                    <!-- 5 -->
+                    <li>
+                      <a
+                        class="dropdown-item brutalist-item"
+                        href="#"
+                        data-src="images/CaseStudy/buasportscasestudy/api-post-product.png"
+                        data-title="API: POST /products"
+                        data-caption="Create success (201)."
+                      >
+                        <strong>API: POST /products</strong><br />
+                        <small>201 Created</small>
+                      </a>
+                    </li>
+                    <!-- 6 -->
+                    <li>
+                      <a
+                        class="dropdown-item brutalist-item"
+                        href="#"
+                        data-src="images/CaseStudy/buasportscasestudy/api-put-product.png"
+                        data-title="API: PUT /products/:id"
+                        data-caption="Update success (200)."
+                      >
+                        <strong>API: PUT /products/:id</strong><br />
+                        <small>200 OK</small>
+                      </a>
+                    </li>
+                    <!-- 7 -->
+                    <li>
+                      <a
+                        class="dropdown-item brutalist-item"
+                        href="#"
+                        data-src="images/CaseStudy/buasportscasestudy/api-post-stock-order.png"
+                        data-title="API: POST /stock_orders"
+                        data-caption="Create success (201)."
+                      >
+                        <strong>API: POST /stock_orders</strong><br />
+                        <small>201 Created</small>
+                      </a>
+                    </li>
+                    <!-- 8 -->
+                    <li>
+                      <a
+                        class="dropdown-item brutalist-item"
+                        href="#"
+                        data-src="images/CaseStudy/buasportscasestudy/api-delete-stock-order.png"
+                        data-title="API: DELETE /stock_orders/:id"
+                        data-caption="Delete success (204)."
+                      >
+                        <strong>API: DELETE /stock_orders/:id</strong><br />
+                        <small>204 No Content</small>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="test-viewer-body mt-3">
+                <div class="ratio ratio-16x9">
+                  <img
+                    id="testViewerImg"
+                    class="test-viewer-img img-fluid no-bg no-border"
+                    src="images/CaseStudy/buasportscasestudy/jest-summary.png"
+                    alt="React: Jest + RTL"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  id="testViewerCaption"
+                  class="test-viewer-caption small mt-2"
+                >
+                  All component tests passing.
+                </div>
+              </div>
+            </div>
+
+            <!-- No-JS fallback (optional to keep) -->
+            <noscript>
+              <div class="mt-3">
+                <p class="text-muted small">
+                  JavaScript disabled: showing all images.
+                </p>
+                <img
+                  class="img-fluid my-2"
+                  src="images/CaseStudy/buasportscasestudy/jest-summary.png"
+                  alt=""
+                />
+                <img
+                  class="img-fluid my-2"
+                  src="images/CaseStudy/buasportscasestudy/rails-tests-summary.png"
+                  alt=""
+                />
+                <img
+                  class="img-fluid my-2"
+                  src="images/CaseStudy/buasportscasestudy/rails-controller-tests.png"
+                  alt=""
+                />
+                <img
+                  class="img-fluid my-2"
+                  src="images/CaseStudy/buasportscasestudy/api-get-products.png"
+                  alt=""
+                />
+                <img
+                  class="img-fluid my-2"
+                  src="images/CaseStudy/buasportscasestudy/api-post-product.png"
+                  alt=""
+                />
+                <img
+                  class="img-fluid my-2"
+                  src="images/CaseStudy/buasportscasestudy/api-put-product.png"
+                  alt=""
+                />
+                <img
+                  class="img-fluid my-2"
+                  src="images/CaseStudy/buasportscasestudy/api-post-stock-order.png"
+                  alt=""
+                />
+                <img
+                  class="img-fluid my-2"
+                  src="images/CaseStudy/buasportscasestudy/api-delete-stock-order.png"
+                  alt=""
+                />
+              </div>
+            </noscript>
+          </div>
+
+          <!-- Below 600px: stacked images with captions -->
+          <div class="show-below-600 mt-2">
+            <figure class="mb-4">
+              <img
+                class="img-fluid no-bg no-border"
+                src="images/CaseStudy/buasportscasestudy/jest-summary.png"
+                alt="React: Jest + RTL"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>React: Jest + RTL</strong><br />All component tests
+                passing.
+              </figcaption>
+            </figure>
+            <figure class="mb-4">
+              <img
+                class="img-fluid no-bg no-border"
+                src="images/CaseStudy/buasportscasestudy/rails-tests-summary.png"
+                alt="Rails test suite"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>Rails test suite</strong><br />Models &amp; integration
+                passing.
+              </figcaption>
+            </figure>
+            <figure class="mb-4">
+              <img
+                class="img-fluid no-bg no-border"
+                src="images/CaseStudy/buasportscasestudy/rails-controller-tests.png"
+                alt="Controllers"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>Controllers</strong><br />CRUD endpoints covered.
+              </figcaption>
+            </figure>
+            <figure class="mb-4">
+              <img
+                class="img-fluid no-bg no-border"
+                src="images/CaseStudy/buasportscasestudy/api-get-products.png"
+                alt="API: GET /products"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>API: GET /products</strong><br />JSON:API payload
+                verified (200 OK).
+              </figcaption>
+            </figure>
+            <figure class="mb-4">
+              <img
+                class="img-fluid no-bg no-border"
+                src="images/CaseStudy/buasportscasestudy/api-post-product.png"
+                alt="API: POST /products"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>API: POST /products</strong><br />Create success (201
+                Created).
+              </figcaption>
+            </figure>
+            <figure class="mb-4">
+              <img
+                class="img-fluid no-bg no-border"
+                src="images/CaseStudy/buasportscasestudy/api-put-product.png"
+                alt="API: PUT /products/:id"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>API: PUT /products/:id</strong><br />Update success (200
+                OK).
+              </figcaption>
+            </figure>
+            <figure class="mb-4">
+              <img
+                class="img-fluid no-bg no-border"
+                src="images/CaseStudy/buasportscasestudy/api-post-stock-order.png"
+                alt="API: POST /stock_orders"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>API: POST /stock_orders</strong><br />Create success
+                (201 Created).
+              </figcaption>
+            </figure>
+            <figure class="mb-2">
+              <img
+                class="img-fluid no-bg no-border"
+                src="images/CaseStudy/buasportscasestudy/api-delete-stock-order.png"
+                alt="API: DELETE /stock_orders/:id"
+                loading="lazy"
+              />
+              <figcaption class="small mt-2">
+                <strong>API: DELETE /stock_orders/:id</strong><br />Delete
+                success (204 No Content).
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= DEPLOYMENT & OPS ========================= -->
+    <section class="container-xl" id="section-deploy">
+      <div class="row align-items-center gy-3 gx-3 gx-lg-4 my-3">
+        <!-- Image LEFT (slightly smaller & 7/12 width on lg+) -->
+        <div
+          class="col-12 col-lg-7 col-xxl-8 order-1 order-lg-1 animate-left text-center"
+        >
+          <img
+            src="images/CaseStudy/buasportscasestudy/buasportsAWS.png"
+            class="img-fluid d-block deploy-figure"
+            alt="EC2 deployment diagram"
+          />
+        </div>
+
+        <!-- Text RIGHT (5/12 on lg+) -->
+        <div class="col-12 col-lg-5 col-xxl-4 order-2 order-lg-2 animate-right">
+          <h3>Deployment &amp; Ops</h3>
+          <ul>
+            <li>
+              AWS EC2 (Ubuntu) host; PostgreSQL user/db created via terminal;
+              CORS configured.
+            </li>
+            <li>
+              Troubleshot disk space (logs/cache), server PIDs, and
+              multi-process runs (API, client).
+            </li>
+            <li>
+              React client deployed cleanly; HTML client had comms issues in
+              prod and was deprioritised.
+            </li>
+          </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Modal (unchanged) -->
+      <div
+        class="modal fade"
+        id="demoModal"
+        tabindex="-1"
+        aria-labelledby="demoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="demoModalLabel">
+                JerseyProducts — EC2 Walkthrough
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/juc7_MPxYgo"
+                  title="Walkthrough"
+                  allowfullscreen
+                  style="border: 0"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== REFLECTION + OUTCOMES (side-by-side) ========== -->
+    <section class="container my-2" id="section-reflection-outcomes">
+      <div class="row gy-4 align-items-stretch">
+        <!-- Reflection -->
+        <div class="col-12 col-lg-6 animate-left d-flex">
+          <div class="w-100">
+            <h3>Reflection</h3>
+            <ul class="mb-0">
+              <li>
+                Clean JSON via serializers kept the React UI simple and fast.
+              </li>
+              <li>
+                Active Storage blob paths made image URLs reliable across views.
+              </li>
+              <li>
+                <strong>Dev/Test vs Deployed:</strong> locally both the React
+                and HTML clients worked perfectly. In production, the React
+                client worked, but the HTML client had API communication issues
+                — React writes showed up in the HTML client, but HTML writes
+                didn’t round-trip back to the API.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Outcomes & Next Steps -->
+        <div class="col-12 col-lg-6 animate-right d-flex">
+          <div class="w-100">
+            <h3>Outcomes &amp; Next Steps</h3>
+            <ul class="mb-0">
+              <li>
+                Shipped a stable React admin with image uploads and clear JSON
+                contracts.
+              </li>
+              <li>
+                Stabilise the HTML client in production by aligning base URLs,
+                CORS allowlist, and CSRF handling; use identical JSON:API
+                headers. Add an e2e test: HTML form → API → verify via GET.
+              </li>
+              <li>
+                Hardening: role-based admin auth, upload rate-limits, broader
+                integration + a11y tests.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+ <!-- ========================= PROTOTYPE OVERVIEW VIDEO ========================= -->
+ <section class="container" id="section-video-overview">
+  <div class="row justify-content-center text-center mb-4">
+    <div class="col-12 col-lg-10">
+      <h3>Prototype Overview</h3>
+      <p class="section-intro">
+        A short walkthrough showing the react client with CRUD operations.
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center"> 
+    <div class="col-12 case-figure"> 
+        <div class="video-frame ratio ratio-16x9"> 
+            <iframe width="100%" src="https://www.youtube.com/embed/tS_nnmwNtjc?si=IMG-WjKCQaUTg-eK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div> 
+    </div> 
+</div>
+
+<!-- ====================== REPORT + REPOSITORY ====================== -->
+<section class="container" id="section-full-pdf-webapp">
+  <div class="row justify-content-center text-center mb-4">
+    <div class="col-12 col-lg-10">
+      <h4 class="mb-3">Explore the Project</h4>
+      <p class="section-intro">
+        View the written report for fuller technical context, or browse the
+        source code and project structure on GitHub.
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center g-4 text-center">
+    <div class="col-12 col-md-6 col-lg-5">
+      <div class="project-access-box h-100">
+        <h5 class="mb-3">Technical Report</h5>
+        <p>
+          Open the full written report with implementation detail, structure,
+          and supporting documentation.
+        </p>
+        <a
+          href="./Documents/Cloud CA Stephen Hughes x24158071.pdf"
+          target="_blank"
+          class="btn btn-dark mt-3"
+        >
+          View Technical Report (PDF)
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-5">
+      <div class="project-access-box h-100">
+        <h5 class="mb-3">GitHub Repository</h5>
+        <p>
+          Browse the source code, file structure, and implementation work for
+          the project on GitHub.
+        </p>
+        <a
+          href="https://github.com/stephenmphughes/Jersey-Products"
+          target="_blank"
+          class="btn btn-dark mt-3"
+        >
+          View Repository
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/nav.js" defer></script>
+    <script src="js/animation.js"></script>
+    <!-- Script: slim brutalist dropdown logic -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const root = document.getElementById("testViewer");
+        if (!root) return;
+
+        const img = document.getElementById("testViewerImg");
+        const caption = document.getElementById("testViewerCaption");
+        const toggleBtn = document.getElementById("testViewerToggle");
+
+        // Click handlers (update image + caption + button label)
+        root
+          .querySelectorAll(".dropdown-item.brutalist-item")
+          .forEach((item) => {
+            item.addEventListener("click", function (e) {
+              e.preventDefault();
+
+              // Active state
+              root
+                .querySelectorAll(".dropdown-item.brutalist-item.active")
+                .forEach((a) => a.classList.remove("active"));
+              this.classList.add("active");
+
+              const src = this.getAttribute("data-src");
+              const title = this.getAttribute("data-title") || "";
+              const cap = this.getAttribute("data-caption") || "";
+
+              img.setAttribute("src", src);
+              img.setAttribute("alt", title);
+              caption.textContent = cap;
+              toggleBtn.textContent = title;
+
+              // Close dropdown (if Bootstrap is present)
+              if (window.bootstrap && bootstrap.Dropdown) {
+                const dd = bootstrap.Dropdown.getOrCreateInstance(toggleBtn);
+                dd.hide();
+              }
+            });
+          });
+
+        // Set initial label from the active item (or first item)
+        const active =
+          root.querySelector(".dropdown-item.brutalist-item.active") ||
+          root.querySelector(".dropdown-item.brutalist-item");
+        if (active) {
+          toggleBtn.textContent =
+            active.getAttribute("data-title") || active.textContent.trim();
+        }
+      });
+    </script>
+    <script src="assets/footer.js" defer></script>
+  </body>
+</html>

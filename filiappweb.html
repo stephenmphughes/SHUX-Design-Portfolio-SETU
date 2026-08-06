@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Filí Web App — UX / Full-Stack Case Study"
+    />
+    <meta name="author" content="Stephen Hughes" />
+    <title>SHUX Design | Filí Web App</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .feature-img,
+      .diagram-img,
+      .code-img,
+      .full-diagram-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 1px solid #111;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      .hero-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      .logic-frame,
+      .media-frame {
+        border: 1px solid #111;
+        border-radius: 0;
+        background: transparent;
+        padding: 1.25rem;
+      }
+
+      .section-intro {
+        max-width: 850px;
+        margin: 0 auto 2rem auto;
+      }
+
+      .flow-row,
+      .logic-row {
+        margin-bottom: 5rem;
+      }
+
+      .mini-label {
+        display: inline-block;
+        margin-bottom: 0.8rem;
+        padding: 0.35rem 0.8rem;
+        font-size: 0.85rem;
+        border: 1px solid #111;
+        border-radius: 999px;
+        letter-spacing: 0.03em;
+        background: transparent;
+      }
+
+      .flow-video {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border: 1px solid #111;
+        background: transparent;
+      }
+
+      .code-caption {
+        font-size: 0.95rem;
+        color: #555;
+        margin-top: 0.75rem;
+      }
+
+      .section-divider {
+        margin: 5rem auto;
+        width: 120px;
+        border-top: 2px solid #111;
+        opacity: 0.2;
+      }
+
+      .text-max {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      .centered-tech {
+        max-width: 950px;
+        margin: 0 auto;
+      }
+
+      .overview-img-wrap {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .equal-img-wrap {
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .equal-img-wrap > * {
+        width: 100%;
+      }
+
+      .case-figure {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .carousel-outside {
+        position: relative;
+        padding: 0 4rem;
+      }
+
+      .carousel-outside .carousel-inner {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .carousel-outside .carousel-inner img {
+        width: 100%;
+        height: auto;
+        max-height: 72vh;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+
+      .carousel-outside .carousel-control-prev,
+      .carousel-outside .carousel-control-next {
+        width: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+
+      .carousel-outside .carousel-control-prev {
+        left: 0;
+        transform: translate(-60%, -50%);
+      }
+
+      .carousel-outside .carousel-control-next {
+        right: 0;
+        transform: translate(60%, -50%);
+      }
+
+      /* use the same svg arrows as your other pages */
+      .carousel-outside .carousel-control-prev-icon,
+      .carousel-outside .carousel-control-next-icon {
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: none !important;
+      }
+
+      .carousel-indicators {
+        position: static;
+        margin-top: 1rem;
+        margin-bottom: 0;
+      }
+
+      .carousel-outside .carousel-indicators [data-bs-target] {
+        background-color: #000;
+        opacity: 0.35;
+      }
+
+      .carousel-outside .carousel-indicators .active {
+        opacity: 1;
+      }
+
+      .carousel-caption-custom {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        text-align: center;
+      }
+
+      .hero-section {
+        margin-top: 3rem;
+      }
+
+      .hero-copy {
+        max-width: 850px;
+        margin: 0 auto;
+      }
+
+      /* bigger sequence diagrams in carousel */
+      .carousel-outside .carousel-inner img.sequence-diagram-img {
+        max-height: 82vh;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .carousel-outside .carousel-inner img.code-carousel-img {
+        max-height: 68vh;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+      }
+
+      @media (max-width: 991.98px) {
+        .carousel-outside .carousel-inner {
+          max-width: 100%;
+        }
+
+        .carousel-outside .carousel-inner img {
+          max-height: 60vh;
+        }
+
+        .carousel-outside .carousel-inner img.sequence-diagram-img {
+          max-height: 72vh;
+        }
+
+        .carousel-outside .carousel-inner img.code-carousel-img {
+          max-height: 58vh;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .carousel-outside {
+          padding: 0 2.25rem;
+        }
+
+        .carousel-outside .carousel-control-prev,
+        .carousel-outside .carousel-control-next {
+          display: none;
+        }
+
+        .carousel-outside .carousel-inner img {
+          max-height: 52vh;
+        }
+
+        .carousel-outside .carousel-inner img.sequence-diagram-img {
+          max-height: 60vh;
+        }
+
+        .carousel-outside .carousel-inner img.code-carousel-img {
+          max-height: 48vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-background"></div>
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- ====================== PAGE HEADER ====================== -->
+    <section class="container hero-section">
+      <div class="starter-template text-center">
+        <div class="hero-copy">
+          <h1>Filí Web App</h1>
+          <p class="lead">
+            A full-stack Irish-language rhyming platform designed to support
+            rhyme discovery, spelling accuracy, and playful learning through an
+            interactive dictionary and two game modes.
+          </p>
+          <p class="text-muted mb-0">
+            Stack: React.js + Node.js / Express + SQL Server (Docker)
+          </p>
+        </div>
+
+        <div class="mt-4">
+          <img
+            src="images/CaseStudy/fili_web_casestudy/FiliWebhero.png"
+            class="hero-img"
+            alt="Filí Web App hero"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== OVERVIEW ====================== -->
+    <section class="container" id="section-webapp-overview">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6 animate-left">
+          <span class="mini-label">Overview</span>
+          <h3>Designing a Rhyming Tool for Irish Language Learning</h3>
+          <p>
+            The Filí Web App was developed as a browser-based Irish-language
+            rhyming tool that combines practical search with lightweight
+            educational interaction. The aim was not only to let users find
+            rhyming words quickly, but also to reinforce accurate spelling,
+            including the correct use of fadas and Irish orthography.
+          </p>
+          <p>
+            From a product and UX perspective, the challenge was to make the
+            experience feel forgiving without becoming vague. This led to a
+            layered search model: the system first rewards correct spelling,
+            then supports users through normalised matching, and finally offers
+            a fuzzy recovery path when the word is close enough to be useful.
+          </p>
+          <ul class="mb-0">
+            <li>
+              <strong>Core features:</strong> rhyming dictionary, spelling game,
+              multiple-choice rhyme game, authentication, forum
+            </li>
+            <li>
+              <strong>Learning goal:</strong> support rhyme discovery while
+              reinforcing correct Irish spelling
+            </li>
+            <li>
+              <strong>Technical goal:</strong> keep lookups fast and predictable
+              through in-memory cache reads
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 animate-right">
+          <div class="overview-img-wrap">
+            <img
+              src="images/CaseStudy/fili_web_casestudy/FiliWebhero.png"
+              class="feature-img"
+              alt="Filí Web App interface preview"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== TECHNOLOGIES ====================== -->
+    <section class="container text-center" id="section-technologies">
+      <div class="centered-tech animate-up">
+        <span class="mini-label">Technologies</span>
+        <h3>Full-Stack Build and Technical Choices</h3>
+        <p>
+          The application was built using a React front end, a Node.js / Express
+          back end, and SQL Server running in Docker. This structure made it
+          possible to separate interface logic from server-side rhyme processing
+          while keeping authentication, forum functionality, and data
+          persistence in one consistent system.
+        </p>
+        <ul class="text-start d-inline-block">
+          <li>
+            <strong>React.js:</strong> reusable front-end components and dynamic
+            UI updates
+          </li>
+          <li>
+            <strong>React Router DOM:</strong> route handling and protected
+            screens
+          </li>
+          <li><strong>Axios:</strong> client-side API communication</li>
+          <li>
+            <strong>Node.js + Express:</strong> server routes and feature logic
+          </li>
+          <li>
+            <strong>SQL Server in Docker:</strong> structured persistence for
+            users, words, rhyme groups, posts, and comments
+          </li>
+          <li><strong>mssql:</strong> parameterised database queries</li>
+          <li>
+            <strong>Passport + bcrypt:</strong> authentication, password
+            hashing, and login flow
+          </li>
+          <li>
+            <strong>express-session:</strong> persistent server-side sessions
+          </li>
+          <li>
+            <strong>NodeCache:</strong> in-memory read model for high-speed
+            rhyme lookups
+          </li>
+          <li>
+            <strong>Fuzzball.js:</strong> fuzzy matching for dictionary recovery
+          </li>
+          <li>
+            <strong>Bootstrap:</strong> layout consistency and responsive
+            structure
+          </li>
+          <li>
+            <strong>Teanglann integration:</strong> optional popup support for
+            extra lexical reference
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== SYSTEM ARCHITECTURE ====================== -->
+    <section class="container" id="section-system-architecture">
+      <div class="row">
+        <div class="col-12 text-center">
+          <span class="mini-label">System Architecture</span>
+          <h3>How the Application is Structured</h3>
+          <p class="text-max">
+            The architecture was designed around a clear separation of concerns.
+            React handles the interface and sends requests through Axios.
+            Express routes requests into services and repository logic. SQL
+            Server stores persistent data. For rhyme-heavy features, the
+            application reads from a preloaded in-memory cache so that
+            dictionary and game interactions remain fast and consistent.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 animate-up">
+          <img
+            src="images/CaseStudy/fili_web_casestudy/System Arcitecture.png"
+            class="full-diagram-img"
+            alt="System architecture diagram for Filí Web App"
+          />
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="logic-frame">
+            <h5>Architecture Summary</h5>
+            <p>
+              The client sends requests to the Express API for authentication,
+              dictionary search, games, and forum actions. On the server,
+              feature logic is divided into controllers, services, and database
+              access. SQL Server remains the source of truth, while NodeCache
+              acts as the fast read layer for rhyme-related features.
+            </p>
+            <ul class="mb-0">
+              <li>Client: React SPA with route-based views</li>
+              <li>
+                API: Express routes for auth, rhyme lookup, games, and forum
+              </li>
+              <li>
+                Read model: NodeCache loaded from the words table on server
+                start
+              </li>
+              <li>
+                Persistence: SQL Server for users, rhyme data, posts, and
+                comments
+              </li>
+              <li>
+                Admin/data maintenance: Azure Data Studio for schema and content
+                management
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== DATABASE / ER DIAGRAM ====================== -->
+    <section class="container" id="section-database-model">
+      <div class="row">
+        <div class="col-12 text-center">
+          <span class="mini-label">Database Design</span>
+          <h3>Entity Relationship Model</h3>
+          <p class="text-max">
+            The database schema supports two main areas of the product:
+            linguistic data and user interaction data. The linguistic side
+            stores rhyme groups and word records, while the interaction side
+            handles users, forum posts, and comments. RhymeGroups act as the
+            structural anchor of the dictionary by linking related words through
+            a shared group id.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 animate-up">
+          <img
+            src="images/CaseStudy/fili_web_casestudy/DB ER DIAGRAM.png"
+            class="full-diagram-img"
+            alt="ER diagram showing users, forum tables, words and rhyme groups"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== AUTH FLOW ====================== -->
+    <section class="container" id="section-authentication">
+      <div class="row">
+        <div class="col-12 text-center">
+          <span class="mini-label">Authentication</span>
+          <h3>Hashing, Sessions, and Protected Routes</h3>
+          <p class="text-max">
+            Authentication was intentionally designed to stay small and
+            explicit. On sign-up, the server checks whether an account already
+            exists, hashes the password with bcrypt, inserts the user into SQL
+            Server, and attaches the new user id to the session. On login, the
+            server retrieves the user by email, compares the plaintext password
+            with the stored hash, and then restores the session if the
+            credentials are correct. Logout destroys the session, while
+            protected routes use a lightweight middleware check to block write
+            actions when no active session exists.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 animate-up">
+          <img
+            src="images/CaseStudy/fili_web_casestudy/User Authentication flow.png"
+            class="full-diagram-img"
+            alt="Authentication flow showing React, Express, AuthService, sessions and SQL Server"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== CACHE / READ MODEL ====================== -->
+    <section class="container" id="section-rhyme-cache">
+      <div class="row">
+        <div class="col-12 text-center">
+          <span class="mini-label">Key Logic</span>
+          <h3>RhymeCache.js as the Read Model</h3>
+          <p class="text-max">
+            One of the most important technical decisions in the project was to
+            use an in-memory cache as the main read model for rhyme-heavy
+            features. When the server starts, it connects to SQL Server, loads
+            the words table into memory, and then serves dictionary and game
+            requests from cache rather than repeatedly querying the database.
+            This keeps responses fast and predictable while SQL Server still
+            remains the source of truth for persistent data.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-4 g-4 align-items-stretch">
+        <div class="col-md-6 animate-left">
+          <div class="equal-img-wrap">
+            <div class="media-frame">
+              <img
+                src="images/CaseStudy/fili_web_casestudy/Cache.png"
+                class="code-img"
+                alt="Rhyme cache code snippet"
+              />
+              <p class="code-caption mb-0">
+                The cache is preloaded from SQL Server when the server starts
+                and then read through <code>getCachedWords()</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 animate-right">
+          <div class="equal-img-wrap">
+            <div class="logic-frame">
+              <h5>Why this mattered</h5>
+              <p>
+                The dictionary and both games are heavily read-oriented
+                features. Without caching, the server would need to query the
+                database on nearly every request. By preloading the word list
+                into memory, the application gains faster and more predictable
+                response times.
+              </p>
+              <p>
+                SQL Server still stores user accounts, forum content, and all
+                rhyme data safely. The cache acts as a fast-access layer for
+                lookups and game rounds, and can be refreshed whenever the
+                underlying data changes.
+              </p>
+              <ul class="mb-0">
+                <li>Server start triggers one preload query</li>
+                <li>Dictionary and game routes read from memory, not DB</li>
+                <li>Faster lookups and fewer repeated database hits</li>
+                <li>
+                  SQL Server still handles persistence and system integrity
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== NORMALISATION ====================== -->
+    <section class="container" id="section-normalisation">
+      <div class="row">
+        <div class="col-12 text-center">
+          <span class="mini-label">Language Logic</span>
+          <h3>Diacritic and Orthography Normalisation</h3>
+          <p class="text-max">
+            Irish spelling relies heavily on diacritics, particularly the fada.
+            Because of this, the application needed a way to be strict enough to
+            support learning, while still being forgiving enough to help users
+            recover from minor input issues. The normalisation step removes
+            accents from a word so that inputs such as <em>Féar (grass)</em> and
+            <em>Fear (man)</em> can be compared in a shared form. This supports
+            the middle stage between exact spelling and fuzzy matching.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 animate-up">
+          <img
+            src="images/CaseStudy/fili_web_casestudy/normalisation.png"
+            class="full-diagram-img"
+            alt="Normalisation function code snippet"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== DICTIONARY PIPELINE ====================== -->
+    <section class="container" id="section-dictionary-pipeline">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 animate-left">
+          <span class="mini-label">Dictionary Logic</span>
+          <h3>Three-Stage Rhyming Lookup Pipeline</h3>
+          <p>
+            The rhyming dictionary follows a three-stage cache-first pipeline
+            designed to prioritise correct spelling while still offering useful
+            recovery paths.
+          </p>
+          <p>
+            <strong>Exact stage:</strong> if the user’s query exists in its
+            correct form, including fadas, the server reads its rhyme group and
+            returns the full rhyming set.
+          </p>
+          <p>
+            <strong>Normalised stage:</strong> if no exact match exists, the
+            query is normalised by removing diacritics and compared again. This
+            catches close spelling attempts without treating them as fully
+            exact.
+          </p>
+          <p class="mb-0">
+            <strong>Fuzzy stage:</strong> if neither of the first two stages
+            succeeds, the query is compared against the normalised cache using a
+            similarity score. If the best candidate passes a threshold, the app
+            returns the candidate’s rhyme set and surfaces the closest suggested
+            word.
+          </p>
+        </div>
+
+        <div class="col-lg-6 animate-right">
+          <div class="media-frame">
+            <img
+              src="images/CaseStudy/fili_web_casestudy/fuzzymatch.png"
+              class="code-img"
+              alt="Fuzzy matching code snippet using cache and fuzzball"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== SPELLING GAME ====================== -->
+    <section class="container" id="section-spelling-game-logic">
+      <div class="row">
+        <div class="col-12">
+          <span class="mini-label">Game Logic</span>
+          <h3>Spelling Game: Exact Orthography with One Retry Path</h3>
+          <p>
+            The spelling game was designed to reinforce correct Irish spelling
+            rather than simply rhyme recognition. For each round, the server
+            selects a prompt from the in-memory cache only. It filters the data
+            to ensure the chosen word belongs to a rhyme group with at least two
+            members, so that each round has a valid answer space.
+          </p>
+          <p>
+            When a user submits an answer, the route trims both the given word
+            and the user input, prevents reuse of the prompt itself, then finds
+            the prompt’s group and compares the answer against valid rhyming
+            entries.
+          </p>
+          <ul class="mb-0">
+            <li>First pass: exact canonical spelling including fadas</li>
+            <li>If matched: result is <strong>correct</strong></li>
+            <li>Second pass on first attempt only: compare normalised forms</li>
+            <li>If matched here: result is <strong>retry</strong></li>
+            <li>Otherwise: result is <strong>incorrect</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-12 case-figure">
+          <div
+            id="spellingGameCarousel"
+            class="carousel slide carousel-outside"
+            data-bs-ride="false"
+            data-bs-interval="false"
+            aria-labelledby="spellingGameHeading"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/CaseStudy/fili_web_casestudy/Spelling Game Sequence Diagram.png"
+                  class="d-block mx-auto bg-transparent feature-img sequence-diagram-img"
+                  alt="Sequence diagram for spelling game"
+                  loading="lazy"
+                />
+                <div class="carousel-caption-custom">
+                  Sequence diagram showing the spelling game validation flow.
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img
+                  src="images/CaseStudy/fili_web_casestudy/spellingGame.png"
+                  class="d-block mx-auto bg-transparent code-img code-carousel-img"
+                  alt="Code snippet for spelling game validation logic"
+                  loading="lazy"
+                />
+                <div class="carousel-caption-custom">
+                  Code snippet showing exact match, retry, and incorrect paths.
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#spellingGameCarousel"
+              data-bs-slide="prev"
+              aria-label="Previous"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#spellingGameCarousel"
+              data-bs-slide="next"
+              aria-label="Next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#spellingGameCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Spelling sequence diagram"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#spellingGameCarousel"
+                data-bs-slide-to="1"
+                aria-label="Spelling game code snippet"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== MULTIPLE CHOICE GAME ====================== -->
+    <section class="container" id="section-multiple-choice-logic">
+      <div class="row">
+        <div class="col-12">
+          <span class="mini-label">Game Logic</span>
+          <h3>Multiple-Choice Game: Rhyme Recognition from Cache</h3>
+          <p>
+            The multiple-choice game uses the cache for the full flow. The
+            server selects a random prompt word, identifies its rhyme group, and
+            gathers valid candidates from that same group, excluding the prompt
+            itself.
+          </p>
+          <p>
+            One of those candidates becomes the correct answer. The server then
+            scans the cached word list for entries belonging to different groups
+            until it has collected three distractors.
+          </p>
+          <p class="mb-0">
+            The final four options are shuffled before being returned to the
+            client. The user selects an option, receives immediate feedback, and
+            the UI requests a new question.
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-12 case-figure">
+          <div
+            id="multipleChoiceCarousel"
+            class="carousel slide carousel-outside"
+            data-bs-ride="false"
+            data-bs-interval="false"
+            aria-labelledby="multipleChoiceHeading"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/CaseStudy/fili_web_casestudy/Multiple Choice Sequence diagram.png"
+                  class="d-block mx-auto bg-transparent feature-img sequence-diagram-img"
+                  alt="Sequence diagram for multiple choice rhyme game"
+                  loading="lazy"
+                />
+                <div class="carousel-caption-custom">
+                  Sequence diagram showing prompt selection, answer building,
+                  and response.
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img
+                  src="images/CaseStudy/fili_web_casestudy/multiplechoice.png"
+                  class="d-block mx-auto bg-transparent code-img code-carousel-img"
+                  alt="Code snippet for multiple choice rhyme game logic"
+                  loading="lazy"
+                />
+                <div class="carousel-caption-custom">
+                  Code snippet showing answer selection, distractors, and
+                  shuffle logic.
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#multipleChoiceCarousel"
+              data-bs-slide="prev"
+              aria-label="Previous"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#multipleChoiceCarousel"
+              data-bs-slide="next"
+              aria-label="Next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#multipleChoiceCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Multiple choice sequence diagram"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#multipleChoiceCarousel"
+                data-bs-slide-to="1"
+                aria-label="Multiple choice code snippet"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== FORUM ====================== -->
+    <section class="container" id="section-forum-logic">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6 animate-left">
+          <span class="mini-label">Community Feature</span>
+          <h3>Forum Posting and Session-Gated Database Writes</h3>
+          <p>
+            Unlike the dictionary and games, the forum was designed to read and
+            write directly to SQL Server so that new content appears
+            immediately. The API returns posts with author information and a
+            live comment count through joins and subqueries rather than cached
+            snapshots.
+          </p>
+          <p>
+            All create, edit, and delete actions require an authenticated user.
+            This is enforced through the active session and through SQL-level
+            owner checks. Updates and deletes only succeed when both the record
+            id and the active user id match, preventing users from changing
+            other people’s content.
+          </p>
+          <ul class="mb-0">
+            <li>Missing fields return <strong>400</strong></li>
+            <li>Unauthenticated requests return <strong>401</strong></li>
+            <li>Owner mismatch returns <strong>404</strong></li>
+            <li>Unexpected server issues return <strong>500</strong></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 animate-right">
+          <div class="logic-frame">
+            <h5>Client-Side Forum Flow</h5>
+            <p>
+              On the front end, the forum component first loads posts and then
+              retrieves comments per post. Users are given simple create, edit,
+              and delete interactions with visible feedback. This keeps the
+              feature intentionally straightforward and readable while still
+              behaving like a real authenticated community layer.
+            </p>
+            <p class="mb-0">
+              From a UX point of view, this section broadens the role of Filí
+              beyond search alone. It supports discussion, shared knowledge, and
+              user participation in a way that aligns with the broader language
+              learning community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== KEY FLOWS (VIDEOS) ====================== -->
+    <section class="container-fluid py-5" id="section-key-flows">
+      <div class="container">
+        <div class="starter-template text-center mb-4">
+          <h3 class="mb-2">Key Flows</h3>
+          <p class="mb-0">Short clips showing the main web app interactions.</p>
+          <p class="small text-muted mb-0">
+            These clips demonstrate how the technical logic translates into real
+            user interactions on the front end.
+          </p>
+        </div>
+      </div>
+
+      <div class="container-xl">
+        <div class="row align-items-center g-4 flow-row">
+          <div class="col-12 col-lg-8 animate-left text-center">
+            <video
+              class="flow-video"
+              playsinline
+              muted
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="videos/fili_app_web_app_videos/LandingLoginDashboard.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="col-12 col-lg-4 animate-right">
+            <h5>1) Login and Dashboard</h5>
+            <p class="mb-0">
+              Entry into the protected parts of the app through session-based
+              authentication.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="row align-items-center g-4 flow-row flex-lg-row-reverse mt-5"
+        >
+          <div class="col-12 col-lg-8 animate-right text-center">
+            <video
+              class="flow-video"
+              playsinline
+              muted
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="videos/fili_app_web_app_videos/RhymingDictionary.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="col-12 col-lg-4 animate-left">
+            <h5>2) Rhyming Dictionary</h5>
+            <p class="mb-0">
+              Demonstrates the search experience built on exact, normalised, and
+              fuzzy matching.
+              <br />
+              Teanglann pop-up widget embedded for exact definitions.
+            </p>
+          </div>
+        </div>
+
+        <div class="row align-items-center g-4 flow-row mt-5">
+          <div class="col-12 col-lg-8 animate-left text-center">
+            <video
+              class="flow-video"
+              playsinline
+              muted
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="videos/fili_app_web_app_videos/SpellCheck_Right:Wrong.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="col-12 col-lg-4 animate-right">
+            <h5>3) Spelling Game — Correct and Incorrect</h5>
+            <p class="mb-0">
+              Shows strict orthographic checking and feedback in the first game
+              mode.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="row align-items-center g-4 flow-row flex-lg-row-reverse mt-5"
+        >
+          <div class="col-12 col-lg-8 animate-right text-center">
+            <video
+              class="flow-video"
+              playsinline
+              muted
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="videos/fili_app_web_app_videos/Spellcheck_Missingfada.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="col-12 col-lg-4 animate-left">
+            <h5>4) Spelling Game — Retry for Fada Correction</h5>
+            <p class="mb-0">
+              If the rhyme is correct but the diacritic is not, the user gets
+              one more attempt rather than an outright fail.
+            </p>
+          </div>
+        </div>
+
+        <div class="row align-items-center g-4 flow-row mt-5">
+          <div class="col-12 col-lg-8 animate-left text-center">
+            <video
+              class="flow-video"
+              playsinline
+              muted
+              loop
+              controls
+              preload="metadata"
+            >
+              <source
+                src="videos/fili_app_web_app_videos/multiplechoicegame.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="col-12 col-lg-4 animate-right">
+            <h5>5) Multiple-Choice Game</h5>
+            <p class="mb-0">
+              A lighter interaction model based on recognition rather than typed
+              spelling.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== FULL REPORT LINK ====================== -->
+    <section class="container text-center" id="section-full-pdf-webapp">
+      <h4 class="mb-3">Explore the Full Technical Report</h4>
+      <p>
+        For the full written report, implementation notes, and supporting
+        technical detail, open the PDF below.
+      </p>
+      <a
+        href="./Documents/STEPHEN HUGHES Final Technical Report .pdf"
+        target="_blank"
+        class="btn btn-dark mt-3"
+      >
+        View Technical Report (PDF)
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/nav.js" defer></script>
+    <script src="assets/footer.js" defer></script>
+    <script src="js/animation.js"></script>
+  </body>
+</html>

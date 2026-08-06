@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="SHUX Design Case Studies" />
+    <meta name="author" content="Stephen Hughes" />
+    <title>SHUX Design — Case Studies</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ─── TOKENS ─────────────────────────────────────────────── */
+      :root {
+        --ink: #111111;
+        --ink-soft: rgba(17, 17, 17, 0.72);
+        --line: #111111;
+        --controls-bg: #efe7ea;
+        --controls-bg-2: #f4eef1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body#caseStudiesPage {
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--ink);
+      }
+
+      /* ─── HIDE CARDS WITHOUT DELETING THEM ───────────────────── */
+      .case-hidden {
+        display: none !important;
+      }
+
+      /* ─── STICKY HEADER WRAPPER ───────────────────────────────── */
+      #sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 1400;
+      }
+
+      #sticky-header .navbar {
+        position: relative !important;
+        top: auto !important;
+        transform: none !important;
+      }
+
+      /* ─── FILTER BLOCK ───────────────────────────────────────── */
+      #caseControls {
+        position: relative;
+        z-index: 1;
+        background: var(--controls-bg);
+      }
+
+      .case-filter-row {
+        background: var(--controls-bg);
+        border-top: 2px solid var(--line);
+        border-bottom: 2px solid var(--line);
+      }
+
+      .case-count-strip {
+        background: var(--controls-bg-2);
+        border-bottom: 2px solid var(--line);
+      }
+
+      .case-filter-inner,
+      .case-count-inner {
+        max-width: 1400px;
+        width: 90%;
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .case-filter-inner {
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+      }
+
+      .case-count-inner {
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+      }
+
+      .case-filter-shell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+      }
+
+      .case-filter-input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .case-filter-label {
+        flex: 0 0 auto;
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+        border: 2px solid var(--line);
+        background: transparent;
+        color: var(--ink);
+        font-family: "Oxanium", sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .case-filter-label:hover {
+        background: #ffffff;
+      }
+
+      .case-filter-input:checked + .case-filter-label {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .case-result-text {
+        margin: 0;
+        text-align: center;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: rgba(17, 17, 17, 0.78);
+      }
+
+      /* ─── PAGE WRAPPER ───────────────────────────────────────── */
+      .case-page {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ─── HERO ───────────────────────────────────────────────── */
+      .case-hero {
+        padding: 2rem 1rem 2rem;
+        text-align: center;
+      }
+
+      .case-hero h1 {
+        font-family: "Oxanium", sans-serif;
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        line-height: 0.95;
+        text-transform: uppercase;
+        color: #111;
+        margin: 0 0 0.75rem;
+      }
+
+      .case-hero .lead {
+        font-family: "Instrument Sans", sans-serif;
+        max-width: 760px;
+        margin: 0 auto;
+        color: var(--ink-soft);
+      }
+
+      /* ─── CARD GRID ──────────────────────────────────────────── */
+      .case-grid-section {
+        position: relative;
+        z-index: 1;
+        padding: 2rem 0 4rem;
+      }
+
+      /* ─── CARDS ──────────────────────────────────────────────── */
+      .case-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid var(--line);
+        background: transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .case-image-wrap {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-bottom: 2px solid var(--line);
+        background: rgba(255, 255, 255, 0.22);
+      }
+
+      .case-image {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .case-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        margin: 1rem;
+        padding: 1rem;
+        border: 2px solid var(--line);
+        background: transparent;
+        min-height: 235px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .case-eyebrow {
+        margin: 0;
+        font-family: "Oxanium", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(17, 17, 17, 0.65);
+      }
+
+      .case-title {
+        margin: 0;
+        font-family: "Oxanium", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: #111;
+      }
+
+      .case-summary {
+        margin: 0;
+        flex-grow: 1;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 0.96rem;
+        line-height: 1.65;
+        color: var(--ink-soft);
+      }
+
+      .case-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .case-tags span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 0.32rem 0.58rem;
+        border: 1.5px solid var(--line);
+        background: rgba(255, 255, 255, 0.4);
+        font-family: "Oxanium", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .case-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start;
+        min-height: 46px;
+        padding: 0.8rem 1rem;
+        border: 2px solid var(--line);
+        background: transparent;
+        color: var(--ink);
+        text-decoration: none;
+        font-family: "Oxanium", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .case-btn:hover {
+        background: var(--ink);
+        color: #ffffff;
+      }
+
+      .case-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 8px 8px 0 #111111;
+      }
+
+      .case-card:hover .case-panel {
+        transform: translate(-4px, -4px);
+        box-shadow: 7px 7px 0 #111111;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .case-card:hover .case-image {
+        transform: scale(1.03);
+      }
+
+      .case-card:hover .case-btn {
+        box-shadow: 5px 5px 0 #111111;
+      }
+
+      /* ─── RESPONSIVE ─────────────────────────────────────────── */
+      @media (max-width: 767.98px) {
+        .case-hero {
+          padding-top: 1rem;
+          padding-bottom: 1.5rem;
+        }
+
+        .case-filter-inner,
+        .case-count-inner {
+          width: 94%;
+        }
+
+        .case-filter-shell {
+          justify-content: flex-start;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 0.1rem;
+        }
+
+        .case-filter-shell::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .case-filter-shell::-webkit-scrollbar-thumb {
+          background: rgba(17, 17, 17, 0.22);
+        }
+
+        .case-panel {
+          min-height: auto;
+          margin: 0.85rem;
+          padding: 0.9rem;
+        }
+
+        .case-title {
+          font-size: 1.3rem;
+        }
+
+        .case-btn {
+          width: 100%;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .case-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="caseStudiesPage">
+    <div class="page-background"></div>
+
+    <div id="sticky-header">
+      <div id="navbar-placeholder"></div>
+
+      <section id="caseControls" aria-label="Project filters and count">
+        <div class="case-filter-row">
+          <div class="case-filter-inner">
+            <div
+              class="case-filter-shell"
+              role="radiogroup"
+              aria-label="Case study filters"
+            >
+              <input
+                class="case-filter-input"
+                type="radio"
+                name="case-filter"
+                id="filter-all"
+                data-filter="all"
+                checked
+              />
+              <label class="case-filter-label" for="filter-all">All</label>
+
+              <input
+                class="case-filter-input"
+                type="radio"
+                name="case-filter"
+                id="filter-uxui"
+                data-filter="uxui"
+              />
+              <label class="case-filter-label" for="filter-uxui">UX / UI</label>
+
+              <input
+                class="case-filter-input"
+                type="radio"
+                name="case-filter"
+                id="filter-frontend"
+                data-filter="frontend"
+              />
+              <label class="case-filter-label" for="filter-frontend"
+                >Front-End</label
+              >
+
+              <input
+                class="case-filter-input"
+                type="radio"
+                name="case-filter"
+                id="filter-fullstack"
+                data-filter="fullstack"
+              />
+              <label class="case-filter-label" for="filter-fullstack"
+                >Full Stack</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="case-count-strip">
+          <div class="case-count-inner">
+            <p class="case-result-text" aria-live="polite">
+              <span id="resultCount">10</span> projects
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <main class="case-page">
+      <section class="case-hero">
+        <h1>Case Studies</h1>
+        <p class="lead">
+          Explore my design and web projects across UX, UI, research-led
+          concepts, and front-end development.
+        </p>
+      </section>
+
+      <section class="case-grid-section">
+        <div class="container">
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4"
+            id="caseGrid"
+          >
+            <!-- 1. Filí App -->
+            <div class="col" data-tags="uxui">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/Filiappcasestudycard.svg"
+                    class="case-image"
+                    alt="Filí App mobile case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">UX / UI / Research</p>
+                  <h3 class="case-title">Filí App</h3>
+                  <p class="case-summary">
+                    A mobile app concept for an Irish-language rhyming
+                    dictionary designed to support creative learning, vocabulary
+                    retention, and sound-based exploration.
+                  </p>
+                  <div class="case-tags">
+                    <span>#Figma</span><span>#Mobile</span
+                    ><span>#Research</span>
+                  </div>
+                  <a href="filiapp.html" class="case-btn">View Project</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 2. Tóggo -->
+            <div class="col" data-tags="uxui">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/toggocasestudycard.svg"
+                    class="case-image"
+                    alt="Tóggo UX and interaction design case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">UX / Interaction Design</p>
+                  <h3 class="case-title">Tóggo</h3>
+                  <p class="case-summary">
+                    A UX and interaction design case study focused on shaping a
+                    clearer digital experience through research, user flows,
+                    interface design, and prototype thinking.
+                  </p>
+                  <div class="case-tags">
+                    <span>#UX</span><span>#Interaction Design</span
+                    ><span>#Prototype</span>
+                  </div>
+                  <a href="toggo.html" class="case-btn">View Project</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 3. Bua Sports -->
+            <div class="col" data-tags="uxui frontend fullstack">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/Buacasestudycard.svg"
+                    class="case-image"
+                    alt="Bua Sports Web Application case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">UX / UI / Full Stack</p>
+                  <h3 class="case-title">Bua Sports</h3>
+                  <p class="case-summary">
+                    A sports performance web application designed to help
+                    athletes and coaches track progress, set goals, and analyse
+                    results.
+                  </p>
+                  <div class="case-tags">
+                    <span>#UX</span><span>#UI</span><span>#Full Stack</span>
+                  </div>
+                  <a href="buasports.html" class="case-btn">View Project</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 4. Filí Web Application -->
+            <div class="col" data-tags="uxui frontend fullstack">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/Filiappwebcasestudycard.svg"
+                    class="case-image"
+                    alt="Filí Web Application case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">UX / UI / Full Stack</p>
+                  <h3 class="case-title">Filí Web Application</h3>
+                  <p class="case-summary">
+                    A full-stack Irish-language rhyming dictionary web app with
+                    authentication, rhyme search logic, learning games, and
+                    community features.
+                  </p>
+                  <div class="case-tags">
+                    <span>#UX</span><span>#UI</span><span>#Full Stack</span>
+                  </div>
+                  <a href="filiappweb.html" class="case-btn">View Project</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 5. Carpooling in Ireland -->
+            <div class="col" data-tags="uxui frontend">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/carpoolcasestudycard.svg"
+                    class="case-image"
+                    alt="A Legal Case for Carpooling in Ireland case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">Research / Front-End / Live Data</p>
+                  <h3 class="case-title">
+                    A Legal Case for Carpooling in Ireland
+                  </h3>
+                  <p class="case-summary">
+                    An informative public-facing website exploring the case for
+                    carpooling in Ireland, supported by public opinion survey
+                    data and live data visualisation.
+                  </p>
+                  <div class="case-tags">
+                    <span>#Research</span><span>#Survey</span
+                    ><span>#Live Data</span>
+                  </div>
+                  <a href="carpool-survey.html" class="case-btn"
+                    >View Project</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <!-- 6. TrailPulse -->
+            <div class="col" data-tags="uxui frontend fullstack">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/Trailpulsecasestudycard.svg"
+                    class="case-image"
+                    alt="TrailPulse Web Application case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">UX / UI / Full Stack</p>
+                  <h3 class="case-title">TrailPulse</h3>
+                  <p class="case-summary">
+                    A web application for outdoor trail discovery and activity
+                    tracking, built around intuitive navigation and
+                    community-driven content.
+                  </p>
+                  <div class="case-tags">
+                    <span>#UX</span><span>#UI</span><span>#Full Stack</span>
+                  </div>
+                  <a href="trailpulse.html" class="case-btn">View Project</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 7. Zenify -->
+            <div class="col" data-tags="uxui">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/Zenifycasestudycard.svg"
+                    class="case-image"
+                    alt="Zenify case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">UX / UI Concept</p>
+                  <h3 class="case-title">Zenify</h3>
+                  <p class="case-summary">
+                    A wellbeing-focused concept across web and mobile, aiming to
+                    create calmer, clearer and more supportive digital
+                    interactions.
+                  </p>
+                  <div class="case-tags">
+                    <span>#UX</span><span>#UI</span><span>#App Design</span>
+                  </div>
+                  <a href="zenify.html" class="case-btn">View Project</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 8. EdHub -->
+            <div class="col" data-tags="uxui frontend">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/Edhubcasestudycard.svg"
+                    class="case-image"
+                    alt="EdHub case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">UX / UI / Front-End</p>
+                  <h3 class="case-title">EdHub</h3>
+                  <p class="case-summary">
+                    An AI-assisted lesson-planning concept shaped through
+                    research, accessibility thinking, interface design, and
+                    product strategy.
+                  </p>
+                  <div class="case-tags">
+                    <span>#Research</span><span>#Accessibility</span
+                    ><span>#EdTech</span>
+                  </div>
+                  <a href="edhub.html" class="case-btn">View Project</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 9. Friendly Bean -->
+            <div class="col" data-tags="frontend">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/Friendlybeancasestudycard.svg"
+                    class="case-image"
+                    alt="Friendly Bean case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">Front-End / Live</p>
+                  <h3 class="case-title">Friendly Bean</h3>
+                  <p class="case-summary">
+                    A café-style web project combining front-end development
+                    with a stronger visual hierarchy and a more polished
+                    presentation.
+                  </p>
+                  <div class="case-tags">
+                    <span>#Live Site</span><span>#Front-End</span
+                    ><span>#Branding</span>
+                  </div>
+                  <a href="link-to-case-study-10" class="case-btn"
+                    >View Project</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <!-- 10. Killenard Community Centre -->
+            <div class="col" data-tags="frontend">
+              <article class="case-card">
+                <div class="case-image-wrap">
+                  <img
+                    src="images/CaseStudy/KillenardCCcasestudycard.svg"
+                    class="case-image"
+                    alt="Killenard Community Centre case study"
+                  />
+                </div>
+                <div class="case-panel">
+                  <p class="case-eyebrow">Front-End / Live / Community</p>
+                  <h3 class="case-title">Killenard Community Centre</h3>
+                  <p class="case-summary">
+                    A community website project designed to improve clarity,
+                    usability, and access to local information for a
+                    public-facing audience.
+                  </p>
+                  <div class="case-tags">
+                    <span>#Community</span><span>#Live Site</span
+                    ><span>#Front-End</span>
+                  </div>
+                  <a href="killenardcc.html" class="case-btn">View Project</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/nav.js" defer></script>
+    <script src="js/animation.js"></script>
+
+    <script>
+      /* Filter logic only — sticky behaviour is pure CSS */
+      (function () {
+        "use strict";
+
+        const grid = document.getElementById("caseGrid");
+        const radios = document.querySelectorAll(".case-filter-input");
+        const countEl = document.getElementById("resultCount");
+
+        function parseTags(attr) {
+          return (attr || "")
+            .toLowerCase()
+            .split(/[\s,]+/)
+            .filter(Boolean);
+        }
+
+        function applyFilter(filter) {
+          filter = filter || "all";
+          const required = filter === "all" ? [] : [filter.toLowerCase()];
+          let visible = 0;
+
+          grid.querySelectorAll(":scope > .col").forEach((col) => {
+            /* Keep hidden cards hidden, even when filters change */
+            if (col.dataset.hidden === "true") {
+              col.classList.add("case-hidden");
+              col.classList.remove("d-none");
+              return;
+            }
+
+            const tags = parseTags(col.dataset.tags);
+            const show =
+              required.length === 0 || required.every((t) => tags.includes(t));
+
+            col.classList.toggle("d-none", !show);
+
+            if (show) visible++;
+          });
+
+          countEl.textContent = visible;
+
+          const radio = document.querySelector(
+            '.case-filter-input[data-filter="' + filter + '"]'
+          );
+
+          if (radio) radio.checked = true;
+
+          const usp = new URLSearchParams(window.location.search);
+          filter === "all" ? usp.delete("type") : usp.set("type", filter);
+
+          history.replaceState(
+            null,
+            "",
+            window.location.pathname +
+              (usp.toString() ? "?" + usp.toString() : "") +
+              window.location.hash
+          );
+        }
+
+        radios.forEach((r) =>
+          r.addEventListener("change", function () {
+            applyFilter(this.dataset.filter);
+          })
+        );
+
+        applyFilter(
+          new URLSearchParams(window.location.search).get("type") || "all"
+        );
+      })();
+    </script>
+    <script src="assets/footer.js" defer></script>
+  </body>
+</html>
