@@ -346,6 +346,81 @@ html, body {
     color: inherit;
   }
 
+/* =========================================================
+   INDEX — PROCESS NAVIGATION CARDS
+   ========================================================= */
+
+   .process-cards {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .process-cards .card-link {
+    display: block;
+    height: 100%;
+  }
+  
+  .process-cards .process-card {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Keep current balanced desktop sizing */
+  .process-cards .card-img-top {
+    display: block;
+    width: 75%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  
+  /* =========================================================
+     INDEX PROCESS CARDS — MOBILE
+     ========================================================= */
+  
+  @media screen and (max-width: 767.98px) {
+  
+    /*
+      Each card now gets essentially the full width
+      of the main content area.
+    */
+    .process-cards {
+      width: 100%;
+    }
+  
+    .process-cards .process-card {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+  
+    /*
+      Increase the SVG/card artwork on mobile.
+      Existing global rule is 75%; mobile becomes 92%.
+    */
+    .process-cards .card-img-top {
+      width: 92%;
+      max-width: 380px;
+    }
+  
+    /* Keep description comfortably beneath artwork */
+    .process-cards .card-body {
+      padding: 0.75rem 0.5rem 1.25rem;
+    }
+  
+    .process-cards .card-text {
+      max-width: 34ch;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+  
+  }  
+
 /*FOOTER */ 
 footer{
   background-color: #000;
@@ -695,6 +770,103 @@ border: unset}
     left: 10px;
   }
 }
+
+/* =========================================================
+   TIMELINE — MOBILE PHONE LAYOUT
+   Line + icons sit OUTSIDE the content column
+   Applies only at 575.98px and below
+   ========================================================= */
+
+   @media screen and (max-width: 575.98px) {
+
+    /* Timeline itself uses the full available container width */
+    .timeline {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+  
+      /* Allow line/icons to extend outside the timeline */
+      overflow: visible;
+    }
+  
+    /* ---------------------------------------------------------
+       VERTICAL LINE
+       Positioned OUTSIDE the left edge of the content
+       --------------------------------------------------------- */
+    .timeline::after {
+      width: 3px;
+  
+      /* Negative value moves the line outside the timeline */
+      left: -18px;
+  
+      margin-left: 0;
+    }
+  
+    /* ---------------------------------------------------------
+       TIMELINE ITEMS
+       No horizontal space reserved for line/icon anymore
+       --------------------------------------------------------- */
+    .timeline-container {
+      width: 100%;
+  
+      /* Let the card use the entire available width */
+      padding-left: 0;
+      padding-right: 0;
+  
+      overflow: visible;
+    }
+  
+    /* All stacked cards read left-to-right */
+    .left-container,
+    .right-container {
+      left: 0;
+      text-align: left;
+    }
+  
+    /* ---------------------------------------------------------
+       TIMELINE ICON
+       Position it outside the content and centre it over line
+       --------------------------------------------------------- */
+    .left-container img,
+    .right-container img {
+      width: 24px;
+  
+      /*
+        Line centre is around -16.5px.
+        24px icon positioned at -28px places its centre
+        almost exactly over the line.
+      */
+      left: -28px;
+      right: auto;
+  
+      top: 28px;
+    }
+  
+    /* ---------------------------------------------------------
+       TEXT CARD
+       Can now occupy the complete timeline width
+       --------------------------------------------------------- */
+    .text-box {
+      width: 100%;
+      box-sizing: border-box;
+  
+      padding: 16px 14px;
+  
+      /* Slightly slimmer brutalist border on small screens */
+      border-width: 3px;
+    }
+  
+    /* Comfortable mobile body copy */
+    .text-box p {
+      font-size: 15px;
+      line-height: 1.55;
+    }
+  
+    .text-box small {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
 
 /*FORM CSS*/
 form {font-family: "Oxanium", serif;
