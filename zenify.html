@@ -2,853 +2,2522 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Zenify UX Case Study" />
-    <meta name="author" content="Stephen Hughes" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Zenify UX Case Study" name="description" />
+    <meta content="Stephen Hughes" name="author" />
     <title>SHUX Design | Zenify</title>
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="mystyle.css" rel="stylesheet" />
-
+    <link href="zenify-case-study-cleaned.css" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&amp;family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Oxanium:wght@200..800&amp;display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      /* --- Global helpers --- */
-      .case-figure {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .feature-img-wide {
-        width: 100%;
-        height: auto;
-      }
-      .section-intro {
-        max-width: 900px;
-        margin: 0 auto 1rem;
-      }
-
-      /* First hero image slightly smaller than full width */
-      .hero-wrapper {
-        max-width: 980px;
-        margin: 0 auto;
-      }
-      .hero-wrapper img {
-        width: 100%;
-        height: auto;
-      }
-
-      /* Alternating section spacing */
-      section.container {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
-      }
-
-      /* --- Carousel outside controls (clean icons, centered vertically) --- */
-      .carousel-outside {
-        position: relative;
-        padding: 0 4rem; /* room for outside controls */
-      }
-
-      .carousel-outside .carousel-inner img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-      }
-
-      /* Center controls vertically and push just outside the image */
-      .carousel-outside .carousel-control-prev,
-      .carousel-outside .carousel-control-next {
-        width: auto;
-        top: 50%;
-        bottom: auto;
-        transform: translateY(-50%); /* vertical centering */
-        opacity: 1;
-        filter: none;
-      }
-
-      /* Nudge them outside horizontally */
-      .carousel-outside .carousel-control-prev {
-        left: 0;
-        transform: translate(-60%, -50%);
-      }
-      .carousel-outside .carousel-control-next {
-        right: 0;
-        transform: translate(60%, -50%);
-      }
-
-      /* Use plain Bootstrap chevrons — no circle, no padding */
-      .carousel-outside .carousel-control-prev-icon,
-      .carousel-outside .carousel-control-next-icon {
-        background-color: transparent; /* remove black circle */
-        background-size: 100% 100%;
-        padding: 0;
-        border-radius: 0;
-        box-shadow: none;
-      }
-
-      /* Dots */
-      .carousel-outside .carousel-indicators [data-bs-target] {
-        background-color: #000;
-      }
-
-      /* Responsive tweaks */
-      @media (max-width: 991.98px) {
-        .carousel-outside {
-          padding: 0 3rem;
-        }
-        .carousel-outside .carousel-control-prev {
-          transform: translate(-50%, -50%);
-        }
-        .carousel-outside .carousel-control-next {
-          transform: translate(50%, -50%);
-        }
-      }
-      @media (max-width: 575.98px) {
-        .carousel-outside {
-          padding: 0 2.25rem;
-        }
-        /* If you want them visible on phones, delete the next two lines */
-        .carousel-outside .carousel-control-prev,
-        .carousel-outside .carousel-control-next {
-          display: none;
-        }
-      }
-    </style>
   </head>
-
   <body>
     <div class="page-background"></div>
-
     <!-- Navbar -->
     <div id="navbar-placeholder"></div>
-
     <!-- Header -->
     <header class="starter-template text-center mt-5">
       <h1>Zenify</h1>
       <p class="lead">
-        A web & mobile platform for youth mental wellbeing built on three
-        pillars: <strong>Meditation</strong>, <strong>Movement</strong>, and
-        <strong>Music</strong>.
+        A web &amp; mobile platform for youth mental wellbeing built on three
+        pillars:
+        <strong> Meditation </strong>
+        ,
+        <strong> Movement </strong>
+        , and
+        <strong> Music </strong>
+        .
       </p>
-      <p class="text-muted mb-0">Project duration: May ’23 – Sep ’23</p>
+      <p class="text-muted mb-0">
+        Project duration: May &rsquo;23 &ndash; Sep &rsquo;23
+      </p>
       <p class="text-muted">Role: UX Designer (end-to-end)</p>
     </header>
-
     <!-- =========================
          1) PROJECT OVERVIEW (CENTERED)
          Row 1: smaller hero image
          Row 2: overview text
          ========================= -->
-    <section class="container" id="section-product">
-      <!-- Row 1: Smaller hero image -->
-      <div class="row justify-content-center text-center mb-4">
-        <div class="col-12 hero-wrapper">
-          <img
-            src="images/CaseStudy/zenifycasestudy/zenifyheromockups.png"
-            class="img-fluid"
-            alt="Zenify hero mockups"
-          />
-        </div>
-      </div>
-      <!-- Row 2: Text -->
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-          <h3 class="text-center">The Product</h3>
-          <p class="section-intro text-center">
-            Zenify is an online and app-based platform aimed at improving young
-            people’s mental health. It blends guided practices and tools across
-            Meditation, Movement, and Music to build daily habits in a
-            youth-friendly, cost-conscious way.
-          </p>
-          <h6 class="text-center">My Responsibilities</h6>
-          <p class="text-center mb-0">
-            User research & interviews, personas, problem statements,
-            competitive audit, IA & wireframes, low/high-fidelity prototypes,
-            usability testing, accessibility, responsive design.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         PROBLEM (ALTERNATING: text left, image right)
-         ========================= -->
-    <section class="container" id="section-problem">
-      <div class="row align-items-center">
-        <div class="col-md-6 animate-left">
-          <h3>The Problem</h3>
-          <p>
-            Stress, anxiety, and depression are rising among young people. Many
-            lack accessible, structured, and engaging ways to practise wellbeing
-            at home. Zenify set out to deliver a clear, easy-to-use experience
-            that supports daily practice and self-management.
-          </p>
-        </div>
-        <div class="col-md-6 animate-right text-center">
-          <img
-            src="images/CaseStudy/Zenify/problem.png"
-            class="img-fluid feature-img"
-            alt="Problem framing"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         2) PERSONAS (CENTERED)
-         Row 1: text
-         Row 2: carousel with outside controls
-         ========================= -->
-    <section class="container" id="section-personas">
-      <!-- Text row -->
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-          <h3 class="text-center mb-3">Understanding the Users — Personas</h3>
-
-          <div class="mb-4">
-            <h5>Paul (21)</h5>
-            <p class="mb-2">
-              <strong>Problem statement:</strong> Paul is a uni student who
-              needs cost-effective meditation to manage exam stress and social
-              anxiety when meeting new people.
-            </p>
-            <ul class="mb-2">
-              <li>
-                <strong>Profile:</strong> Outgoing but under pressure; classes
-                are expensive.
-              </li>
-              <li>
-                <strong>Goals:</strong> Meet friends; reduce social anxiety.
-              </li>
-              <li>
-                <strong>Frustrations:</strong> Balancing study/social life;
-                class costs.
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h5>Maria (17)</h5>
-            <p class="mb-2">
-              <strong>Problem statement:</strong> Maria (ASD) wants to interact
-              with music and technology to relax and meditate after school.
-            </p>
-            <ul class="mb-2">
-              <li>
-                <strong>Profile:</strong> iPad apps fan; music therapy helped
-                but costly.
-              </li>
-              <li>
-                <strong>Goals:</strong> Daily routine; meditative interaction
-                with music.
-              </li>
-              <li>
-                <strong>Frustrations:</strong> Self-meditation without direction
-                feels repetitive.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carousel row -->
-      <div class="row justify-content-center text-center mt-3">
-        <div class="col-12 case-figure">
-          <div
-            id="personasCarousel"
-            class="carousel slide carousel-outside"
-            data-bs-ride="false"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/userpersonabob.png"
-                  class="d-block w-100"
-                  alt="User persona: Paul"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/userpersonamaria.png"
-                  class="d-block w-100"
-                  alt="User persona: Maria"
-                />
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#personasCarousel"
-              data-bs-slide="prev"
-              aria-label="Previous"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#personasCarousel"
-              data-bs-slide="next"
-              aria-label="Next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-            </button>
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#personasCarousel"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Paul"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#personasCarousel"
-                data-bs-slide-to="1"
-                aria-label="Maria"
-              ></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         RESEARCH & INSIGHTS (ALTERNATING: image left, text right)
-         ========================= -->
-    <section class="container" id="section-research">
-      <div class="row align-items-center flex-md-row-reverse">
-        <div class="col-md-6 animate-right">
-          <h3>Research & Insights</h3>
-          <p>
-            Research combined surveys, interviews, and a competitive audit of
-            meditation and music-therapy apps to understand needs and barriers.
-          </p>
-          <ul>
-            <li>Simple navigation and predictable controls across screens.</li>
-            <li>
-              Concise layouts for mobile; clear visual feedback during sessions.
-            </li>
-            <li>
-              Persistent access to primary areas (Meditation, Movement, Music).
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-6 animate-left text-center">
-          <img
-            src="images/CaseStudy/Zenify/competitive-audit.png"
-            class="img-fluid feature-img"
-            alt="Competitive audit summary"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         3) USER JOURNEY MAP (CENTERED)
-         Heading + desc, then carousel (outside controls)
-         ========================= -->
-    <section class="container" id="section-journey">
-      <div class="row justify-content-center text-center">
-        <div class="col-12 col-lg-10">
-          <h3>User Journey Map</h3>
-          <p class="section-intro">
-            Mapping typical scenarios highlighted key moments for guidance,
-            feedback, and habit-building across daily routines.
-          </p>
-        </div>
-      </div>
-      <div class="row justify-content-center text-center">
-        <div class="col-12 case-figure">
-          <div
-            id="journeyCarousel"
-            class="carousel slide carousel-outside"
-            data-bs-ride="false"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/journeymapbob.png"
-                  class="d-block w-100"
-                  alt="User journey map part 1"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/journeymapmaria.png"
-                  class="d-block w-100"
-                  alt="User journey map part 2"
-                />
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#journeyCarousel"
-              data-bs-slide="prev"
-              aria-label="Previous"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#journeyCarousel"
-              data-bs-slide="next"
-              aria-label="Next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-            </button>
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#journeyCarousel"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Journey 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#journeyCarousel"
-                data-bs-slide-to="1"
-                aria-label="Journey 2"
-              ></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         STARTING THE DESIGN (ALTERNATING: text left, image right)
-         ========================= -->
-    <section class="container" id="section-starting-design">
-      <div class="row align-items-center">
-        <div class="col-md-6 animate-left">
-          <h3>Starting the Design</h3>
-          <ul>
-            <li>
-              <strong>Digital wireframes</strong> set structure for web +
-              mobile.
-            </li>
-            <li>
-              <strong>Low-fidelity prototype</strong> linked core flows for
-              early testing.
-            </li>
-            <li>
-              <strong>Usability study</strong> captured prioritised findings.
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-6 animate-right text-center">
-          <img
-            src="images/CaseStudy/Zenify/wireframes-lowfi.png"
-            class="img-fluid feature-img"
-            alt="Digital wireframes & low-fi prototypes"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
+    <main class="zenify-case-study">
+      <!-- =========================
+     PROBLEM AREA
+     ========================= -->
+      <!-- ========================= PERSONAS ========================= -->
+      <!-- =========================
+     RESEARCH & INSIGHTS
+     ========================= -->
+      <!-- ========================= USER JOURNEY MAPPING ========================= -->
+      <!-- =========================
      4) COMPETITIVE AUDIT (CENTERED) — Modal + external link
      ========================= -->
-    <section class="container" id="section-competitive">
-      <div class="row justify-content-center text-center">
-        <div class="col-12 col-lg-10">
-          <h3>Competitive Audit</h3>
-          <p class="section-intro">
-            View the full audit (long, horizontal document). Open in a popup for
-            scroll/zoom, or in a new tab.
-          </p>
-          <div class="d-flex justify-content-center gap-3">
-            <button
-              class="btn btn-dark"
-              data-bs-toggle="modal"
-              data-bs-target="#auditModal"
-            >
-              Open in Popup
-            </button>
-            <a
-              class="btn btn-outline-dark"
-              href="https://docs.google.com/spreadsheets/d/1TZwYuJNnVIdRZDnpFb24mInY0rMvZegjYeLip8keWTs/edit?usp=sharing"
-              target="_blank"
-              rel="noopener"
-            >
-              Open in New Tab
-            </a>
+      <!-- =========================
+     REFINING THE DESIGN
+     Image left 2/3 — Text right 1/3
+     ========================= -->
+      <!-- ========================= USABILITY TESTING ========================= -->
+      <!-- =========================
+     HIGH-FIDELITY PROTOTYPE
+     Row 1: text
+     Row 2: full-width image
+     ========================= -->
+      <!-- =========================
+         ACCESSIBILITY (ALTERNATING: image left, text right)
+         ========================= -->
+      <!-- ========================= INFORMATION ARCHITECTURE ========================= -->
+      <!-- =========================
+         OUTCOMES (ALTERNATING: image left, text right)
+         ========================= -->
+      <!-- =========================
+         Prototype Embeds
+         ========================= -->
+      <section class="container" id="section-product">
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-12 hero-wrapper">
+            <img
+              alt="Zenify mobile and web interface mockups"
+              class="img-fluid"
+              src="images/CaseStudy/zenifycasestudy/zenifyheromockups.png"
+            />
           </div>
         </div>
-      </div>
-
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="auditModal"
-        tabindex="-1"
-        aria-labelledby="auditModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="auditModalLabel">
-                Competitive Audit
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="ratio ratio-audit">
-                <!-- Embed Google Sheets directly -->
-                <iframe
-                  id="auditFrame"
-                  src="https://docs.google.com/spreadsheets/d/1TZwYuJNnVIdRZDnpFb24mInY0rMvZegjYeLip8keWTs/preview"
-                  title="Zenify competitive audit"
-                  style="border: 0; width: 100%; height: 80vh"
-                  allowfullscreen
-                ></iframe>
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label"> Product </span>
+            <h3>A Three-Pillar Wellbeing Platform</h3>
+            <p class="section-intro">
+              Zenify is a web and mobile wellbeing platform for young people,
+              built around three complementary modes of everyday support:
+              <strong> Meditation </strong>
+              ,
+              <strong> Movement </strong>
+              and
+              <strong> Music </strong>
+              . Rather than treating wellbeing as a single activity, the product
+              brings these three areas into one connected experience alongside
+              lightweight tools for mood, sleep, routines and personal goals.
+              The concept was designed to be easy to return to each day, giving
+              users short activities and practical tools that can support
+              healthier habits over time.
+            </p>
+          </div>
+        </div>
+        <div class="row g-3 mt-3 zenify-offering-grid">
+          <!-- 01 Meditation -->
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="zenify-info-card">
+              <span class="zenify-card-number"> 01 </span>
+              <div class="zenify-offering-icon-wrap">
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="zenify-offering-icon"
+                  src="images/CaseStudy/zenifycasestudy/meditationicon.svg"
+                />
               </div>
-              <p class="small mt-2">
-                If the file doesn't render,
-                <a
-                  href="https://docs.google.com/spreadsheets/d/1TZwYuJNnVIdRZDnpFb24mInY0rMvZegjYeLip8keWTs/edit?usp=sharing"
-                  target="_blank"
-                  rel="noopener"
-                  >open it in a new tab</a
-                >.
+              <h5>Meditation</h5>
+              <p class="mb-0">
+                Mindfulness, guided meditation, breathing and affirmation-based
+                activities for stress reduction and regular reflective practice.
+              </p>
+            </article>
+          </div>
+          <!-- 02 Movement -->
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="zenify-info-card">
+              <span class="zenify-card-number"> 02 </span>
+              <div class="zenify-offering-icon-wrap">
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="zenify-offering-icon"
+                  src="images/CaseStudy/zenifycasestudy/movementicon.svg"
+                />
+              </div>
+              <h5>Movement</h5>
+              <p class="mb-0">
+                Simple movement options including stretching, yoga and running,
+                extending the experience beyond screen-based meditation.
+              </p>
+            </article>
+          </div>
+          <!-- 03 Music -->
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="zenify-info-card">
+              <span class="zenify-card-number"> 03 </span>
+              <div class="zenify-offering-icon-wrap">
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="zenify-offering-icon"
+                  src="images/CaseStudy/zenifycasestudy/musicicon.svg"
+                />
+              </div>
+              <h5>Music</h5>
+              <p class="mb-0">
+                Music-led relaxation with a player, artist content and
+                lyric-based interaction designed to make wellbeing feel less
+                clinical.
+              </p>
+            </article>
+          </div>
+          <!-- 04 Tools -->
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="zenify-info-card">
+              <span class="zenify-card-number"> 04 </span>
+              <div class="zenify-offering-icon-wrap">
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="zenify-offering-icon"
+                  src="images/CaseStudy/zenifycasestudy/toolsicon.svg"
+                />
+              </div>
+              <h5>Support Tools</h5>
+              <p class="mb-0">
+                Energy tracking, sleep quality, weekly scheduling, mood
+                journaling and personal targets to support reflection and habit
+                building.
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 col-lg-10">
+            <div class="zenify-responsibility-strip text-center">
+              <strong> My responsibilities: </strong>
+              User research, personas, problem statements, competitive audit,
+              information architecture, wireframes, low/high-fidelity
+              prototypes, usability testing, accessibility and responsive
+              design.
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container" id="section-problem">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10 col-xl-9 animate-up">
+            <span class="mini-label"> Problem Area </span>
+            <h2 class="zenify-problem-title">
+              Young People Need Wellbeing Support
+              <span> Before, Between and Beyond Appointments </span>
+            </h2>
+            <p class="zenify-problem-lead">
+              Accessing counselling and mental-health support is not always
+              immediate. Cost, limited availability and waiting lists can leave
+              young people without practical support at the point when they may
+              need it most.
+            </p>
+            <p class="zenify-problem-body">
+              Zenify explored how a digital wellbeing platform could help bridge
+              that everyday gap without positioning itself as a replacement for
+              professional care. The challenge was to create something
+              accessible enough to use regularly, while bringing together
+              <strong> Meditation </strong>
+              ,
+              <strong> Movement </strong>
+              and
+              <strong> Music </strong>
+              as three complementary approaches to wellbeing.
+            </p>
+            <p class="zenify-problem-body mb-0">
+              Rather than asking users to wait until support becomes available
+              or rely on a single type of activity, the product needed to offer
+              simple tools for managing stress, building routines and developing
+              healthier habits as part of everyday life.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container" id="section-research">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10 col-xl-9 animate-up">
+            <span class="mini-label"> Research </span>
+            <h2 class="zenify-research-title">
+              Understanding the Users, Their Routines
+              <span> and the Existing Wellbeing Landscape </span>
+            </h2>
+            <p class="zenify-research-lead">
+              The research phase combined persona development, user journey
+              mapping, problem statements and competitive analysis to understand
+              both the everyday needs of young users and the wider
+              wellbeing-product landscape.
+            </p>
+            <p class="zenify-research-body">
+              Four direct competitors &mdash;
+              <strong> Headspace </strong>
+              ,
+              <strong> Calm </strong>
+              ,
+              <strong> Insight Timer </strong>
+              and
+              <strong> Spoke </strong>
+              &mdash; were reviewed across navigation, content discovery,
+              accessibility, branding, user flow and premium-content
+              restrictions.
+            </p>
+            <p class="zenify-research-body">
+              The research was used to examine where young people might need
+              practical support in daily life, how easily existing products help
+              users find relevant content, and where Zenify's three-part model
+              could offer a distinct but coherent experience.
+            </p>
+            <div class="zenify-research-takeaways">
+              <span> Access &amp; Affordability </span>
+              <span> Daily Routines &amp; Habits </span>
+              <span> Content Discovery </span>
+              <span> Competitor Positioning </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container" id="section-personas">
+        <!-- ========================= SECTION INTRO ========================= -->
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label"> User Research </span>
+            <h3>Understanding the Users &mdash; Personas</h3>
+            <p class="section-intro">
+              Two personas were developed from the research to represent
+              different motivations for using Zenify. Paul focuses on
+              affordable, flexible support for stress and social anxiety, while
+              Maria represents a more music-led and routine-based approach to
+              relaxation and wellbeing.
+            </p>
+          </div>
+        </div>
+        <!-- ========================= PERSONA SUMMARY CARDS ========================= -->
+        <div class="row g-4 mt-3 zenify-persona-summary-row">
+          <!-- ========================= PAUL ========================= -->
+          <div class="col-12 col-lg-6">
+            <article class="zenify-persona-summary-card">
+              <div class="zenify-persona-summary-header">
+                <div>
+                  <span class="zenify-persona-number"> Persona 01 </span>
+                  <h4>Paul</h4>
+                </div>
+                <span class="zenify-persona-age"> 21 </span>
+              </div>
+              <!-- Problem -->
+              <div class="zenify-persona-problem">
+                <span> Problem Statement </span>
+                <p class="mb-0">
+                  Paul is a university student who needs an affordable and
+                  accessible way to use meditation to manage exam stress and
+                  social anxiety.
+                </p>
+              </div>
+              <!-- Details -->
+              <div class="zenify-persona-details">
+                <div class="zenify-persona-detail">
+                  <span> Profile </span>
+                  <p>
+                    Outgoing and socially active, but often under pressure from
+                    study, exams and the cost of attending wellbeing classes.
+                  </p>
+                </div>
+                <div class="zenify-persona-detail">
+                  <span> Goals </span>
+                  <p>
+                    Reduce social anxiety, manage stress more effectively and
+                    balance academic demands with an active social life.
+                  </p>
+                </div>
+                <div class="zenify-persona-detail">
+                  <span> Frustrations </span>
+                  <p>
+                    Balancing study and social commitments can feel
+                    overwhelming, while regular meditation or wellbeing classes
+                    may be too expensive.
+                  </p>
+                </div>
+                <div class="zenify-persona-detail">
+                  <span> Needs </span>
+                  <p>
+                    Low-cost, flexible wellbeing activities that fit around his
+                    existing routine and are available whenever stress begins to
+                    build.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- ========================= MARIA ========================= -->
+          <div class="col-12 col-lg-6">
+            <article class="zenify-persona-summary-card">
+              <div class="zenify-persona-summary-header">
+                <div>
+                  <span class="zenify-persona-number"> Persona 02 </span>
+                  <h4>Maria</h4>
+                </div>
+                <span class="zenify-persona-age"> 17 </span>
+              </div>
+              <!-- Problem -->
+              <div class="zenify-persona-problem">
+                <span> Problem Statement </span>
+                <p class="mb-0">
+                  Maria wants to use music and familiar digital technology as a
+                  more engaging way to relax, regulate her mood and unwind after
+                  school.
+                </p>
+              </div>
+              <!-- Details -->
+              <div class="zenify-persona-details">
+                <div class="zenify-persona-detail">
+                  <span> Profile </span>
+                  <p>
+                    Comfortable using iPad apps and digital media. Previous
+                    music therapy was helpful, but ongoing sessions were
+                    expensive.
+                  </p>
+                </div>
+                <div class="zenify-persona-detail">
+                  <span> Goals </span>
+                  <p>
+                    Build a dependable daily relaxation routine and use music as
+                    a more interactive route into meditation and wellbeing.
+                  </p>
+                </div>
+                <div class="zenify-persona-detail">
+                  <span> Frustrations </span>
+                  <p>
+                    Self-guided meditation can feel repetitive and difficult to
+                    sustain when there is little direction or variation.
+                  </p>
+                </div>
+                <div class="zenify-persona-detail">
+                  <span> Needs </span>
+                  <p>
+                    Clear guidance, familiar digital interactions and varied
+                    music-based activities that make regular practice easier to
+                    maintain.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- ========================= ORIGINAL PERSONA ARTEFACTS ========================= -->
+        <div class="row justify-content-center text-center mt-5">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label"> Persona Artefacts </span>
+            <h4 class="zenify-persona-subheading">Detailed Persona Profiles</h4>
+            <p class="section-intro">
+              The original persona boards contain the fuller research profiles
+              used during the design process. Use the controls below to view
+              each persona.
+            </p>
+          </div>
+        </div>
+        <!-- ========================= PERSONA CAROUSEL ========================= -->
+        <div class="row justify-content-center text-center mt-3">
+          <div class="col-12 case-figure">
+            <div
+              class="carousel slide carousel-outside"
+              data-bs-interval="false"
+              data-bs-ride="false"
+              id="personasCarousel"
+            >
+              <div class="carousel-inner">
+                <!-- Paul -->
+                <div class="carousel-item active">
+                  <img
+                    alt="Detailed Zenify user persona for Paul"
+                    class="d-block w-100"
+                    src="images/CaseStudy/zenifycasestudy/userpersonabob.png"
+                  />
+                  <div class="zenify-persona-carousel-caption">
+                    <strong> Paul, 21 </strong>
+                    <span>
+                      Stress management, affordability and flexible meditation
+                    </span>
+                  </div>
+                </div>
+                <!-- Maria -->
+                <div class="carousel-item">
+                  <img
+                    alt="Detailed Zenify user persona for Maria"
+                    class="d-block w-100"
+                    src="images/CaseStudy/zenifycasestudy/userpersonamaria.png"
+                  />
+                  <div class="zenify-persona-carousel-caption">
+                    <strong> Maria, 17 </strong>
+                    <span>
+                      Music-led relaxation, routine and guided interaction
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Previous -->
+              <button
+                aria-label="Previous persona"
+                class="carousel-control-prev"
+                data-bs-slide="prev"
+                data-bs-target="#personasCarousel"
+                type="button"
+              >
+                <span aria-hidden="true" class="carousel-control-prev-icon">
+                </span>
+              </button>
+              <!-- Next -->
+              <button
+                aria-label="Next persona"
+                class="carousel-control-next"
+                data-bs-slide="next"
+                data-bs-target="#personasCarousel"
+                type="button"
+              >
+                <span aria-hidden="true" class="carousel-control-next-icon">
+                </span>
+              </button>
+              <!-- Indicators -->
+              <div class="carousel-indicators">
+                <button
+                  aria-current="true"
+                  aria-label="Paul persona"
+                  class="active"
+                  data-bs-slide-to="0"
+                  data-bs-target="#personasCarousel"
+                  type="button"
+                ></button>
+                <button
+                  aria-label="Maria persona"
+                  data-bs-slide-to="1"
+                  data-bs-target="#personasCarousel"
+                  type="button"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container-xl" id="section-journey">
+        <!-- SECTION INTRO -->
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label"> Journey Mapping </span>
+            <h3>User Journey Maps</h3>
+            <p class="section-intro">
+              The journey maps explored two different wellbeing contexts:
+              Maria&rsquo;s everyday routine and Paul&rsquo;s attempt to
+              introduce meditation into his study and social life. Mapping
+              actions, emotions and pain points helped identify where Zenify
+              could provide timely guidance rather than simply offering another
+              library of wellbeing content.
+            </p>
+          </div>
+        </div>
+        <!-- =========================================================
+       MARIA
+       ========================================================= -->
+        <div class="zenify-journey-block">
+          <div class="zenify-journey-header">
+            <div>
+              <span class="zenify-journey-number"> Journey 01 </span>
+              <h4>Maria &mdash; Supporting a Daily Routine</h4>
+            </div>
+            <p>
+              <strong> Goal: </strong>
+              Needs a simple tool to help structure her routine and support
+              wellbeing at different points throughout the day.
+            </p>
+          </div>
+          <div
+            aria-label="Maria user journey map"
+            class="zenify-journey-scroll"
+            role="region"
+            tabindex="0"
+          >
+            <table class="zenify-journey-table">
+              <thead>
+                <tr>
+                  <th scope="col">Journey Stage</th>
+                  <th scope="col">Beginning of Day</th>
+                  <th scope="col">Middle of Day</th>
+                  <th scope="col">Evening</th>
+                  <th scope="col">Night Time</th>
+                  <th scope="col">Next Day</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- ACTIONS -->
+                <tr>
+                  <th scope="row">Actions</th>
+                  <td data-stage="Beginning of Day">
+                    <ul>
+                      <li>Gets ready for school</li>
+                      <li>Attends classes</li>
+                    </ul>
+                  </td>
+                  <td data-stage="Middle of Day">
+                    <ul>
+                      <li>Completes homework</li>
+                      <li>Eats dinner</li>
+                      <li>Exercises</li>
+                    </ul>
+                  </td>
+                  <td data-stage="Evening">
+                    <ul>
+                      <li>Watches TV</li>
+                      <li>Plays video games</li>
+                      <li>Uses social media</li>
+                      <li>Listens to music</li>
+                    </ul>
+                  </td>
+                  <td data-stage="Night Time">
+                    <ul>
+                      <li>Tries to wind down before sleep</li>
+                    </ul>
+                  </td>
+                  <td data-stage="Next Day">
+                    <ul>
+                      <li>Returns to school and repeats the routine</li>
+                    </ul>
+                  </td>
+                </tr>
+                <!-- EMOTIONS -->
+                <tr>
+                  <th scope="row">Emotional State</th>
+                  <td data-stage="Beginning of Day">
+                    Tired and unmotivated, with some anxiety, although she is
+                    happy to see friends.
+                  </td>
+                  <td data-stage="Middle of Day">
+                    Distracted, unmotivated and lethargic.
+                  </td>
+                  <td data-stage="Evening">
+                    Energetic but mentally restless; curious and engaged, yet
+                    easily distracted and increasingly tired.
+                  </td>
+                  <td data-stage="Night Time">
+                    Mind racing and prone to overthinking.
+                  </td>
+                  <td data-stage="Next Day">
+                    Still tired as the routine begins again.
+                  </td>
+                </tr>
+                <!-- OPPORTUNITIES -->
+                <tr class="zenify-opportunity-row">
+                  <th scope="row">Design Opportunities</th>
+                  <td data-stage="Beginning of Day">
+                    Help Maria prepare for the day through a simple morning
+                    routine and low-effort wellbeing prompts.
+                  </td>
+                  <td data-stage="Middle of Day">
+                    Provide tools that encourage focus and help reduce
+                    distraction during homework and other responsibilities.
+                  </td>
+                  <td data-stage="Evening">
+                    Introduce a more deliberate transition from stimulating
+                    activities into relaxation.
+                  </td>
+                  <td data-stage="Night Time">
+                    Offer calming audio, meditation or breathing activities that
+                    reduce stimulation and support winding down before bed.
+                  </td>
+                  <td data-stage="Next Day">
+                    Create an everyday wellbeing tool that can support different
+                    needs across the full daily routine rather than only one
+                    moment.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- =========================================================
+       PAUL
+       ========================================================= -->
+        <div class="zenify-journey-block">
+          <div class="zenify-journey-header">
+            <div>
+              <span class="zenify-journey-number"> Journey 02 </span>
+              <h4>Paul &mdash; Finding a Meditation That Fits</h4>
+            </div>
+            <p>
+              <strong> Goal: </strong>
+              Wants an accessible way to use meditation to manage study
+              pressure, unwind and better balance his academic and social life.
+            </p>
+          </div>
+          <div
+            aria-label="Paul user journey map"
+            class="zenify-journey-scroll"
+            role="region"
+            tabindex="0"
+          >
+            <table class="zenify-journey-table">
+              <thead>
+                <tr>
+                  <th scope="col">Journey Stage</th>
+                  <th scope="col">Need Arises</th>
+                  <th scope="col">Explores Options</th>
+                  <th scope="col">Finds a Meditation</th>
+                  <th scope="col">Uses Meditation</th>
+                  <th scope="col">After Meditation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- ACTIONS -->
+                <tr>
+                  <th scope="row">Actions</th>
+                  <td data-stage="Need Arises">
+                    <ul>
+                      <li>Finishes a period of studying</li>
+                      <li>Looks for a way to wind down</li>
+                    </ul>
+                  </td>
+                  <td data-stage="Explores Options">
+                    <ul>
+                      <li>Searches videos / YouTube</li>
+                      <li>Looks through podcasts</li>
+                      <li>Reads blogs and other online content</li>
+                    </ul>
+                  </td>
+                  <td data-stage="Finds a Meditation">
+                    <ul>
+                      <li>Chooses an online meditation</li>
+                    </ul>
+                  </td>
+                  <td data-stage="Uses Meditation">
+                    <ul>
+                      <li>Follows the meditation instructions</li>
+                      <li>Experiences some distraction during the session</li>
+                    </ul>
+                  </td>
+                  <td data-stage="After Meditation">
+                    <ul>
+                      <li>Feels more able to wind down</li>
+                      <li>Returns to studying or socialising</li>
+                    </ul>
+                  </td>
+                </tr>
+                <!-- EMOTIONS -->
+                <tr>
+                  <th scope="row">Emotional State</th>
+                  <td data-stage="Need Arises">
+                    Stressed, overwhelmed and anxious.
+                  </td>
+                  <td data-stage="Explores Options">
+                    Curious, but frustrated and uncertain about which option
+                    will actually help.
+                  </td>
+                  <td data-stage="Finds a Meditation">
+                    Intrigued and curious about trying the selected activity.
+                  </td>
+                  <td data-stage="Uses Meditation">
+                    Gradually more relaxed and content, although still slightly
+                    distracted.
+                  </td>
+                  <td data-stage="After Meditation">
+                    Calmer, but uncertain whether meditation will become
+                    something he returns to regularly.
+                  </td>
+                </tr>
+                <!-- OPPORTUNITIES -->
+                <tr class="zenify-opportunity-row">
+                  <th scope="row">Design Opportunities</th>
+                  <td data-stage="Need Arises">
+                    Provide ready-to-use meditation options so Paul does not
+                    need an established routine before getting started.
+                  </td>
+                  <td data-stage="Explores Options">
+                    Replace fragmented searching across videos, podcasts and
+                    blogs with a clearer, more personalised discovery
+                    experience.
+                  </td>
+                  <td data-stage="Finds a Meditation">
+                    Recommend activities based on available time, mood and the
+                    situation he is trying to manage.
+                  </td>
+                  <td data-stage="Uses Meditation">
+                    Personalise sessions around preferences and provide enough
+                    guidance to reduce distraction.
+                  </td>
+                  <td data-stage="After Meditation">
+                    Encourage repeat use through mobile access, progress
+                    feedback and simple prompts that help meditation become part
+                    of his routine.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container-xl" id="section-competitive">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label"> Competitive Research </span>
+            <h3>Competitive Audit</h3>
+            <p class="section-intro">
+              Four direct competitors were reviewed across product offering,
+              positioning, usability, accessibility, navigation, branding and
+              content. The audit showed that the products overlap heavily at a
+              feature level, but differ much more clearly in
+              <strong> how they package and position wellbeing </strong>
+              .
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-12">
+            <div class="zenify-subsection-heading">
+              <span class="mini-label"> Positioning Summary </span>
+              <h4>How the Competitors Position Wellbeing</h4>
+              <p>
+                Before the detailed comparison, the clearest strategic
+                difference between the four products was how each framed its
+                wellbeing offer.
+              </p>
+            </div>
+            <div class="zenify-position-grid">
+              <article class="zenify-position-card">
+                <div class="zenify-position-card__top">
+                  <span class="zenify-competitor-type"> Broad Toolkit </span>
+                  <h4>Headspace</h4>
+                </div>
+                <div
+                  class="zenify-position-block zenify-position-block--highlight"
+                >
+                  <span> Positioning </span>
+                  <p>
+                    A broad all-round wellbeing toolkit built around structured
+                    meditation, sleep and movement content.
+                  </p>
+                </div>
+              </article>
+              <article class="zenify-position-card">
+                <div class="zenify-position-card__top">
+                  <span class="zenify-competitor-type">
+                    Immersive Relaxation
+                  </span>
+                  <h4>Calm</h4>
+                </div>
+                <div
+                  class="zenify-position-block zenify-position-block--highlight"
+                >
+                  <span> Positioning </span>
+                  <p>
+                    A highly polished relaxation experience differentiated by
+                    ambience, visual identity and mood-led discovery.
+                  </p>
+                </div>
+              </article>
+              <article class="zenify-position-card">
+                <div class="zenify-position-card__top">
+                  <span class="zenify-competitor-type">
+                    Breadth &amp; Discovery
+                  </span>
+                  <h4>Insight Timer</h4>
+                </div>
+                <div
+                  class="zenify-position-block zenify-position-block--highlight"
+                >
+                  <span> Positioning </span>
+                  <p>
+                    A large discovery-led catalogue extending beyond meditation
+                    into yoga, work content and personal challenges.
+                  </p>
+                </div>
+              </article>
+              <article class="zenify-position-card">
+                <div class="zenify-position-card__top">
+                  <span class="zenify-competitor-type"> Music First </span>
+                  <h4>Spoke</h4>
+                </div>
+                <div
+                  class="zenify-position-block zenify-position-block--highlight"
+                >
+                  <span> Positioning </span>
+                  <p>
+                    A specialist music-led proposition combining psychologically
+                    themed audio, progress tracking and skills-based
+                    development.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="zenify-table-block">
+          <div class="zenify-subsection-heading">
+            <span class="mini-label"> Market Snapshot </span>
+            <h4>Product Offering &amp; Positioning</h4>
+            <p>
+              A concise comparison of who each product serves, what it offers
+              and the main reason a user might choose it over the others.
+            </p>
+          </div>
+          <div
+            aria-label="Zenify competitor market comparison"
+            class="zenify-table-scroll"
+            role="region"
+            tabindex="0"
+          >
+            <table class="zenify-audit-table zenify-audit-table--market">
+              <thead>
+                <tr>
+                  <th>Competitor</th>
+                  <th>Type</th>
+                  <th>Location</th>
+                  <th>Business size</th>
+                  <th>Price</th>
+                  <th>Target audience</th>
+                  <th>Product offering</th>
+                  <th>Refined unique value proposition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Headspace</th>
+                  <td>Direct</td>
+                  <td>Global</td>
+                  <td>Large</td>
+                  <td>
+                    Free trial; &euro;12.99 monthly or &euro;57.99 annually
+                  </td>
+                  <td>All ages; audit notes mostly 15&ndash;70</td>
+                  <td>
+                    Guided meditation, physical movement, Sleepcasts, music and
+                    broader self-help content.
+                  </td>
+                  <td class="zenify-uvp-cell">
+                    The broad all-round toolkit: structured meditation, sleep
+                    and movement content inside a deliberately simple hierarchy.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Calm</th>
+                  <td>Direct</td>
+                  <td>Global</td>
+                  <td>Large</td>
+                  <td>Free version; premium &euro;49.99 yearly</td>
+                  <td>All ages</td>
+                  <td>
+                    Guided meditation, movement, Sleepcasts and music, with
+                    mood-led suggestions and ambient backgrounds / sounds.
+                  </td>
+                  <td class="zenify-uvp-cell">
+                    The immersive relaxation experience: strong visual identity,
+                    configurable ambient backgrounds and sounds, and content
+                    discovery linked to mood.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Insight Timer</th>
+                  <td>Direct</td>
+                  <td>Global</td>
+                  <td>Large</td>
+                  <td>Free version; premium &euro;60 yearly</td>
+                  <td>
+                    All ages; also includes a business subscription option
+                  </td>
+                  <td>
+                    Guided meditation, music, movement, yoga, work-related
+                    content, personal challenges and broader discovery
+                    categories.
+                  </td>
+                  <td class="zenify-uvp-cell">
+                    The breadth-and-discovery competitor: a very wide content
+                    catalogue extending into yoga, work, personal challenges and
+                    business use.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Spoke</th>
+                  <td>Direct</td>
+                  <td>Global</td>
+                  <td>Small / Medium</td>
+                  <td>&pound;4.99 monthly or &pound;34.99 yearly</td>
+                  <td>
+                    Listed as all ages; audit felt the product leans strongly
+                    toward users in their 20s
+                  </td>
+                  <td>
+                    Music-centred meditation / music therapy with topical audio,
+                    progress tracking, Skills / Psych / Sound techniques and
+                    personal affirmations.
+                  </td>
+                  <td class="zenify-uvp-cell">
+                    The clearest specialist proposition: music-first wellbeing
+                    combined with psychologically themed content, progress
+                    tracking and skills-based development.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="zenify-table-block">
+          <div class="zenify-subsection-heading">
+            <span class="mini-label"> UX Comparison </span>
+            <h4>Experience Audit</h4>
+            <p>
+              The original positive and negative observations are retained
+              below, with the overall impression shown at the top of each cell.
+            </p>
+            <div class="zenify-audit-legend">
+              <span>
+                <strong> + </strong>
+                Positive observation
+              </span>
+              <span>
+                <strong> &minus; </strong>
+                Negative observation
+              </span>
+            </div>
+          </div>
+          <div
+            aria-label="Zenify competitor UX audit"
+            class="zenify-table-scroll"
+            role="region"
+            tabindex="0"
+          >
+            <table class="zenify-audit-table zenify-audit-table--ux">
+              <thead>
+                <tr>
+                  <th class="zenify-audit-sticky">Competitor</th>
+                  <th>Desktop</th>
+                  <th>App / Mobile</th>
+                  <th>Features</th>
+                  <th>Accessibility</th>
+                  <th>User Flow</th>
+                  <th>Navigation</th>
+                  <th>Brand Identity</th>
+                  <th>Tone</th>
+                  <th>Descriptiveness</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="zenify-audit-sticky" scope="row">Headspace</th>
+                  <td>
+                    <span class="zenify-rating zenify-rating--bad"> Bad </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Simple layout with only two footer tabs.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Desktop uses a narrow, mobile-like layout and does not
+                        make strong use of available screen space.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Basic white background was judged visually unappealing.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--okay">
+                      Okay
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Darker, more relaxing visual treatment with short
+                        sessions organised around a daily timeline.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Explore categories and search make content easy to find.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Large amounts of content are locked and repeated
+                        subscription CTAs interrupt the experience.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Wide mix of meditation, video and music content.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Much of the useful feature set is behind the paid
+                        subscription.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--very-good">
+                      Very Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Multiple languages, audio-description support, icons,
+                        clear text and headings.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Desktop remains unusually narrow and closely mirrors the
+                        mobile layout.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good*
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Key information is easy to find with a clear hierarchy.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Frequent subscription CTAs add friction to the flow.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good*
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Easy to navigate with clear clickable elements.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--okay">
+                      Okay*
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Calming darker colours, good fonts and art direction.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Audit felt the brand identity itself was not especially
+                        distinctive and buttons could stand out more.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <p class="zenify-tone-text">Friendly and encouraging</p>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good*
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Most captions are concise and include session duration.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Some content types could explain their purpose in more
+                        detail.
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="zenify-audit-sticky" scope="row">Calm</th>
+                  <td>
+                    <span class="zenify-rating zenify-rating--very-good">
+                      Very Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Very visually appealing and easy to use.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Strong left-side menu with clear icons and typography.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Lack of vertical scroll indicators can hide that more
+                        content is available.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--very-good">
+                      Very Good*
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Keeps the desktop visual theme and remains easy to
+                        navigate.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Clear branding.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Some icons do not clearly communicate their categories.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Large range of meditation, music, movement and mindful
+                        tools.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Mood selection uses emojis to suggest appropriate
+                        activities.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Many features are locked behind premium.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--okay">
+                      Okay
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Multiple languages, clear icons and readable hierarchy.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Audit could not identify a screen-reader option.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--very-good">
+                      Very Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Simple menu, easy to use and quick to find key
+                        information.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--very-good">
+                      Very Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Very easy and familiar to navigate, including swipe
+                        interactions.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        The first homepage carousel lacks a clear swipe
+                        indicator.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--outstanding">
+                      Outstanding
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Strong background choices, soothing audio, icons, colour
+                        scheme and large clickable thumbnails.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <p class="zenify-tone-text">Fun and indirect</p>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--very-good">
+                      Very Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Easy to follow, short and to the point.
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="zenify-audit-sticky" scope="row">Insight Timer</th>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Easy and familiar to navigate.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Audit noted the absence of a clear menu.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Discovery area uses large category thumbnails and clear
+                        icons.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Still lacks a conventional menu.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Very broad range of guided meditation, music, work
+                        content, challenges and yoga.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Premium content remains paywalled.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--okay">
+                      Okay
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Different language options are available.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--okay">
+                      Okay
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Objects are large enough to click and the experience
+                        flows normally.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Lack of a menu weakens orientation.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Simple and easy enough to navigate.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Audit still wanted a dedicated menu tab.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--bad"> Bad </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Audit found little or no distinctive brand identity.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <p class="zenify-tone-text">Friendly and encouraging</p>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--okay">
+                      Okay
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Thumbnail captions contain limited descriptive
+                        information.
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="zenify-audit-sticky" scope="row">Spoke</th>
+                  <td>
+                    <span class="zenify-rating zenify-rating--na"> N/A </span>
+                    <span class="zenify-audit-na">
+                      Not evaluated in the original audit.
+                    </span>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--outstanding">
+                      Outstanding
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Very strong modern brand identity and user-friendly
+                        presentation.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Music-focused content covers themes such as addiction,
+                        sex, money, relationships, identity and body image.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Progress tracking encourages continued use.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--very-good">
+                      Very Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Music-first feature set with Skills, Psych and Sound
+                        techniques.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Personal affirmation creation aims to disrupt negative
+                        thought patterns.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Progress tracking supports continued development.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--bad"> Bad </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        No settings tab identified.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        No alternative-language options found.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Audit felt the product appears strongly targeted to
+                        younger adults.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Progress tracker and clear categories make browsing
+                        easy.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Good use of horizontal and vertical scrolling.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Many routes lead to locked subscription content.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Progress tracker is useful and Skills / Psych / Sound
+                        gives a clear structure.
+                      </li>
+                      <li class="zenify-audit-minus">
+                        <span> - </span>
+                        Could benefit from filtering free versus premium
+                        content.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--outstanding">
+                      Outstanding
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Strong use of colour, typography, motion, imagery and
+                        photography.
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
+                    <p class="zenify-tone-text">Motivating and encouraging</p>
+                  </td>
+                  <td>
+                    <span class="zenify-rating zenify-rating--good">
+                      Good
+                    </span>
+                    <ul class="zenify-audit-notes">
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Tracks are descriptive and users can connect mood with
+                        different genres.
+                      </li>
+                      <li class="zenify-audit-plus">
+                        <span> + </span>
+                        Categories are clearly defined.
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="zenify-audit-takeaway">
+          <span class="mini-label"> Design Opportunity </span>
+          <h4>Where Zenify Could Sit</h4>
+          <p>
+            The audit suggested an opportunity between the broad meditation
+            libraries and Spoke&rsquo;s specialist music-first approach. Zenify
+            could differentiate through its
+            <strong> three-pillar model </strong>
+            : meditation for mental regulation, movement for physical release
+            and music for a more expressive route into wellbeing &mdash; with
+            all three supported by lightweight tracking and routine-building
+            tools.
+          </p>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container" id="section-ia">
+        <!-- TEXT -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 text-center">
+            <span class="mini-label"> Structure </span>
+            <h3>Information Architecture</h3>
+            <p class="section-intro">
+              The information architecture was designed around Zenify&rsquo;s
+              three core areas &mdash; Meditation, Movement and Music &mdash;
+              while keeping supporting wellbeing tools and account features easy
+              to reach. The structure aimed to give users clear routes into
+              different activities without making the platform feel overly
+              complex.
+            </p>
+          </div>
+        </div>
+        <!-- STRUCTURE SUMMARY -->
+        <div class="row justify-content-center mt-3">
+          <div class="col-12 col-lg-10">
+            <div class="row g-4 zenify-ia-summary">
+              <div class="col-12 col-md-6">
+                <div class="zenify-ia-text-block">
+                  <h5>Top-Level Areas</h5>
+                  <ul class="mb-0">
+                    <li>Home / Landing</li>
+                    <li>
+                      Meditation &mdash; Mindfulness, Breathing, Guided Sessions
+                      and Affirmations
+                    </li>
+                    <li>Movement &mdash; Stretching, Yoga and Running</li>
+                    <li>
+                      Music &mdash; Player, Artist Profile and Lyric Digest
+                    </li>
+                    <li>
+                      Tools &mdash; Energy Tracker, Sleep Quality, Weekly
+                      Schedule, Mood Journal and Targets
+                    </li>
+                    <li>
+                      Account &mdash; Login, Sign Up, Profile and Settings
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="zenify-ia-text-block">
+                  <h5>Navigation Approach</h5>
+                  <ul class="mb-0">
+                    <li>Persistent access to the three main wellbeing areas</li>
+                    <li>
+                      Quick links from Home for frequently used activities
+                    </li>
+                    <li>
+                      Supporting tools grouped separately from core content
+                    </li>
+                    <li>
+                      Clear separation between wellbeing content and account
+                      controls
+                    </li>
+                    <li>
+                      Consistent structure across mobile and web experiences
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FULL-WIDTH INFORMATION ARCHITECTURE -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <figure class="zenify-ia-figure mb-0">
+              <img
+                alt="Zenify information architecture showing the structure of the web and mobile experience"
+                class="zenify-ia-img"
+                loading="lazy"
+                src="images/CaseStudy/zenifycasestudy/zenifyinformationarcitecture.svg"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container-xl" id="section-usability">
+        <!-- =========================================================
+       INTRO
+       ========================================================= -->
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label"> Usability Testing </span>
+            <h3>Usability Study &mdash; Findings &amp; Prioritised Insights</h3>
+            <p class="section-intro">
+              Four participants tested the prototype and highlighted issues
+              around navigation, page differentiation, mobile usability,
+              interaction consistency and content discovery. The individual
+              observations were then grouped into recurring themes and
+              translated into actionable design improvements.
+            </p>
+          </div>
+        </div>
+        <!-- =========================================================
+       PARTICIPANT FINDINGS
+       ========================================================= -->
+        <div class="zenify-usability-subsection">
+          <div class="zenify-usability-heading text-center">
+            <span class="mini-label"> Participant Findings </span>
+            <h4>What Participants Observed</h4>
+            <p>
+              The tables below capture the issues and positive signals raised
+              during each session. Recurring patterns are synthesised afterwards
+              before being translated into design actions.
+            </p>
+          </div>
+          <!-- ========================= PERSON 1 ========================= -->
+          <div class="zenify-participant-block">
+            <div class="zenify-participant-header">
+              <span> Participant 01 </span>
+              <h5>Navigation, Interaction &amp; Visual Consistency</h5>
+            </div>
+            <div class="zenify-usability-table-wrap">
+              <table class="zenify-usability-table zenify-participant-table">
+                <thead>
+                  <tr>
+                    <th>Finding</th>
+                    <th>Participant Observation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Repetitive pages </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Several pages felt too similar, with limited
+                      differentiation between sections.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Back buttons not functioning </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Some back buttons did not work as expected, causing
+                      confusion and interrupting navigation.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> More menu access </strong>
+                    </td>
+                    <td data-label="Observation">
+                      The participant wanted an additional way to reach
+                      important pages directly from the menu.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Menu prominence </strong>
+                    </td>
+                    <td data-label="Observation">
+                      The menu control was not noticeable enough within the
+                      interface.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Music / Lyric Digest switching </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Switching between the Music section and Lyric Digest
+                      should feel more direct and seamless.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Bottom navigation controls </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Buttons and icons in the bottom menu felt too small.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Scrolling inconsistencies </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Some scrolling interactions did not function correctly.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Spacing inconsistencies </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Spacing between sections varied noticeably.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Border states </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Some interface borders appeared highlighted while others
+                      did not.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- ========================= PERSON 2 ========================= -->
+          <div class="zenify-participant-block">
+            <div class="zenify-participant-header">
+              <span> Participant 02 </span>
+              <h5>Discoverability, Navigation &amp; Mobile Controls</h5>
+            </div>
+            <div class="zenify-usability-table-wrap">
+              <table class="zenify-usability-table zenify-participant-table">
+                <thead>
+                  <tr>
+                    <th>Finding</th>
+                    <th>Participant Observation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Similar page layouts </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Many pages felt visually similar and could contain more
+                      differentiated information.
+                    </td>
+                  </tr>
+                  <tr class="zenify-positive-row">
+                    <td data-label="Finding">
+                      <strong> Content was easy to find </strong>
+                    </td>
+                    <td data-label="Observation">
+                      The participant was able to locate the requested page
+                      without difficulty.
+                    </td>
+                  </tr>
+                  <tr class="zenify-positive-row">
+                    <td data-label="Finding">
+                      <strong> Three-pillar concept </strong>
+                    </td>
+                    <td data-label="Observation">
+                      The participant responded positively to the Meditation,
+                      Movement and Music structure.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Music / Lyric Digest switching </strong>
+                    </td>
+                    <td data-label="Observation">
+                      A more seamless transition between Music and Lyric Digest
+                      was requested.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Bottom navigation controls </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Bottom-menu buttons and icons should be larger.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Scrolling behaviour </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Overall interaction felt smooth, but some scrolling
+                      controls did not behave correctly.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Spacing consistency </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Spacing between sections was not always consistent.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Border states </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Highlighted borders were not applied consistently.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- ========================= PERSON 3 ========================= -->
+          <div class="zenify-participant-block">
+            <div class="zenify-participant-header">
+              <span> Participant 03 </span>
+              <h5>Content, Data Visualisation &amp; Mobile Experience</h5>
+            </div>
+            <div class="zenify-usability-table-wrap">
+              <table class="zenify-usability-table zenify-participant-table">
+                <thead>
+                  <tr>
+                    <th>Finding</th>
+                    <th>Participant Observation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Video alongside audio </strong>
+                    </td>
+                    <td data-label="Observation">
+                      A video player was suggested as an additional option
+                      alongside audio content.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Sleep visualisation </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Sleep-quality information would be easier to understand
+                      with graphs or chart-based visualisation.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Homepage quick links </strong>
+                    </td>
+                    <td data-label="Observation">
+                      More quick links were requested on the homepage.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Bottom navigation controls </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Bottom navigation buttons and icons should be larger.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Mobile page length </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Some pages felt too long for a mobile experience.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- ========================= PERSON 4 ========================= -->
+          <div class="zenify-participant-block">
+            <div class="zenify-participant-header">
+              <span> Participant 04 </span>
+              <h5>Page Variety, Navigation &amp; Mobile Optimisation</h5>
+            </div>
+            <div class="zenify-usability-table-wrap">
+              <table class="zenify-usability-table zenify-participant-table">
+                <thead>
+                  <tr>
+                    <th>Finding</th>
+                    <th>Participant Observation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Repetitive pages </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Some screens felt repetitive and lacked sufficient
+                      differentiation.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Enhanced menu navigation </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Additional menu options would make different areas easier
+                      to access.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Sleep visualisation </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Graphs and visualisations would make sleep-quality
+                      information easier to interpret.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Homepage quick links </strong>
+                    </td>
+                    <td data-label="Observation">
+                      More quick links would reduce the effort required to reach
+                      relevant pages.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Finding">
+                      <strong> Mobile page layout </strong>
+                    </td>
+                    <td data-label="Observation">
+                      Mobile pages should be more concise and better reflect the
+                      dimensions of a phone interface.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- =========================================================
+       SYNTHESIS
+       ========================================================= -->
+        <div class="zenify-usability-subsection">
+          <div class="zenify-usability-heading text-center">
+            <span class="mini-label"> Synthesis </span>
+            <h4>Recurring Patterns Across Participants</h4>
+            <p>
+              Comparing the four sessions revealed several issues that appeared
+              more than once. These recurring observations carried more weight
+              when deciding what should be addressed in the next iteration.
+            </p>
+          </div>
+          <div class="zenify-usability-table-wrap">
+            <table class="zenify-usability-table zenify-synthesis-table">
+              <thead>
+                <tr>
+                  <th>Theme</th>
+                  <th>Participants</th>
+                  <th>What the Testing Suggested</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Page differentiation </strong>
+                  </td>
+                  <td data-label="Participants">P1, P2, P4</td>
+                  <td data-label="Testing Suggested">
+                    Several participants felt that screens were too repetitive.
+                    Consistency was useful, but individual sections needed
+                    stronger identities.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Bottom navigation size </strong>
+                  </td>
+                  <td data-label="Participants">P1, P2, P3</td>
+                  <td data-label="Testing Suggested">
+                    Mobile navigation controls needed larger touch targets.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Menu access </strong>
+                  </td>
+                  <td data-label="Participants">P1, P4</td>
+                  <td data-label="Testing Suggested">
+                    Primary navigation needed to be more noticeable and provide
+                    more direct routes to content.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Music / Lyric Digest connection </strong>
+                  </td>
+                  <td data-label="Participants">P1, P2</td>
+                  <td data-label="Testing Suggested">
+                    Closely related music features should feel like part of one
+                    continuous experience.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Scrolling reliability </strong>
+                  </td>
+                  <td data-label="Participants">P1, P2</td>
+                  <td data-label="Testing Suggested">
+                    Scrolling interactions needed more consistent behaviour.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Spacing consistency </strong>
+                  </td>
+                  <td data-label="Participants">P1, P2</td>
+                  <td data-label="Testing Suggested">
+                    A clearer spacing system was required to strengthen visual
+                    consistency.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Selection / border states </strong>
+                  </td>
+                  <td data-label="Participants">P1, P2</td>
+                  <td data-label="Testing Suggested">
+                    Active and inactive interface states needed to be easier to
+                    distinguish.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Sleep data visualisation </strong>
+                  </td>
+                  <td data-label="Participants">P3, P4</td>
+                  <td data-label="Testing Suggested">
+                    Wellbeing data would be easier to interpret through
+                    graphical summaries.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Homepage quick links </strong>
+                  </td>
+                  <td data-label="Participants">P3, P4</td>
+                  <td data-label="Testing Suggested">
+                    Frequently used areas should be available directly from the
+                    homepage.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Theme">
+                    <strong> Mobile content length </strong>
+                  </td>
+                  <td data-label="Participants">P3, P4</td>
+                  <td data-label="Testing Suggested">
+                    Mobile screens needed more concise layouts and stronger
+                    content prioritisation.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- =========================================================
+       ACTIONABLE INSIGHTS
+       ========================================================= -->
+        <div class="zenify-usability-subsection">
+          <div class="zenify-usability-heading text-center">
+            <span class="mini-label"> Actionable Insights </span>
+            <h4>Translating Findings Into Design Changes</h4>
+            <p>
+              Participant observations were converted into specific actions that
+              could be carried forward into the next design iteration.
+            </p>
+          </div>
+          <div class="zenify-usability-table-wrap">
+            <table class="zenify-usability-table zenify-action-table">
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>Actionable Insight</th>
+                  <th>Evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Area">Navigation</td>
+                  <td data-label="Action">
+                    Ensure all back buttons function consistently.
+                  </td>
+                  <td data-label="Evidence">P1</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Navigation</td>
+                  <td data-label="Action">
+                    Make the main menu more noticeable and prominent.
+                  </td>
+                  <td data-label="Evidence">P1</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Navigation</td>
+                  <td data-label="Action">
+                    Add more direct menu routes to important sections.
+                  </td>
+                  <td data-label="Evidence">P1, P4</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Content</td>
+                  <td data-label="Action">
+                    Increase visual and content differentiation between pages.
+                  </td>
+                  <td data-label="Evidence">P1, P2, P4</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Interaction</td>
+                  <td data-label="Action">
+                    Provide seamless switching between Music and Lyric Digest.
+                  </td>
+                  <td data-label="Evidence">P1, P2</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Mobile</td>
+                  <td data-label="Action">
+                    Increase the size of bottom-navigation buttons and icons.
+                  </td>
+                  <td data-label="Evidence">P1, P2, P3</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Interaction</td>
+                  <td data-label="Action">
+                    Resolve inconsistent scrolling behaviour.
+                  </td>
+                  <td data-label="Evidence">P1, P2</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Visual Design</td>
+                  <td data-label="Action">
+                    Apply consistent spacing between sections.
+                  </td>
+                  <td data-label="Evidence">P1, P2</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Visual Design</td>
+                  <td data-label="Action">
+                    Standardise highlighted and selected border states.
+                  </td>
+                  <td data-label="Evidence">P1, P2</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Media</td>
+                  <td data-label="Action">
+                    Explore a video player alongside the existing audio player.
+                  </td>
+                  <td data-label="Evidence">P3</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Data</td>
+                  <td data-label="Action">
+                    Add graphs and visual summaries to the Sleep Quality
+                    feature.
+                  </td>
+                  <td data-label="Evidence">P3, P4</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Discoverability</td>
+                  <td data-label="Action">
+                    Add more homepage quick links to frequently used content.
+                  </td>
+                  <td data-label="Evidence">P3, P4</td>
+                </tr>
+                <tr>
+                  <td data-label="Area">Mobile</td>
+                  <td data-label="Action">
+                    Make mobile pages more concise and better suited to smaller
+                    screens.
+                  </td>
+                  <td data-label="Evidence">P3, P4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- =========================================================
+       PRIORITISED INSIGHTS
+       ========================================================= -->
+        <div class="zenify-usability-subsection">
+          <div class="zenify-usability-heading text-center">
+            <span class="mini-label"> Prioritisation </span>
+            <h4>P0 &mdash; Critical Issues to Resolve First</h4>
+            <p>
+              Two findings were explicitly prioritised as P0 because they
+              directly affected users' ability to move confidently through the
+              product.
+            </p>
+          </div>
+          <div class="zenify-priority-grid">
+            <article class="zenify-priority-card">
+              <div class="zenify-priority-top">
+                <span class="zenify-priority-badge"> P0 </span>
+                <span> Navigation Reliability </span>
+              </div>
+              <h5>Fix Back-Button Behaviour</h5>
+              <p>
+                Ensure every back button works consistently so users can move
+                through the application without unexpected dead ends or
+                navigation errors.
+              </p>
+              <div class="zenify-priority-reason">
+                <strong> Why first: </strong>
+                Broken navigation interrupts task completion and undermines
+                trust in the interface.
+              </div>
+            </article>
+            <article class="zenify-priority-card">
+              <div class="zenify-priority-top">
+                <span class="zenify-priority-badge"> P0 </span>
+                <span> Navigation Visibility </span>
+              </div>
+              <h5>Make the Menu More Prominent</h5>
+              <p>
+                Increase the visibility and prominence of the primary menu so
+                users can quickly recognise how to reach the application's main
+                sections.
+              </p>
+              <div class="zenify-priority-reason">
+                <strong> Why first: </strong>
+                The menu is the main route into Meditation, Movement, Music and
+                supporting tools, so poor visibility affects the entire
+                experience.
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container" id="section-refining">
+        <div class="row align-items-center g-4">
+          <!-- LEFT: IMAGE -->
+          <div class="col-12 col-md-8 animate-left text-center">
+            <img
+              alt="Before and after Zenify interface mockups"
+              class="img-fluid zenify-before-after-img"
+              src="images/CaseStudy/zenifycasestudy/beforeafter.png"
+            />
+          </div>
+          <!-- RIGHT: TEXT -->
+          <div class="col-12 col-md-4 animate-right">
+            <span class="mini-label"> Iteration </span>
+            <h3>Refining the Design After Testing</h3>
+            <ul>
+              <li>
+                Back-button behaviour and menu visibility were treated as the
+                first navigation issues to resolve.
+              </li>
+              <li>
+                Bottom-navigation controls, scrolling behaviour and touch
+                targets were refined for a more dependable mobile experience.
+              </li>
+              <li>
+                Spacing, selected states and page hierarchy were made more
+                consistent to reduce the repetitive feel identified during
+                testing.
+              </li>
+              <li>
+                Direct routes to important content were strengthened, including
+                clearer menu access, homepage shortcuts and the relationship
+                between Music and Lyric Digest.
+              </li>
+            </ul>
+            <p class="mb-0">
+              Alongside these usability-led changes, the visual system was
+              refined with darker background tones and a clearer landing
+              experience before the final high-fidelity design was assembled.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container" id="section-accessibility">
+        <div class="row align-items-center flex-md-row-reverse">
+          <div class="col-md-6 animate-right">
+            <span class="mini-label"> Accessibility Review </span>
+            <h3>Accessibility Considerations</h3>
+            <ul>
+              <li>
+                Colour contrast was reviewed to support legibility across the
+                interface.
+              </li>
+              <li>
+                Navigation was kept persistent and predictable, particularly
+                through the web side menu.
+              </li>
+              <li>
+                Touch targets, labels and icon sizing were reviewed to make key
+                controls easier to identify and use.
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 animate-left text-center">
+            <img
+              alt="Accessibility"
+              class="img-fluid feature-img"
+              src="images/CaseStudy/zenifycasestudy/zenifyaccesibilityconsiderations.png"
+            />
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container text-center" id="section-prototype">
+        <!-- TEXT ROW -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label"> Final Design </span>
+            <h3 class="mb-3">High-Fidelity Design</h3>
+            <p class="section-intro">
+              The final interface brought together the refined navigation,
+              visual system and interaction patterns developed through research,
+              testing and iteration.
+            </p>
+            <p class="zenify-prototype-body">
+              The finished design reflects the usability priorities around menu
+              visibility, mobile controls, page hierarchy, content discovery and
+              consistency while retaining Zenify's overall wellbeing structure
+              and everyday support tools.
+            </p>
+            <p class="small text-muted mt-3 mb-0">
+              Final interface overview following usability testing and
+              prioritised refinement.
+            </p>
+          </div>
+        </div>
+        <!-- FULL-WIDTH IMAGE ROW -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <figure class="zenify-prototype-overview mb-0">
+              <img
+                alt="Overview of the Zenify high-fidelity prototype screens"
+                class="zenify-prototype-overview-img"
+                loading="lazy"
+                src="images/CaseStudy/zenifycasestudy/zenifyprototypeoverview.png"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <div class="section-divider"></div>
+      <!-- =========================
+     INTERACTIVE PROTOTYPES
+     Mobile App + Web Platform
+     ========================= -->
+      <section class="container-fluid px-0" id="section-prototypes">
+        <!-- ========================= SECTION INTRO ========================= -->
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-12 col-lg-10">
+              <span class="mini-label">Figma Prototypes</span>
+
+              <h3>Interactive Prototypes</h3>
+
+              <p class="section-intro">
+                Zenify was designed as two connected experiences: a
+                <strong>mobile app</strong> for accessible, everyday wellbeing
+                activities and a <strong>web platform</strong> that adapts the
+                same core content and visual identity to a larger-screen
+                experience.
+              </p>
+
+              <p class="zenify-prototypes-intro">
+                Both prototypes use the same three-pillar structure of
+                Meditation, Movement and Music, while adapting navigation,
+                interaction patterns and content presentation to suit each
+                device.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- =========================
-         REFINING THE DESIGN (ALTERNATING: image left, text right)
-         ========================= -->
-    <section class="container" id="section-refining">
-      <div class="row align-items-center flex-md-row-reverse">
-        <div class="col-md-6 animate-right">
-          <h3>Refining the Design</h3>
-          <ul>
-            <li>Darker background tones for improved content legibility.</li>
-            <li>
-              Web app: side menu with accordion drop-downs (always present).
-            </li>
-            <li>Carousel buttons on web for mouse-first interaction.</li>
-            <li>Landing page created to entice first-time users.</li>
-          </ul>
-          <p>These changes fed into the high-fidelity prototype.</p>
-        </div>
-        <div class="col-md-6 animate-left text-center">
-          <img
-            src="images/CaseStudy/zenifycasestudy/zenifybeforeafter1.png"
-            class="img-fluid feature-img"
-            alt="Before & after mockups"
-          />
-        </div>
-      </div>
-    </section>
+        <!-- =========================================================
+           01 — MOBILE APP
+           ========================================================= -->
+        <div class="zenify-prototype-section">
+          <div class="container">
+            <!-- MOBILE HEADING -->
+            <div class="row justify-content-center text-center">
+              <div class="col-12 col-lg-10">
+                <span class="zenify-prototype-number">01</span>
 
-    <!-- =========================
-     5) USABILITY STUDY FINDINGS (CENTERED) — Carousel (outside controls)
-     ========================= -->
-    <section class="container" id="section-usability">
-      <div class="row justify-content-center text-center">
-        <div class="col-12 col-lg-10">
-          <h3>Usability Study — Findings & Prioritised Insights</h3>
-          <p class="section-intro">
-            Key issues and prioritisation that shaped the next iteration.
-          </p>
-        </div>
-      </div>
-      <div class="row justify-content-center text-center">
-        <div class="col-12 case-figure">
-          <div
-            id="usabilityCarousel"
-            class="carousel slide carousel-outside"
-            data-bs-ride="false"
-          >
-            <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/zenifyusability1.png"
-                  class="d-block w-100"
-                  alt="Zenify usability finding 1"
-                />
-              </div>
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/zenifyusability2.png"
-                  class="d-block w-100"
-                  alt="Zenify usability finding 2"
-                />
-              </div>
-              <!-- Slide 3 -->
-              <div class="carousel-item">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/zenifyusability3.png"
-                  class="d-block w-100"
-                  alt="Zenify usability finding 3"
-                />
-              </div>
-              <!-- Slide 4 -->
-              <div class="carousel-item">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/zenifyusability4.png"
-                  class="d-block w-100"
-                  alt="Zenify usability finding 4"
-                />
-              </div>
-              <!-- Slide 5 -->
-              <div class="carousel-item">
-                <img
-                  src="images/CaseStudy/zenifycasestudy/zenifyprioritisedinsights.png"
-                  class="d-block w-100"
-                  alt="Zenify prioritised insights"
-                />
+                <span class="mini-label">Mobile App</span>
+
+                <h3>Zenify Mobile Experience</h3>
+
+                <p class="section-intro">
+                  The mobile experience was designed around quick, repeatable
+                  access to wellbeing activities throughout the day. Navigation
+                  prioritises the three core areas alongside supporting tools
+                  for mood, sleep, routines and personal goals.
+                </p>
               </div>
             </div>
 
-            <!-- Controls -->
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#usabilityCarousel"
-              data-bs-slide="prev"
-              aria-label="Previous"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#usabilityCarousel"
-              data-bs-slide="next"
-              aria-label="Next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-            </button>
-
-            <!-- Indicators -->
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#usabilityCarousel"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Finding 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#usabilityCarousel"
-                data-bs-slide-to="1"
-                aria-label="Finding 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#usabilityCarousel"
-                data-bs-slide-to="2"
-                aria-label="Finding 3"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#usabilityCarousel"
-                data-bs-slide-to="3"
-                aria-label="Finding 4"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#usabilityCarousel"
-                data-bs-slide-to="4"
-                aria-label="Prioritised insights"
-              ></button>
+            <!-- MOBILE PROTOTYPE -->
+            <div class="row justify-content-center mt-4">
+              <div class="col-12">
+                <div class="zenify-figma-frame zenify-figma-frame--mobile">
+                  <iframe
+                    class="zenify-figma-embed zenify-figma-embed--mobile"
+                    src="https://embed.figma.com/proto/5l6uO2mrzriUjhOSdIL8e3/ZENIFY-APP?page-id=0%3A1&amp;node-id=0-1878&amp;viewport=1266%2C200%2C0.51&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=0%3A1878&amp;embed-host=share"
+                    allowfullscreen
+                    loading="lazy"
+                    title="Zenify Mobile App Interactive Prototype"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- =========================
-         HIGH-FIDELITY PROTOTYPE (ALTERNATING: text left, image right)
-         ========================= -->
-    <section class="container text-center text-md-start" id="section-prototype">
-      <div class="row align-items-center">
-        <div class="col-md-6 animate-left">
-          <h3 class="mb-3">High-Fidelity Prototype</h3>
-          <p>
-            Explore the refined flows and visual design in the clickable
-            prototype.
-          </p>
-          <a href="#" class="btn btn-dark mt-2" target="_blank"
-            >Open Prototype</a
-          >
-          <p class="small text-muted mt-3 mb-0">
-            Incorporates improvements from usability testing.
-          </p>
-        </div>
-        <div class="col-md-6 animate-right text-center">
-          <img
-            src="images/CaseStudy/zenifycasestudy/zenifyprototypeoverview.png"
-            class="img-fluid feature-img mt-3 mt-md-0"
-            alt="High fidelity screens"
-          />
-        </div>
-      </div>
-    </section>
+        <!-- ========================= INTERNAL DIVIDER ========================= -->
+        <div class="zenify-prototype-divider"></div>
 
-    <!-- =========================
-         ACCESSIBILITY (ALTERNATING: image left, text right)
-         ========================= -->
-    <section class="container" id="section-accessibility">
-      <div class="row align-items-center flex-md-row-reverse">
-        <div class="col-md-6 animate-right">
-          <h3>Accessibility Considerations</h3>
-          <ul>
-            <li>Colour-contrast checks throughout.</li>
-            <li>Persistent, predictable navigation (web side menu).</li>
-            <li>Large, tappable targets; clear labels and icon sizing.</li>
-          </ul>
-        </div>
-        <div class="col-md-6 animate-left text-center">
-          <img
-            src="images/CaseStudy/zenifycasestudy/zenifyaccesibilityconsiderations.png"
-            class="img-fluid feature-img"
-            alt="Accessibility"
-          />
-        </div>
-      </div>
-    </section>
+        <!-- =========================================================
+           02 — WEB PLATFORM
+           ========================================================= -->
+        <div class="zenify-prototype-section">
+          <div class="container">
+            <!-- WEB HEADING -->
+            <div class="row justify-content-center text-center">
+              <div class="col-12 col-lg-10">
+                <span class="zenify-prototype-number">02</span>
 
-    <!-- =========================
-         INFORMATION ARCHITECTURE (ALTERNATING: text left, image right)
-         ========================= -->
-    <section class="container" id="section-ia">
-      <div class="row align-items-center">
-        <div class="col-md-6 animate-left">
-          <h3>Information Architecture</h3>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <h6 class="mt-2">Top-Level</h6>
-              <ul>
-                <li>Home (Landing / Sign Up CTA)</li>
-                <li>Meditation (Mindfulness, Yoga, Breathing, Affirmations)</li>
-                <li>Movement (Stretching, Running)</li>
-                <li>Music (Player, Artist Profile, Lyric Digest)</li>
-                <li>
-                  Tools (Energy Tracker, Sleep Quality, Weekly Schedule, Mood
-                  Journal, Targets)
-                </li>
-                <li>Account (Login, Sign Up, Profile, Settings)</li>
-              </ul>
+                <span class="mini-label">Web Platform</span>
+
+                <h3>Zenify Web Experience</h3>
+
+                <p class="section-intro">
+                  The web experience carries the same wellbeing ecosystem onto a
+                  larger screen, using the additional space to create clearer
+                  content hierarchy, persistent navigation and more expansive
+                  layouts without changing the underlying product structure.
+                </p>
+              </div>
             </div>
-            <div class="col-12 col-md-6">
-              <h6 class="mt-2">Key Elements</h6>
-              <ul>
-                <li>Media player (audio; planned video)</li>
-                <li>Quick links on Home for faster access</li>
-                <li>Graphs/pie charts for Sleep Quality (planned)</li>
-              </ul>
+
+            <!-- WEB PROTOTYPE -->
+            <div class="row justify-content-center mt-4">
+              <div class="col-12">
+                <div class="zenify-figma-frame zenify-figma-frame--web">
+                  <iframe
+                    class="zenify-figma-embed zenify-figma-embed--web"
+                    src="https://embed.figma.com/proto/zc4d8mW1LrLswHF0c560H2/ZENIFY-WEBSITE?node-id=1-153&amp;viewport=-186%2C244%2C0.04&amp;scaling=contain&amp;content-scaling=fixed&amp;starting-point-node-id=1%3A153&amp;show-proto-sidebar=1&amp;page-id=0%3A1&amp;embed-host=share"
+                    allowfullscreen
+                    loading="lazy"
+                    title="Zenify Web Platform Interactive Prototype"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6 animate-right text-center">
-          <img
-            src="images/CaseStudy/zenifycasestudy/zenifyinformationarcitecture.png"
-            class="img-fluid feature-img"
-            alt="Sitemap"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         OUTCOMES (ALTERNATING: image left, text right)
-         ========================= -->
-    <section class="container" id="section-outcomes">
-      <div class="row justify-content-center text-center">
-        <div class="col-12 col-lg-10">
-          <h3>Outcomes &amp; Next Steps</h3>
-          <p class="section-intro">
-            Zenify was developed as a calm digital wellbeing concept spanning
-            both mobile and web. The final outcome demonstrates how the same
-            core experience can adapt across devices while maintaining a
-            consistent visual identity, clear interaction patterns, and a softer
-            wellness-led interface. The next stage would involve expanding the
-            prototypes into a more complete design system, refining
-            microinteractions, and testing the experience with users to validate
-            ease of use, emotional tone, and feature clarity.
-          </p>
-        </div>
-      </div>
-    </section>
-    <!-- =========================
-         Prototype Embeds
-         ========================= -->
-    <section class="container-fluid px-0" id="section-prototypes">
-      <div class="text-center mb-5">
-        <h3>Interactive Prototype</h3>
-        <p class="section-intro">Explore the Zenify prototype below</p>
-      </div>
-
-      <div class="prototype-block">
-        <div class="container">
-          <div class="figma-full-wrap">
-            <iframe
-              class="figma-full"
-              src="https://embed.figma.com/proto/5l6uO2mrzriUjhOSdIL8e3/ZENIFY-APP?page-id=0%3A1&node-id=0-1878&viewport=1266%2C200%2C0.51&scaling=scale-down&content-scaling=fixed&starting-point-node-id=0%3A1878&embed-host=share"
-              allowfullscreen
-              loading="lazy"
-              title="Zenify Mobile App Prototype"
-            ></iframe>
+      </section>
+      <div class="section-divider"></div>
+      <section class="container" id="section-outcomes">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <span class="mini-label"> Outcome </span>
+            <h3>Outcomes &amp; Next Steps</h3>
+            <p class="section-intro">
+              Zenify was developed as a cross-platform wellbeing concept
+              spanning mobile and web, with a consistent visual identity and a
+              structure designed around accessible everyday use. The
+              four-participant usability study identified concrete issues in
+              navigation, mobile controls, content hierarchy and consistency,
+              which informed the final round of refinement. The next stage would
+              be to test the concept with a broader and more diverse participant
+              group, strengthen the design system and microinteractions, and
+              continue validating accessibility, emotional tone and whether the
+              daily tools genuinely support sustainable wellbeing habits.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
-
+      </section>
+    </main>
     <!-- FOOTER -->
     <div id="footer-placeholder"></div>
-
     <!-- Bootstrap & Scripts -->
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="assets/nav.js" defer></script>
-    <script src="assets/footer.js" defer></script>
+    <script defer="" src="assets/nav.js"></script>
+    <script defer="" src="assets/footer.js"></script>
     <script src="js/animation.js"></script>
   </body>
 </html>

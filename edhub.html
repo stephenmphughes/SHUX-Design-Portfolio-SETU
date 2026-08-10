@@ -22,6 +22,167 @@
     <!-- Then Bootstrap and your site CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="mystyle.css" rel="stylesheet" />
+
+    <!-- edHub detail sections added from the UX Design Concepts report -->
+    <style>
+      .edhub-report-section {
+        padding-top: 3.25rem;
+        padding-bottom: 3.25rem;
+      }
+
+      .edhub-report-section + .edhub-report-section {
+        border-top: 1px solid #111;
+      }
+
+      .edhub-section-kicker {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-family: "Oxanium", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .edhub-section-intro {
+        max-width: 780px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .edhub-soft-card,
+      .edhub-source-figure,
+      .edhub-phase-card,
+      .edhub-testing-card {
+        border: 1.5px solid #111;
+        border-radius: 0;
+        background: rgba(255, 238, 244, 0.88);
+      }
+
+      .edhub-soft-card,
+      .edhub-phase-card,
+      .edhub-testing-card {
+        height: 100%;
+        padding: 1.25rem;
+      }
+
+      .edhub-soft-card h4,
+      .edhub-soft-card h5,
+      .edhub-phase-card h4,
+      .edhub-testing-card h4,
+      .edhub-testing-card h5 {
+        margin-bottom: 0.7rem;
+        font-family: "Oxanium", sans-serif;
+        text-transform: uppercase;
+      }
+
+      .edhub-source-figure {
+        margin: 0;
+        padding: 0.7rem;
+        overflow: hidden;
+      }
+
+      .edhub-source-figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 0;
+        background: transparent;
+      }
+
+      .edhub-source-figure figcaption {
+        margin-top: 0.65rem;
+        padding: 0 0.2rem 0.15rem;
+        font-size: 0.86rem;
+        line-height: 1.45;
+      }
+
+      .edhub-stat {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-family: "Oxanium", sans-serif;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .edhub-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .edhub-testing-columns {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .edhub-testing-card--good {
+        background: rgba(234, 247, 241, 0.9);
+      }
+
+      .edhub-testing-card--bad {
+        background: rgba(255, 238, 244, 0.95);
+      }
+
+      .edhub-phase-number {
+        display: inline-grid;
+        place-items: center;
+        width: 2.35rem;
+        height: 2.35rem;
+        margin-bottom: 0.8rem;
+        border: 1.5px solid #111;
+        background: #111;
+        color: #fff;
+        font-family: "Oxanium", sans-serif;
+        font-weight: 700;
+      }
+
+      .edhub-phase-cost {
+        margin-top: 1rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid #111;
+        font-family: "Oxanium", sans-serif;
+        font-weight: 700;
+      }
+
+      .edhub-report-note {
+        padding: 0.85rem 1rem;
+        border-left: 4px solid #111;
+        background: rgba(255, 255, 255, 0.35);
+      }
+
+      .edhub-image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      @media (max-width: 991.98px) {
+        .edhub-meta-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .edhub-report-section {
+          padding-top: 2.5rem;
+          padding-bottom: 2.5rem;
+        }
+
+        .edhub-testing-columns,
+        .edhub-image-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .edhub-soft-card,
+        .edhub-phase-card,
+        .edhub-testing-card {
+          padding: 1rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -96,6 +257,770 @@
               alt="Overview visuals and value props"
             />
           </div>
+        </div>
+      </section>
+
+      <!-- ====================== USER SURVEY ====================== -->
+      <section
+        class="container edhub-report-section edhub-survey-section"
+        id="user-survey"
+      >
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-12 col-lg-10">
+            <span class="edhub-section-kicker">Primary Research</span>
+            <h3>Survey of the Target Market</h3>
+            <p class="copy edhub-section-intro">
+              The survey was completed by four working education professionals:
+              three primary-school teachers and one curriculum coordinator. The
+              group included both early-career and experienced educators, and
+              the questions explored their current lesson-planning tools,
+              support for children with different learning needs, accessibility,
+              AI-assisted planning, online resources, and student assessment
+              information.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="edhub-survey-sample-strip mb-4"
+          aria-label="Survey participant summary"
+        >
+          <div>
+            <strong>4</strong>
+            <span>Working education professionals</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>Primary-school teachers</span>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>Curriculum coordinator</span>
+          </div>
+        </div>
+
+        <div class="edhub-survey-finding-stack">
+          <!-- Finding 01 -->
+          <article class="edhub-survey-finding">
+            <div class="edhub-survey-copy">
+              <p class="edhub-survey-finding-label">Finding 01</p>
+              <h4>
+                Current tools save time, but do not cater well for different
+                learning needs
+              </h4>
+
+              <p>
+                All four respondents had used lesson-planning software. Time
+                saving and pre-populated Department of Education curriculum
+                content were common benefits, but all four also selected
+                <strong>“not effective in differentiation”</strong> as a
+                problem.
+              </p>
+
+              <p>
+                In this context, <strong>differentiation</strong> means adapting
+                a lesson, activity, level of difficulty, or type of support so
+                that children with different abilities, learning styles, or
+                additional educational needs can work toward the same learning
+                goals.
+              </p>
+
+              <div class="edhub-survey-implication">
+                <strong>Design implication:</strong>
+                edHub should retain the time-saving benefits of existing
+                planning tools while making it easier for teachers to adapt
+                content for individual learners and different classroom needs.
+              </div>
+            </div>
+
+            <div class="edhub-survey-evidence">
+              <div class="edhub-survey-stat-grid">
+                <div class="edhub-survey-mini-data-card">
+                  <strong>4 / 4</strong>
+                  <span>Had used lesson-planning software</span>
+                </div>
+
+                <div
+                  class="edhub-survey-mini-data-card edhub-survey-mini-data-card--accent"
+                >
+                  <strong>4 / 4</strong>
+                  <span>Selected “not effective in differentiation”</span>
+                </div>
+              </div>
+
+              <div class="edhub-survey-evidence-grid mt-3">
+                <div class="edhub-survey-chart-panel">
+                  <h5>What respondents liked</h5>
+
+                  <div class="edhub-survey-bar-chart">
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">Time saving</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 75%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">3 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">DES curriculum</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 75%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">3 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Relevant content</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Easy navigation</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+                  </div>
+
+                  <p class="edhub-survey-source-note mb-0">
+                    Multiple selections were allowed.
+                  </p>
+                </div>
+
+                <div class="edhub-survey-chart-panel">
+                  <h5>What respondents disliked</h5>
+
+                  <div class="edhub-survey-bar-chart">
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Weak differentiation</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill edhub-survey-bar-fill--negative"
+                          style="width: 100%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">4 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Missing content/features</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill edhub-survey-bar-fill--negative"
+                          style="width: 75%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">3 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Difficult navigation</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill edhub-survey-bar-fill--negative"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">Time-consuming</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill edhub-survey-bar-fill--negative"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+                  </div>
+
+                  <p class="edhub-survey-source-note mb-0">
+                    Multiple selections were allowed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Finding 02 -->
+          <article class="edhub-survey-finding">
+            <div class="edhub-survey-copy">
+              <p class="edhub-survey-finding-label">Finding 02</p>
+              <h4>
+                Accessibility support was inconsistent and awareness was mixed
+              </h4>
+
+              <p>
+                When asked whether their current online resources or planning
+                tools provided accessibility options, two respondents answered
+                <strong>No</strong>, one answered <strong>Some of them</strong>,
+                and one answered <strong>I don’t know</strong>.
+              </p>
+
+              <p>
+                When asked which accessibility options they used in the
+                classroom,
+                <strong>adjustable font sizes</strong> were selected most often
+                (3 / 4), followed by <strong>changing button size</strong> (2 /
+                4). Screen readers, dark mode, high-contrast mode, and keyboard
+                navigation were each selected by one respondent.
+              </p>
+
+              <p>
+                The responses do not suggest that accessibility is unimportant.
+                Instead, they point to uneven awareness and use: accessibility
+                was not consistently visible in the planning tools participants
+                used, while different educators relied on different supports in
+                practice.
+              </p>
+
+              <div class="edhub-survey-implication">
+                <strong>Design implication:</strong>
+                accessibility features should be built into edHub and made easy
+                to find, rather than treated as specialist settings hidden away
+                from the main planning experience.
+              </div>
+            </div>
+
+            <div class="edhub-survey-evidence">
+              <div class="edhub-survey-evidence-grid">
+                <div class="edhub-survey-chart-panel">
+                  <h5>Accessibility in current tools</h5>
+
+                  <div class="edhub-survey-donut-wrap">
+                    <div
+                      class="edhub-survey-donut edhub-survey-donut--access"
+                      aria-label="Two of four said no, one said some of them, and one did not know"
+                    >
+                      <span>2 / 4<small>NO</small></span>
+                    </div>
+                  </div>
+
+                  <div class="edhub-survey-legend">
+                    <span
+                      ><i class="edhub-survey-dot edhub-survey-dot--no"></i>No —
+                      2 / 4</span
+                    >
+                    <span
+                      ><i class="edhub-survey-dot edhub-survey-dot--some"></i
+                      >Some — 1 / 4</span
+                    >
+                    <span
+                      ><i class="edhub-survey-dot edhub-survey-dot--unsure"></i
+                      >Don’t know — 1 / 4</span
+                    >
+                  </div>
+                </div>
+
+                <div class="edhub-survey-chart-panel">
+                  <h5>Accessibility options used in the classroom</h5>
+
+                  <div class="edhub-survey-bar-chart">
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Adjustable font size</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 75%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">3 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Change button size</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">Screen reader</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 25%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">1 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">Dark mode</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 25%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">1 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">High contrast</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 25%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">1 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Keyboard navigation</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 25%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">1 / 4</span>
+                    </div>
+                  </div>
+
+                  <p class="edhub-survey-source-note mb-0">
+                    Respondents could select more than one classroom
+                    accessibility option.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Finding 03 -->
+          <article class="edhub-survey-finding">
+            <div class="edhub-survey-copy">
+              <p class="edhub-survey-finding-label">Finding 03</p>
+              <h4>
+                Interest in tools for different learning abilities was unanimous
+              </h4>
+
+              <p>
+                All four participants said they would try a new lesson-planning
+                tool if it included features designed for children with
+                different learning abilities. This reinforced the
+                differentiation problem identified earlier in the survey.
+              </p>
+
+              <p>
+                Three of the four participants had also used AI-powered tools
+                for lesson planning. One respondent specifically disliked that
+                the AI tools they had used
+                <strong
+                  >could not plan for specific students in their class</strong
+                >.
+              </p>
+
+              <p>
+                The individual comment is supported by the wider response to the
+                learning-needs question: all four participants were receptive to
+                a tool that explicitly helped teachers plan for children with
+                different abilities.
+              </p>
+
+              <div class="edhub-survey-implication">
+                <strong>Design implication:</strong>
+                AI in edHub should support curriculum-aligned planning while
+                allowing teachers to adapt the output for individual learners,
+                different ability levels, and AEN requirements.
+              </div>
+            </div>
+
+            <div class="edhub-survey-evidence">
+              <div class="edhub-survey-evidence-grid">
+                <div class="edhub-survey-chart-panel">
+                  <h5>
+                    Would try a tool designed for different learning abilities
+                  </h5>
+
+                  <div class="edhub-survey-donut-wrap">
+                    <div
+                      class="edhub-survey-donut edhub-survey-donut--all-yes"
+                      aria-label="All four respondents said yes"
+                    >
+                      <span>4 / 4<small>YES</small></span>
+                    </div>
+                  </div>
+
+                  <div class="edhub-survey-legend">
+                    <span
+                      ><i class="edhub-survey-dot edhub-survey-dot--yes"></i>Yes
+                      — 4 / 4</span
+                    >
+                  </div>
+                </div>
+
+                <div class="edhub-survey-chart-panel">
+                  <h5>Used AI-powered tools for lesson planning</h5>
+
+                  <div class="edhub-survey-donut-wrap">
+                    <div
+                      class="edhub-survey-donut edhub-survey-donut--ai"
+                      aria-label="Three of four respondents had used AI-powered tools for lesson planning"
+                    >
+                      <span>3 / 4<small>YES</small></span>
+                    </div>
+                  </div>
+
+                  <div class="edhub-survey-legend">
+                    <span
+                      ><i class="edhub-survey-dot edhub-survey-dot--yes"></i>Yes
+                      — 3 / 4</span
+                    >
+                    <span
+                      ><i class="edhub-survey-dot edhub-survey-dot--no"></i>No —
+                      1 / 4</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="edhub-survey-insight-panel edhub-survey-insight-panel--accent mt-3"
+              >
+                <h5>Qualitative insight</h5>
+                <p class="mb-0">
+                  “They cannot plan for specific students in my class.” The
+                  comment highlights the gap between generating a generic lesson
+                  and supporting a teacher who needs to adapt that lesson for
+                  particular pupils.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Finding 04 -->
+          <article class="edhub-survey-finding">
+            <div class="edhub-survey-copy">
+              <p class="edhub-survey-finding-label">Finding 04</p>
+
+              <h4>
+                Easy access to assessment data was valued more strongly than
+                deeper integration
+              </h4>
+
+              <p>
+                Question 8 asked participants to rate six possible
+                lesson-planning features from 1 (most important) to 6 (least
+                important). Integration with online resources received the
+                strongest ratings, with
+                <strong>all four participants rating it either 1 or 2</strong>.
+              </p>
+
+              <p>
+                <strong>Integration with student assessments</strong> received a
+                more mixed response: two participants rated it
+                <strong>2</strong> and two rated it <strong>4</strong>. In this
+                context, integration means linking assessment data directly with
+                the planning system so that results, student profiles, or
+                progress information can actively support lesson planning and
+                differentiation.
+              </p>
+
+              <p>
+                However, Question 18 asked a simpler and more practical
+                question: whether it would be beneficial to have
+                <strong
+                  >easy access to student assessments within an online planning
+                  tool</strong
+                >. Here,
+                <strong>4 / 4 participants selected “Very Valuable”</strong>.
+                Access refers to being able to quickly view or retrieve
+                assessment information while planning, without necessarily using
+                that data to automatically influence the lesson plan.
+              </p>
+
+              <p>
+                Question 14 also showed that assessment information was already
+                being stored digitally in several forms. Student profiles were
+                available to
+                <strong>4 / 4 participants</strong>, while standardised-test
+                results and report cards were available to
+                <strong>3 / 4</strong>.
+              </p>
+
+              <div class="edhub-survey-implication">
+                <strong>Design implication:</strong>
+                The research suggests a useful distinction between
+                <strong>access</strong> and <strong>integration</strong>.
+                Educators clearly valued having assessment information readily
+                available while planning, while deeper integration with
+                assessment data was a more mixed priority. For edHub, this
+                suggests prioritising easy access to existing student records
+                first, with more advanced assessment-driven planning and
+                differentiation developed as a deeper feature.
+              </div>
+            </div>
+
+            <div class="edhub-survey-evidence">
+              <div class="edhub-survey-evidence-grid">
+                <div class="edhub-survey-chart-panel">
+                  <h5>Question 8 — rated 1 or 2 for importance</h5>
+
+                  <div class="edhub-survey-bar-chart">
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Online resources</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 100%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">4 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">DES curriculum</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">Easy templates</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">Collaboration</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label"
+                        >Student assessments</span
+                      >
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">2 / 4</span>
+                    </div>
+
+                    <div class="edhub-survey-bar-row">
+                      <span class="edhub-survey-bar-label">AI suggestions</span>
+                      <div class="edhub-survey-bar-track">
+                        <div
+                          class="edhub-survey-bar-fill"
+                          style="width: 0%"
+                        ></div>
+                      </div>
+                      <span class="edhub-survey-bar-value">0 / 4</span>
+                    </div>
+                  </div>
+
+                  <p class="edhub-survey-source-note mb-0">
+                    “High importance” here means a rating of 1 or 2 on the
+                    survey’s 1–6 scale.
+                  </p>
+                </div>
+
+                <div class="edhub-survey-chart-panel">
+                  <h5>Question 18 — easy access to student assessments</h5>
+
+                  <div class="edhub-survey-donut-wrap">
+                    <div
+                      class="edhub-survey-donut edhub-survey-donut--all-yes"
+                      aria-label="All four respondents selected very valuable"
+                    >
+                      <span>4 / 4<small>VERY VALUABLE</small></span>
+                    </div>
+                  </div>
+
+                  <div class="edhub-survey-legend">
+                    <span
+                      ><i class="edhub-survey-dot edhub-survey-dot--yes"></i
+                      >Very Valuable — 4 / 4</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="edhub-survey-chart-panel mt-3">
+                <h5>
+                  Question 14 — assessment records already stored digitally
+                </h5>
+
+                <div class="edhub-survey-bar-chart">
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label">Student profiles</span>
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 100%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">4 / 4</span>
+                  </div>
+
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label"
+                      >Standardised tests</span
+                    >
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 75%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">3 / 4</span>
+                  </div>
+
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label">Report cards</span>
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 75%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">3 / 4</span>
+                  </div>
+
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label"
+                      >Student work samples</span
+                    >
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 50%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">2 / 4</span>
+                  </div>
+
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label"
+                      >Photos of student work</span
+                    >
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 50%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">2 / 4</span>
+                  </div>
+
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label"
+                      >Checklists / rubrics</span
+                    >
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 50%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">2 / 4</span>
+                  </div>
+
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label"
+                      >Student support plans</span
+                    >
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 50%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">2 / 4</span>
+                  </div>
+
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label"
+                      >End-of-unit / spelling tests</span
+                    >
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 25%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">1 / 4</span>
+                  </div>
+
+                  <div class="edhub-survey-bar-row">
+                    <span class="edhub-survey-bar-label"
+                      >Parent-teacher records</span
+                    >
+                    <div class="edhub-survey-bar-track">
+                      <div
+                        class="edhub-survey-bar-fill"
+                        style="width: 25%"
+                      ></div>
+                    </div>
+                    <span class="edhub-survey-bar-value">1 / 4</span>
+                  </div>
+                </div>
+
+                <p class="edhub-survey-source-note mb-0">
+                  Multiple selections were allowed.
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -384,84 +1309,82 @@
         </div>
       </section>
 
-      <!-- ====================== BRAND BOARD ====================== -->
+      <!-- ====================== BRANDING & STYLES ====================== -->
       <section class="container" id="brand-board">
-        <!-- Intro -->
-        <div class="row align-items-center gy-4">
-          <div class="col-12 col-md-6">
-            <h3>Brand Board and Components</h3>
-            <p class="copy">
-              Branding decisions for edHub aim to convey calmness, focus, and
-              inclusivity—qualities vital in ed-tech. The direction balances
-              professionalism with friendliness and accessibility, keeping
-              interfaces clear and engaging.
+        <!-- Section Intro -->
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-12 col-lg-10">
+            <span class="edhub-section-kicker">Visual Design</span>
+            <h3>Branding &amp; Styles</h3>
+            <p class="copy edhub-section-intro">
+              edHub's visual identity was designed to balance professionalism
+              with a friendly and accessible educational experience. The system
+              combines a calm colour palette, clear typography, modular layouts,
+              and restrained visual effects to keep information organised while
+              giving the interface a distinctive and contemporary character.
             </p>
           </div>
-          <div class="col-12 col-md-6 text-center">
-            <img
-              src="images/CaseStudy/edhubcasestudy/edhubComponents.png"
-              class="img-fluid feature-img"
-              alt="edHub colour palette overview"
-            />
-            <figcaption class="small mt-2 text-muted">
-              Primary blue with optimistic muted yellow accent; supporting
-              neutrals.
-            </figcaption>
-          </div>
         </div>
-
-        <hr class="my-4" />
 
         <!-- Colour Palette -->
         <div class="row align-items-center gy-4">
           <div class="col-12 col-md-6">
             <h5 class="mb-2">Colour Palette</h5>
             <p>
-              Blue is highly favourable in education—its calmness supports focus
-              and creativity. We chose a distinct blue that isn’t overtly
-              saturated to keep the UI modern and unique. A muted yellow accent
-              adds optimism and energy, supporting concentration and visual
-              balance.
+              Blue was selected as the primary colour because of its association
+              with calmness, focus, and trust within educational environments. A
+              muted yellow adds warmth and optimism, while plum and neutral
+              tones provide contrast and support hierarchy throughout the
+              interface.
             </p>
+
             <p class="mono mb-0">
               #0081A7 • #670643 • #F9D978 • #2D3748 • #FBFAF8
             </p>
           </div>
+
           <div class="col-12 col-md-6 text-center">
             <img
               src="images/CaseStudy/edhubcasestudy/edhubColourPallete.png"
               class="img-fluid feature-img"
-              alt="edHub swatches for primary, accent, and neutrals"
+              alt="edHub primary, accent and neutral colour palette"
             />
+
             <figcaption class="small mt-2 text-muted">
-              Primary, accent, and neutral swatches used across the system.
+              Primary, accent, and neutral colours used throughout the edHub
+              interface.
             </figcaption>
           </div>
         </div>
 
         <hr class="my-4" />
 
-        <!-- Fonts -->
+        <!-- Typography -->
         <div class="row align-items-center gy-4">
           <div class="col-12 col-md-6">
-            <h5 class="mb-2">Fonts</h5>
+            <h5 class="mb-2">Typography</h5>
+
             <p>
-              <strong>Poppins</strong> (Bold &amp; Regular) was chosen for a
-              clean, friendly aesthetic with excellent legibility and a
-              polished, contemporary feel. Its geometric forms and generous
-              spacing read clearly at small sizes and scale well across UI
-              components.
+              <strong>Poppins</strong> Bold and Regular were selected for their
+              clean, friendly appearance and strong legibility. The geometric
+              letterforms give the interface a contemporary feel while remaining
+              clear at smaller sizes across navigation, forms, dashboard
+              elements, and longer pieces of content.
             </p>
+
             <p class="mono mb-0">Aa Bb Cc — Poppins Bold / Poppins Regular</p>
           </div>
+
           <div class="col-12 col-md-6 text-center">
             <img
               src="images/CaseStudy/edhubcasestudy/edhubFonts.png"
               class="img-fluid feature-img"
-              alt="Poppins typography samples: Bold and Regular"
+              alt="Poppins typography used throughout the edHub interface"
             />
+
             <figcaption class="small mt-2 text-muted">
-              Typography specimens illustrating hierarchy and legibility.
+              Poppins Bold and Regular used to establish hierarchy and maintain
+              legibility.
             </figcaption>
           </div>
         </div>
@@ -471,415 +1394,713 @@
         <!-- Bento Grid -->
         <div class="row align-items-center gy-4">
           <div class="col-12 col-md-6">
-            <h5 class="mb-2">Bento Grid Design Trend</h5>
+            <h5 class="mb-2">Bento Grid Layout</h5>
+
             <p>
-              Bento Grids present multiple elements in a structured, modular
-              layout. They improve scanability, keep the interface organised,
-              and allow related content to be grouped without visual
-              clutter—useful for dashboards and resource hubs.
+              A bento-style layout was used to organise the large amount of
+              information available within edHub. Related tools and information
+              can be grouped into modular areas while still allowing each
+              component to remain visually distinct.
+            </p>
+
+            <p class="mb-0">
+              This approach supports dashboard-style interfaces particularly
+              well, allowing teachers to scan lesson plans, resources,
+              assessments, student information, and supporting tools without
+              presenting everything as one continuous block of content.
             </p>
           </div>
+
           <div class="col-12 col-md-6 text-center">
             <img
               src="images/CaseStudy/edhubcasestudy/edhubBentogrids.png"
               class="img-fluid feature-img"
-              alt="Bento grid examples used in edHub UI"
+              alt="Bento grid layout examples used in the edHub interface"
             />
+
             <figcaption class="small mt-2 text-muted">
-              Modular tiles for quick scanning and tidy content grouping.
+              Modular content areas help separate functions while maintaining a
+              consistent dashboard structure.
             </figcaption>
           </div>
         </div>
 
         <hr class="my-4" />
 
-        <!-- Glassmorphism / Styles -->
+        <!-- Visual Styles -->
         <div class="row align-items-center gy-4">
           <div class="col-12 col-md-6">
             <h5 class="mb-2">
-              Glassmorphism, Gradients, Active/ Hover States &amp; Visual Style
+              Glassmorphism, Gradients &amp; Interaction States
             </h5>
+
+            <p>
+              Glassmorphism and gradients were used selectively rather than
+              across every interface element. Semi-transparent surfaces help
+              create depth within the bento-style layout while maintaining a
+              clear separation between foreground controls and surrounding
+              content.
+            </p>
+
             <p class="mb-0">
-              Subtle frosted-glass layers and soft shadows create depth and
-              focus without distraction. Used sparingly, this glassmorphism
-              aesthetic helps important elements stand out, encourages
-              interaction, and contributes to a polished, approachable brand
-              identity.
+              Selected, unselected, hover, and active states were also designed
+              to give users clear visual feedback as they move through the
+              interface. These states help communicate which options are
+              interactive, currently active, or awaiting input.
             </p>
           </div>
+
           <div class="col-12 col-md-6 text-center">
             <img
               src="images/CaseStudy/edhubcasestudy/edhubStyles.png"
               class="img-fluid feature-img"
-              alt="Glassmorphism styling examples for edHub"
+              alt="edHub glassmorphism, gradients and interaction states"
             />
+
             <figcaption class="small mt-2 text-muted">
-              Depth and hierarchy through frosted panels and soft elevation.
+              Glass effects, gradients, hover states, and selected states
+              establish depth and interaction feedback.
             </figcaption>
           </div>
         </div>
-      </section>
-      <!-- ====================== SWOT (Corner Letters, No Fill) ====================== -->
-      <section class="container" id="swot-corner">
-        <div class="row g-3">
-          <!-- Strengths -->
-          <div class="col-12 col-md-6">
-            <article class="swot-card h-100">
-              <div class="swot-badge" aria-hidden="true">S</div>
-              <h5 class="swot-title">Strengths</h5>
-              <ul class="mb-0">
-                <li>
-                  Access to large databases of resources and content for lesson-
-                  planning
-                </li>
-                <li>
-                  Teacher-first, Ireland-specific focus adds sharper value
-                  because of the cirriculum and Irish language
-                </li>
-                <li>
-                  Use of AI tools to generate lesson plans for Twinkl and
-                  TeachMateAI.com; but depth and capabilities of their AI are
-                  limited
-                </li>
-              </ul>
-            </article>
-          </div>
 
-          <!-- Weaknesses -->
-          <div class="col-12 col-md-6">
-            <article class="swot-card h-100">
-              <div class="swot-badge" aria-hidden="true">W</div>
-              <h5 class="swot-title">Weaknesses</h5>
-              <ul class="mb-0">
-                <li>
-                  Lack of accessibility features - None of the platforms
-                  examined currently offer accessibility options for users with
-                  different abilities.</li>
-                </li>
+        <hr class="my-4" />
 
-                <li>
-                  Limited support for diverse learning styles - None of the
-                  platforms examined offer features for creating lesson plans
-                  that cater to AEN students.
-                </li>
-                <li>
-                  Two competitors have websites which are not mobile-responsive.
-                </li>
-              </ul>
-            </article>
-          </div>
-
-          <!-- Opportunities -->
-          <div class="col-12 col-md-6">
-            <article class="swot-card h-100">
-              <div class="swot-badge" aria-hidden="true">O</div>
-              <h5 class="swot-title">Opportunities</h5>
-              <ul class="mb-0">
-                <li>edHub is designed to fill the gap left by competitors as we consider comprehensive accessibility features, and the ability to customise learning plans for AEN students a key component of our software.</li>
-                <li>Additionally, collaborating with trusted publishers and educational bodies could provide a platform for scaling and gaining credibility quickly.</li>
-              </ul>
-            </article>
-          </div>
-
-          <!-- Threats -->
-          <div class="col-12 col-md-6">
-            <article class="swot-card h-100">
-              <div class="swot-badge" aria-hidden="true">T</div>
-              <h5 class="swot-title">Threats</h5>
-              <ul class="mb-0">
-                <li>TeachMateAI.com and Twinkl are large, global platforms with an established user base</li>
-                <li>
-                    Scoilnet is funded by the Irish Department of Education, giving them strong brand recognition within Ireland’s teaching
-                    community
-                </li>
-                <li>Fast imitation of features by larger competitors.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-
-  <!-- ====================== COMPETITOR ANALYSIS (SWOT-Style Cards) ====================== -->
-<section class="container" id="competitor-cards">
-    <div class="row g-3">
-      <!-- Primary Planning Tool -->
-      <div class="col-12 col-md-6">
-        <article class="swot-card h-100">
-          <h5 class="swot-title">Primary Planning Tool</h5>
-          <ul class="mb-0">
-            <li><strong>Price:</strong> €60/yr (single), €85/teacher/yr (school)</li>
-            <li><strong>Strengths:</strong> Cloud storage; responsive; simple menus; Irish version.</li>
-            <li><strong>Weaknesses:</strong> No accessibility features; no support for diverse learning styles.</li>
-          </ul>
-        </article>
-      </div>
-  
-      <!-- Twinkl -->
-      <div class="col-12 col-md-6">
-        <article class="swot-card h-100">
-          <h5 class="swot-title">Twinkl</h5>
-          <ul class="mb-0">
-            <li><strong>Price:</strong> 30-day free trial; from £4.49/mo</li>
-            <li><strong>Strengths:</strong> AI tool suite; straightforward menus; help chatbot.</li>
-            <li><strong>Weaknesses:</strong> No accessibility; not fully responsive; limited diverse-style content.</li>
-          </ul>
-        </article>
-      </div>
-  
-      <!-- TeachMateAI -->
-      <div class="col-12 col-md-6">
-        <article class="swot-card h-100">
-          <h5 class="swot-title">TeachMateAI</h5>
-          <ul class="mb-0">
-            <li><strong>Price:</strong> €7.99/mo • €84/yr</li>
-            <li><strong>Strengths:</strong> Large global trust; responsive; free AI tools; simple UI.</li>
-            <li><strong>Weaknesses:</strong> No accessibility; no diverse-style lesson support.</li>
-          </ul>
-        </article>
-      </div>
-  
-      <!-- Scoilnet -->
-      <div class="col-12 col-md-6">
-        <article class="swot-card h-100">
-          <h5 class="swot-title">Scoilnet</h5>
-          <ul class="mb-0">
-            <li><strong>Price:</strong> €4.99/mo • €34.99/yr</li>
-            <li><strong>Strengths:</strong> 24k+ resources; teacher uploads; Irish-language option.</li>
-            <li><strong>Weaknesses:</strong> No accessibility; not fully responsive; limited diverse-style content.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-  
-
-      <!-- IA (full-bleed + bullets) -->
-      <section class="container" id="ia">
-        <div class="full-bleed-wrap">
-          <figure class="mb-0">
-            <img
-              src="images/edhub/ia-sitemap.png"
-              alt="Information Architecture & sitemap"
-            />
-            <figcaption class="text-center mt-2">
-              IA: Home, Lesson Centre, Assessments, Students, Resources,
-              Settings.
-            </figcaption>
-          </figure>
-        </div>
-        <div class="row justify-content-center mt-3">
-          <div class="col-12 col-lg-10">
-            <ul class="copy">
-              <li>
-                <strong>Lesson Centre:</strong> templates, AI-seed, reading-age
-                & tone controls, accessibility preview.
-              </li>
-              <li>
-                <strong>Resources:</strong> library with filters (topic, level,
-                style, accessibility tags).
-              </li>
-              <li>
-                <strong>Assessments:</strong> quick checks, student notes,
-                exports for reporting.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Design System / Accessibility (text L / image R) -->
-      <section class="container" id="design-system">
+        <!-- Components -->
         <div class="row align-items-center gy-4">
           <div class="col-12 col-md-6">
-            <h3>Design System & Accessibility</h3>
-            <ul class="copy">
-              <li>
-                <strong>Tokens:</strong> spacing (4/8/12), type scale, semantic
-                colours.
-              </li>
-              <li>
-                <strong>Components:</strong> cards, forms, tabs, tables
-                (keyboard/ARIA), toasts.
-              </li>
-              <li>
-                <strong>Accessibility:</strong> AA+ contrast, focus order, skip
-                links, reduced motion, SR labels.
-              </li>
-            </ul>
-            <div class="d-flex gap-2 mt-2">
-              <span class="chip chip-blue" title="#0081A7"></span>
-              <span class="chip chip-plum" title="#670643"></span>
-              <span class="chip chip-yellow" title="#F9D978"></span>
-              <span class="chip chip-slate" title="#2D3748"></span>
-              <span class="chip chip-cream" title="#FBFAF8"></span>
-            </div>
+            <h5 class="mb-2">Components</h5>
+
+            <p class="mb-0">
+              Reusable components were designed to fit within the bento-style
+              interface, including glassmorphism in selected areas, modal
+              pop-ups such as the AI assistant chatbox, selected and unselected
+              states, and input states replicating HTML form validation.
+            </p>
           </div>
+
           <div class="col-12 col-md-6 text-center">
             <img
-              src="images/edhub/brand-board.png"
-              class="feature-img"
-              alt="Brand board & tokens"
+              src="images/CaseStudy/edhubcasestudy/edhubComponents.png"
+              class="img-fluid feature-img"
+              alt="Reusable components designed for the edHub interface"
             />
+
+            <figcaption class="small mt-2 text-muted">
+              Reusable interface components, modal states, selection states, and
+              form validation feedback.
+            </figcaption>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== MARKET POSITIONING & COMPETITIVE LANDSCAPE ====================== -->
+      <section class="container" id="market-positioning">
+        <!-- Section Heading -->
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-12 col-lg-10">
+            <span class="edhub-section-kicker">Market Research</span>
+
+            <h3>Market Positioning &amp; Competitive Landscape</h3>
+
+            <p class="copy edhub-section-intro">
+              Competitor research was used to understand where existing
+              lesson-planning platforms were already performing well and where
+              opportunities remained for edHub. The analysis focused
+              particularly on accessibility, support for different learning
+              needs, AI-assisted planning, responsiveness, educational
+              resources, and the Irish education context.
+            </p>
+          </div>
+        </div>
+
+        <!-- ====================== SWOT ANALYSIS ====================== -->
+        <div id="swot-corner">
+          <div class="row justify-content-center text-center mb-4">
+            <div class="col-12 col-lg-10">
+              <h4>SWOT Analysis</h4>
+
+              <p class="copy mb-0">
+                Findings from the competitor research were brought together to
+                identify the strengths and weaknesses of the existing market,
+                along with opportunities for edHub and potential threats from
+                established education platforms.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <!-- Strengths -->
+            <div class="col-12 col-md-6">
+              <article class="swot-card h-100">
+                <div class="swot-badge" aria-hidden="true">S</div>
+
+                <h5 class="swot-title">Strengths</h5>
+
+                <ul class="mb-0">
+                  <li>
+                    Access to large databases of resources and content for
+                    lesson-planning.
+                  </li>
+
+                  <li>
+                    Teacher-first, Ireland-specific platforms can provide value
+                    through alignment with the Irish curriculum and
+                    Irish-language resources.
+                  </li>
+
+                  <li>
+                    AI tools are already being used to generate lesson plans on
+                    platforms such as Twinkl and TeachMateAI, demonstrating an
+                    established use case for AI-assisted planning.
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Weaknesses -->
+            <div class="col-12 col-md-6">
+              <article class="swot-card h-100">
+                <div class="swot-badge" aria-hidden="true">W</div>
+
+                <h5 class="swot-title">Weaknesses</h5>
+
+                <ul class="mb-0">
+                  <li>
+                    Accessibility features were limited or not clearly available
+                    across the platforms examined.
+                  </li>
+
+                  <li>
+                    Existing platforms provided limited support for adapting
+                    lesson plans to children with different learning abilities
+                    or Additional Educational Needs (AEN).
+                  </li>
+
+                  <li>
+                    Two of the competitor websites examined were not fully
+                    responsive across different screen sizes.
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Opportunities -->
+            <div class="col-12 col-md-6">
+              <article class="swot-card h-100">
+                <div class="swot-badge" aria-hidden="true">O</div>
+
+                <h5 class="swot-title">Opportunities</h5>
+
+                <ul class="mb-0">
+                  <li>
+                    edHub could address gaps in the existing market by combining
+                    accessibility features with lesson-planning tools that allow
+                    teachers to adapt content for AEN students and different
+                    learning abilities.
+                  </li>
+
+                  <li>
+                    Collaboration with trusted publishers, curriculum providers,
+                    and educational bodies could provide access to established
+                    resources while helping the platform build credibility.
+                  </li>
+
+                  <li>
+                    Connecting curriculum resources, student information,
+                    assessments, and AI-assisted planning within one system
+                    could reduce the need for teachers to move between multiple
+                    tools.
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Threats -->
+            <div class="col-12 col-md-6">
+              <article class="swot-card h-100">
+                <div class="swot-badge" aria-hidden="true">T</div>
+
+                <h5 class="swot-title">Threats</h5>
+
+                <ul class="mb-0">
+                  <li>
+                    TeachMateAI and Twinkl are large international platforms
+                    with established user bases and existing AI functionality.
+                  </li>
+
+                  <li>
+                    Scoilnet has strong recognition within Irish education
+                    through its connection with the Department of Education.
+                  </li>
+
+                  <li>
+                    Features introduced by edHub could potentially be replicated
+                    by larger competitors with greater development resources.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider between SWOT and competitor analysis -->
+        <hr class="my-5" />
+
+        <!-- ====================== COMPETITOR ANALYSIS ====================== -->
+        <div id="competitor-cards">
+          <div class="row justify-content-center text-center mb-4">
+            <div class="col-12 col-lg-10">
+              <h4>Competitor Analysis</h4>
+
+              <p class="copy mb-0">
+                Four existing education and lesson-planning platforms were
+                reviewed to compare their pricing, functionality, usability,
+                responsiveness, accessibility, and support for different
+                learning needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <!-- Primary Planning Tool -->
+            <div class="col-12 col-md-6">
+              <article class="swot-card h-100">
+                <h5 class="swot-title">Primary Planning Tool</h5>
+
+                <ul class="mb-0">
+                  <li>
+                    <strong>Price:</strong>
+                    €60 per year for a single-user licence or €85 per teacher
+                    per year for a school licence.
+                  </li>
+
+                  <li>
+                    <strong>Strengths:</strong>
+                    Cloud storage, responsive design, straightforward
+                    navigation, and an Irish-language version.
+                  </li>
+
+                  <li>
+                    <strong>Weaknesses:</strong>
+                    No clearly identified accessibility options and limited
+                    support for creating lesson plans around different learning
+                    needs.
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Twinkl -->
+            <div class="col-12 col-md-6">
+              <article class="swot-card h-100">
+                <h5 class="swot-title">Twinkl</h5>
+
+                <ul class="mb-0">
+                  <li>
+                    <strong>Price:</strong>
+                    30-day free trial, with subscriptions starting from £4.49
+                    per month.
+                  </li>
+
+                  <li>
+                    <strong>Strengths:</strong>
+                    Large educational resource library, a suite of AI-powered
+                    tools, straightforward navigation, and a support chatbot.
+                  </li>
+
+                  <li>
+                    <strong>Weaknesses:</strong>
+                    No clearly identified accessibility options, limited support
+                    for different learning needs, and the interface examined was
+                    not fully responsive across screen sizes.
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- TeachMateAI -->
+            <div class="col-12 col-md-6">
+              <article class="swot-card h-100">
+                <h5 class="swot-title">TeachMateAI</h5>
+
+                <ul class="mb-0">
+                  <li>
+                    <strong>Price:</strong>
+                    €7.99 per month or €84 annually per teacher.
+                  </li>
+
+                  <li>
+                    <strong>Strengths:</strong>
+                    Established international user base, responsive interface,
+                    free AI tools, and straightforward navigation.
+                  </li>
+
+                  <li>
+                    <strong>Weaknesses:</strong>
+                    No clearly identified accessibility features and limited
+                    support for generating lesson plans for children with
+                    different learning needs.
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Scoilnet -->
+            <div class="col-12 col-md-6">
+              <article class="swot-card h-100">
+                <h5 class="swot-title">Scoilnet</h5>
+
+                <ul class="mb-0">
+                  <li>
+                    <strong>Price:</strong>
+                    €4.99 per month or €34.99 annually.
+                  </li>
+
+                  <li>
+                    <strong>Strengths:</strong>
+                    A database of more than 24,000 educational resources,
+                    teacher uploads, straightforward navigation, and an
+                    Irish-language option.
+                  </li>
+
+                  <li>
+                    <strong>Weaknesses:</strong>
+                    No clearly identified accessibility options, limited support
+                    for different learning needs, and the interface examined was
+                    not fully responsive across screen sizes.
+                  </li>
+                </ul>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Key Flows (alternating) -->
-       <!-- Key Flows (alternating with video) -->
+      <!-- Key Flows (alternating with video) -->
       <!-- Key Flows (full width, video 2/3, text 1/3) -->
-<!-- ================== KEY FLOWS ================== -->
-<section class="container-fluid py-5" id="flows">
-  <div class="container-xl">
+      <!-- ================== KEY FLOWS ================== -->
+      <section class="container-fluid py-5" id="flows">
+        <div class="container-xl">
+          <!-- Header -->
+          <div class="row text-center mb-4">
+            <div class="col-12 col-lg-10 mx-auto">
+              <h3>Key Flows</h3>
+              <p class="copy mx-auto">
+                Onboarding, lesson planning, student feedback, subjects
+                navigation, and AI assistance.
+              </p>
+            </div>
+          </div>
 
-    <!-- Header -->
-    <div class="row text-center mb-4">
-      <div class="col-12 col-lg-10 mx-auto">
-        <h3>Key Flows</h3>
-        <p class="copy mx-auto">
-          Onboarding, lesson planning, student feedback, subjects navigation, and AI assistance.
-        </p>
-      </div>
-    </div>
+          <!-- 1) ONBOARDING -->
+          <div class="row g-4 align-items-center flow-row">
+            <div class="col-12 col-lg-8">
+              <video class="flow-video" playsinline muted loop controls>
+                <source
+                  src="videos/edhubvideos/edHubOnboardingHome.mp4"
+                  type="video/mp4"
+                />
+                <!-- If still .mov, change the src and type accordingly -->
+              </video>
+            </div>
+            <div class="col-12 col-lg-4">
+              <h5>1) Onboarding</h5>
+              <ul class="mb-0">
+                <li>
+                  Teachers land into a personalised dashboard after sign-up.
+                </li>
+                <li>
+                  Guided steps configure class, subjects, and planning
+                  preferences.
+                </li>
+              </ul>
+            </div>
+          </div>
 
-    <!-- 1) ONBOARDING -->
-    <div class="row g-4 align-items-center flow-row">
-      <div class="col-12 col-lg-8">
-        <video
-          class="flow-video"
-          playsinline
-          muted
-          loop
-          controls
-        >
-          <source src="videos/edhubvideos/edHubOnboardingHome.mp4" type="video/mp4" />
-          <!-- If still .mov, change the src and type accordingly -->
-        </video>
-      </div>
-      <div class="col-12 col-lg-4">
-        <h5>1) Onboarding</h5>
-        <ul class="mb-0">
-          <li>Teachers land into a personalised dashboard after sign-up.</li>
-          <li>Guided steps configure class, subjects, and planning preferences.</li>
-        </ul>
-      </div>
-    </div>
+          <!-- 2) PLAN LESSONS -->
+          <div
+            class="row g-4 align-items-center flow-row flex-lg-row-reverse mt-5"
+          >
+            <div class="col-12 col-lg-8">
+              <video class="flow-video" playsinline muted loop controls>
+                <source
+                  src="videos/edhubvideos/EdhubLessonPlan.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="col-12 col-lg-4">
+              <h5>2) Plan Lessons</h5>
+              <ul class="mb-0">
+                <li>
+                  AI-seeded templates aligned to Irish curriculum content.
+                </li>
+                <li>
+                  Teacher adjusts reading age, tone, and differentiation
+                  in-place.
+                </li>
+              </ul>
+            </div>
+          </div>
 
-    <!-- 2) PLAN LESSONS -->
-    <div class="row g-4 align-items-center flow-row flex-lg-row-reverse mt-5">
-      <div class="col-12 col-lg-8">
-        <video
-          class="flow-video"
-          playsinline
-          muted
-          loop
-          controls
-        >
-          <source src="videos/edhubvideos/EdhubLessonPlan.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="col-12 col-lg-4">
-        <h5>2) Plan Lessons</h5>
-        <ul class="mb-0">
-          <li>AI-seeded templates aligned to Irish curriculum content.</li>
-          <li>Teacher adjusts reading age, tone, and differentiation in-place.</li>
-        </ul>
-      </div>
-    </div>
+          <!-- 3) STUDENT FEEDBACK -->
+          <div class="row g-4 align-items-center flow-row mt-5">
+            <div class="col-12 col-lg-8">
+              <video class="flow-video" playsinline muted loop controls>
+                <source
+                  src="videos/edhubvideos/EdHubStudentFeedback.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="col-12 col-lg-4">
+              <h5>3) Student Feedback</h5>
+              <ul class="mb-0">
+                <li>Log quick observations and track patterns over time.</li>
+                <li>Export summaries for parent meetings or SEN reviews.</li>
+              </ul>
+            </div>
+          </div>
 
-    <!-- 3) STUDENT FEEDBACK -->
-    <div class="row g-4 align-items-center flow-row mt-5">
-      <div class="col-12 col-lg-8">
-        <video
-          class="flow-video"
-          playsinline
-          muted
-          loop
-          controls
-        >
-          <source src="videos/edhubvideos/EdHubStudentFeedback.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="col-12 col-lg-4">
-        <h5>3) Student Feedback</h5>
-        <ul class="mb-0">
-          <li>Log quick observations and track patterns over time.</li>
-          <li>Export summaries for parent meetings or SEN reviews.</li>
-        </ul>
-      </div>
-    </div>
+          <!-- 4) SUBJECTS -->
+          <div
+            class="row g-4 align-items-center flow-row flex-lg-row-reverse mt-5"
+          >
+            <div class="col-12 col-lg-8">
+              <video class="flow-video" playsinline muted loop controls>
+                <source
+                  src="videos/edhubvideos/EdhubSubjects.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="col-12 col-lg-4">
+              <h5>4) Subjects</h5>
+              <ul class="mb-0">
+                <li>Browse subjects with a simple, consistent layout.</li>
+                <li>
+                  Jump into plans, resources, and assessments in a few clicks.
+                </li>
+              </ul>
+            </div>
+          </div>
 
-    <!-- 4) SUBJECTS -->
-    <div class="row g-4 align-items-center flow-row flex-lg-row-reverse mt-5">
-      <div class="col-12 col-lg-8">
-        <video
-          class="flow-video"
-          playsinline
-          muted
-          loop
-          controls
-        >
-          <source src="videos/edhubvideos/EdhubSubjects.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="col-12 col-lg-4">
-        <h5>4) Subjects</h5>
-        <ul class="mb-0">
-          <li>Browse subjects with a simple, consistent layout.</li>
-          <li>Jump into plans, resources, and assessments in a few clicks.</li>
-        </ul>
-      </div>
-    </div>
+          <!-- 5) AI ASSISTANT – ASK EDY -->
+          <div class="row g-4 align-items-center flow-row mt-5">
+            <div class="col-12 col-lg-8">
+              <video class="flow-video" playsinline muted loop controls>
+                <source
+                  src="videos/edhubvideos/EdHubAskEdy.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="col-12 col-lg-4">
+              <h5>5) AI Assistant – Ask Edy</h5>
+              <ul class="mb-0">
+                <li>Ask Edy to clarify topics or generate starting points.</li>
+                <li>
+                  Teacher reviews and edits before anything reaches students.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- 5) AI ASSISTANT – ASK EDY -->
-    <div class="row g-4 align-items-center flow-row mt-5">
-      <div class="col-12 col-lg-8">
-        <video
-          class="flow-video"
-          playsinline
-          muted
-          loop
-          controls
-        >
-          <source src="videos/edhubvideos/EdHubAskEdy.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="col-12 col-lg-4">
-        <h5>5) AI Assistant – Ask Edy</h5>
-        <ul class="mb-0">
-          <li>Ask Edy to clarify topics or generate starting points.</li>
-          <li>Teacher reviews and edits before anything reaches students.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- 6) GENERAL FLOW (own full-width block) -->
+      <section class="container-fluid py-5" id="general-flow">
+        <div class="container-xl text-center">
+          <h3>6) General Flow</h3>
+          <p class="copy mx-auto mb-4">
+            High-level walkthrough of a typical day using edHub, from login to
+            evidence.
+          </p>
 
-<!-- 6) GENERAL FLOW (own full-width block) -->
-<section class="container-fluid py-5" id="general-flow">
-  <div class="container-xl text-center">
-    <h3>6) General Flow</h3>
-    <p class="copy mx-auto mb-4">
-      High-level walkthrough of a typical day using edHub, from login to evidence.
-    </p>
+          <div style="max-width: 1000px; margin: 0 auto">
+            <video class="flow-video" playsinline muted loop controls>
+              <source
+                src="videos/edhubvideos/EdhubGeneralFlow.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </section>
 
-    <div style="max-width: 1000px; margin: 0 auto;">
-      <video
-        class="flow-video"
-        playsinline
-        muted
-        loop
-        controls
-      >
-        <source src="videos/edhubvideos/EdhubGeneralFlow.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </div>
-</section>
+      <!-- ====================== USABILITY TESTING ====================== -->
+      <section class="container edhub-report-section" id="usability-testing">
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-12 col-lg-10">
+            <span class="edhub-section-kicker">Validation</span>
+            <h3>Moderated Usability Testing</h3>
+            <p class="copy edhub-section-intro">
+              The prototype was tested in person with a 52-year-old primary
+              school principal who had more than 20 years' experience and had
+              previously used several lesson-planning products. She was asked to
+              think aloud while completing tasks so navigation issues, unclear
+              labels, and friction points could be observed directly.
+            </p>
+          </div>
+        </div>
 
+        <div class="row g-4 align-items-start mb-4">
+          <div class="col-12 col-lg-5">
+            <figure class="edhub-source-figure">
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhub-usability-participant-method.png"
+                alt="edHub usability test participant profile, method, and goals"
+                loading="lazy"
+              />
+              <figcaption>
+                Participant profile, moderated think-aloud method, and the three
+                test goals used in the study.
+              </figcaption>
+            </figure>
+          </div>
 
+          <div class="col-12 col-lg-7">
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <article class="edhub-testing-card">
+                  <h5>Goals</h5>
+                  <ul class="mb-0">
+                    <li>
+                      Test whether the overall edHub concept was understood.
+                    </li>
+                    <li>
+                      Identify errors and broken or confusing interactions.
+                    </li>
+                    <li>
+                      Reveal friction in navigation, labels, and task
+                      completion.
+                    </li>
+                  </ul>
+                </article>
+              </div>
+              <div class="col-12 col-md-6">
+                <article class="edhub-testing-card">
+                  <h5>Usability factors</h5>
+                  <ul class="mb-0">
+                    <li>Effectiveness and efficiency in completing goals.</li>
+                    <li>Legibility, content balance, and satisfaction.</li>
+                    <li>Ability to recognise and recover from errors.</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
 
-      
+            <div class="edhub-testing-columns mt-3">
+              <article class="edhub-testing-card edhub-testing-card--good">
+                <h5>What worked</h5>
+                <ul class="mb-0">
+                  <li>The participant completed 80% of the assigned tasks.</li>
+                  <li>
+                    The overall product concept and purpose were understood.
+                  </li>
+                  <li>
+                    The Lesson-Planning Centre generated the strongest positive
+                    response.
+                  </li>
+                  <li>
+                    Pre-populated, curriculum-aligned content was appreciated.
+                  </li>
+                  <li>
+                    The participant said she would be likely to subscribe.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="edhub-testing-card edhub-testing-card--bad">
+                <h5>What needed work</h5>
+                <ul class="mb-0">
+                  <li>
+                    Some menu navigation was difficult and one link was broken.
+                  </li>
+                  <li>
+                    The purpose of some tools was not immediately visible.
+                  </li>
+                  <li>
+                    The label and purpose of the "Need help" function caused
+                    confusion.
+                  </li>
+                  <li>
+                    The student statistics comparison was unsuitable for larger
+                    groups.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="edhub-image-grid mb-4">
+          <figure class="edhub-source-figure">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhub-usability-overall-findings.png"
+              alt="edHub usability testing overall concept findings"
+              loading="lazy"
+            />
+            <figcaption>
+              Overall concept: strong interest and clear value, alongside
+              navigation and discoverability issues.
+            </figcaption>
+          </figure>
+
+          <figure class="edhub-source-figure">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhub-usability-task-findings.png"
+              alt="edHub usability testing findings for effectiveness, efficiency, navigation, legibility and content satisfaction"
+              loading="lazy"
+            />
+            <figcaption>
+              Task findings: 80% completion and strong satisfaction with
+              planning, but broken links and unclear functions reduced
+              efficiency.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="row justify-content-center text-center mb-3">
+          <div class="col-12 col-lg-9">
+            <h4>Changes Made After Testing</h4>
+            <p class="copy mb-0">
+              Feedback was converted into specific interface changes rather than
+              being left as a list of observations.
+            </p>
+          </div>
+        </div>
+
+        <div class="edhub-image-grid">
+          <figure class="edhub-source-figure">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhub-usability-actions-student-stats.png"
+              alt="Usability testing changes to student statistics, including full-screen chart and heat-map table"
+              loading="lazy"
+            />
+            <figcaption>
+              Student statistics: broken side-menu links were fixed and
+              comparison views were expanded with a full-screen chart and
+              heat-map table.
+            </figcaption>
+          </figure>
+
+          <figure class="edhub-source-figure">
+            <img
+              src="images/CaseStudy/edhubcasestudy/edhub-usability-actions-chatbot.png"
+              alt="Usability testing change renaming the Need Help chatbot to Ask Edy with explanatory hover text"
+              loading="lazy"
+            />
+            <figcaption>
+              Chatbot clarity: "Need help?" was renamed "Ask Edy" and supported
+              by explanatory hover text to communicate its assistant and
+              fact-checking role.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
       <!-- Outcomes (text L / image R) -->
       <section class="container" id="outcomes">
@@ -909,70 +2130,217 @@
         </div>
       </section>
 
-      <!-- Business Plan Highlights (image R / text L) -->
-      <section class="container" id="business">
-        <div class="row align-items-center gy-4 flex-lg-row-reverse">
-          <div class="col-12 col-md-6 text-center">
-            <img
-              src="images/edhub/finance.png"
-              class="feature-img"
-              alt="Pricing & Year 1 snapshot"
-            />
+      <!-- ====================== GETTING TO MARKET ====================== -->
+      <section class="container edhub-report-section" id="getting-to-market">
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-12 col-lg-10">
+            <span class="edhub-section-kicker">Product Strategy</span>
+
+            <h3>Getting edHub to Market</h3>
+
+            <p class="copy edhub-section-intro">
+              The report proposes a three-stage development plan: release a
+              focused Minimum Viable Product, expand the platform as the user
+              base grows, and then complete the advanced feature set for a
+              broader launch. Each phase is tied to a development objective,
+              testing activity, and cost range.
+            </p>
+
+            <h4 class="edhub-market-mantra mt-4 mb-4">
+              Concept. Develop. Deploy. Educate. Optimise. Scale. Repeat
+            </h4>
           </div>
-          <div class="col-12 col-md-6">
-            <h3>Business Plan Highlights</h3>
-            <ul class="copy">
-              <li>
-                <strong>Positioning:</strong> teacher-centric planning tool with
-                AI assist & accessibility leadership.
-              </li>
-              <li>
-                <strong>Pricing:</strong> competitor band ~€6–7 per
-                teacher/month; competitive entry.
-              </li>
-              <li>
-                <strong>Year-1 model:</strong> seasonality spike around
-                back-to-school; micro-finance option modelled.
-              </li>
-              <li>
-                <strong>Go-to-Market:</strong> pilot schools, principal
-                networks, teacher communities, CPD sessions.
-              </li>
-            </ul>
+        </div>
+
+        <figure class="edhub-source-figure mb-5">
+          <img
+            src="images/CaseStudy/edhubcasestudy/edhubgettingtomarketgraph.png"
+            alt="Three-stage edHub getting-to-market roadmap from MVP to full product launch"
+            loading="lazy"
+          />
+        </figure>
+
+        <!-- Phase 1: image first on mobile, left on desktop -->
+        <div class="row g-4 align-items-center mb-5">
+          <div class="col-12 col-lg-6">
+            <figure class="edhub-source-figure">
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhub-getting-to-market-phase-1.png"
+                alt="edHub Phase 1 development strategy and cost estimate"
+                loading="lazy"
+              />
+              <figcaption>
+                Phase 1 - first launch and Minimum Viable Product.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-12 col-lg-6">
+            <article class="edhub-phase-card">
+              <span class="edhub-phase-number">1</span>
+              <h4>Minimum Viable Product Launch</h4>
+              <p>
+                Phase 1 focuses on releasing a functional MVP with the essential
+                edHub experience. The proposal combines the team's UX,
+                development, marketing, and operations skills with strategic
+                outsourcing for selected technical work.
+              </p>
+              <ul>
+                <li>AI development and Natural Language Processing.</li>
+                <li>Core full-stack product development.</li>
+                <li>
+                  Cloud infrastructure, quality assurance, and legal
+                  preparation.
+                </li>
+                <li>
+                  First market release with the essential lesson-planning
+                  workflow.
+                </li>
+              </ul>
+              <p class="edhub-phase-cost mb-0">
+                Reported Phase 1 total: EUR 107,000-EUR 170,000
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Phase 2: image first on mobile, right on desktop -->
+        <div class="row g-4 align-items-center mb-5">
+          <div class="col-12 col-lg-6 order-lg-2">
+            <figure class="edhub-source-figure">
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhub-getting-to-market-phase-2.png"
+                alt="edHub Phase 2 development strategy and cost estimate"
+                loading="lazy"
+              />
+              <figcaption>
+                Phase 2 - expansion, refinement, and second launch.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-12 col-lg-6 order-lg-1">
+            <article class="edhub-phase-card">
+              <span class="edhub-phase-number">2</span>
+              <h4>Further Development and Scale</h4>
+              <p>
+                Phase 2 develops the MVP into a more capable and scalable
+                product. Existing functions are refined while new services are
+                introduced to support a growing user base and more complex
+                school workflows.
+              </p>
+              <ul>
+                <li>Further AI development and interface refinement.</li>
+                <li>
+                  OCR integration for extracting information from documents.
+                </li>
+                <li>APIs for automated grading and language translation.</li>
+                <li>
+                  Cloud optimisation, expanded user testing, and quality
+                  assurance.
+                </li>
+              </ul>
+              <p class="edhub-phase-cost mb-0">
+                Reported Phase 2 total: EUR 208,000-EUR 352,000
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Phase 3: image first on mobile, left on desktop -->
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-6">
+            <figure class="edhub-source-figure">
+              <img
+                src="images/CaseStudy/edhubcasestudy/edhub-getting-to-market-phase-3.png"
+                alt="edHub Phase 3 final launch development strategy and cost estimate"
+                loading="lazy"
+              />
+              <figcaption>
+                Phase 3 - advanced features and final launch.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-12 col-lg-6">
+            <article class="edhub-phase-card">
+              <span class="edhub-phase-number">3</span>
+              <h4>Full Product Launch</h4>
+              <p>
+                The final phase prepares edHub for a wider market with a
+                polished experience and a more complete feature set. Testing and
+                feedback continue so the platform can support users across
+                different markets.
+              </p>
+              <ul>
+                <li>Further AI development and deep-learning work.</li>
+                <li>
+                  Ask Edy, automated grading, and expanded OCR capability.
+                </li>
+                <li>Final interface refinement and comprehensive QA.</li>
+                <li>
+                  Marketing, promotion, and preparation for broader rollout.
+                </li>
+              </ul>
+              <p class="edhub-phase-cost mb-0">
+                Reported Phase 3 total: EUR 378,600-EUR 551,600
+              </p>
+            </article>
           </div>
         </div>
       </section>
+      <!-- ====================== INTERACTIVE PROTOTYPE ====================== -->
+      <section
+        class="container edhub-report-section"
+        id="interactive-prototype"
+      >
+        <!-- Section Heading -->
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-12 col-lg-10">
+            <span class="edhub-section-kicker">Final Prototype</span>
 
-      <!-- Roadmap (text L / image R) -->
-      <section class="container" id="roadmap">
-        <div class="row align-items-center gy-4">
-          <div class="col-12 col-md-6">
-            <h3>Roadmap</h3>
-            <ul class="copy">
-              <li>
-                <strong>Phase 1 — MVP:</strong> core Lesson Centre, resources,
-                AI seeds, accessibility baseline, QA.
-              </li>
-              <li>
-                <strong>Phase 2 — Expansion:</strong> OCR, grading/translation
-                APIs, infra scaling, richer analytics.
-              </li>
-              <li>
-                <strong>Phase 3 — Launch:</strong> “Ask Edy”, deeper grading,
-                advanced OCR, marketing & roll-out.
-              </li>
-            </ul>
+            <h3>Interactive Prototype</h3>
+
+            <p class="copy edhub-section-intro">
+              The final high-fidelity prototype brings together the research,
+              information architecture, visual system, and reusable components
+              into an interactive edHub experience. The prototype explores the
+              core teacher workflow across lesson planning, student information,
+              assessments, resources, and AI-assisted support.
+            </p>
           </div>
-          <div class="col-12 col-md-6 text-center">
-            <img
-              src="images/edhub/roadmap.png"
-              class="feature-img"
-              alt="Three-stage roadmap graphic"
-            />
+        </div>
+
+        <!-- Figma Prototype -->
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="edhub-prototype-frame">
+              <iframe
+                src="https://embed.figma.com/proto/n1NRLcEnsqJFGyJ1mZPO33/Edhub-Portfolio?node-id=0-3236&viewport=31%2C25%2C0.02&scaling=contain&content-scaling=fixed&starting-point-node-id=0%3A3236&page-id=0%3A1&embed-host=share"
+                allowfullscreen
+                loading="lazy"
+                title="Interactive edHub Figma prototype"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prototype Link -->
+        <div class="row justify-content-center text-center mt-4">
+          <div class="col-12 col-lg-8">
+            <p class="copy mb-3">
+              The prototype can be explored directly in the browser. Open it in
+              Figma for the full-screen interaction experience.
+            </p>
+
+            <a
+              href="https://www.figma.com/proto/n1NRLcEnsqJFGyJ1mZPO33/Edhub-Portfolio?node-id=0-3236&viewport=31%2C25%2C0.02&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=0%3A3236&page-id=0%3A1"
+              class="btn btn-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore the Prototype
+            </a>
           </div>
         </div>
       </section>
-
       <!-- Links / CTAs -->
       <section class="container text-center" id="links">
         <h4 class="mb-3">Explore</h4>
@@ -993,7 +2361,7 @@
             >Business Plan (PDF)</a
           >
           <a
-            href="https://www.figma.com/proto/your-edhub-prototype"
+            href="https://www.figma.com/proto/n1NRLcEnsqJFGyJ1mZPO33/Edhub-Portfolio?node-id=0-3236&viewport=31%2C25%2C0.02&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=0%3A3236&page-id=0%3A1"
             target="_blank"
             rel="noopener"
             class="btn btn-outline-dark"
@@ -1001,7 +2369,6 @@
           >
         </div>
       </section>
-      
     </main>
 
     <!-- FOOTER -->

@@ -104,6 +104,60 @@
         flex-wrap: wrap;
       }
 
+      /* Mobile filter is hidden on tablet / desktop */
+      .case-filter-mobile {
+        display: none;
+      }
+
+      .case-filter-mobile-label {
+        display: block;
+        margin-bottom: 0.45rem;
+        font-family: "Oxanium", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .case-filter-select-wrap {
+        position: relative;
+      }
+
+      .case-filter-select-wrap::after {
+        content: "▾";
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        pointer-events: none;
+        font-family: "Oxanium", sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
+      .case-filter-select {
+        width: 100%;
+        min-height: 48px;
+        padding: 0.75rem 3rem 0.75rem 1rem;
+        border: 2px solid var(--line);
+        border-radius: 0;
+        background: var(--controls-bg-2);
+        color: var(--ink);
+        appearance: none;
+        -webkit-appearance: none;
+        font-family: "Oxanium", sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .case-filter-select:focus {
+        outline: 3px solid rgba(17, 17, 17, 0.2);
+        outline-offset: 2px;
+      }
+
       .case-filter-input {
         position: absolute;
         opacity: 0;
@@ -331,21 +385,13 @@
           width: 94%;
         }
 
+        /* Use a compact dropdown instead of horizontally scrolling filters */
         .case-filter-shell {
-          justify-content: flex-start;
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          overflow-y: hidden;
-          -webkit-overflow-scrolling: touch;
-          padding-bottom: 0.1rem;
+          display: none;
         }
 
-        .case-filter-shell::-webkit-scrollbar {
-          height: 6px;
-        }
-
-        .case-filter-shell::-webkit-scrollbar-thumb {
-          background: rgba(17, 17, 17, 0.22);
+        .case-filter-mobile {
+          display: block;
         }
 
         .case-panel {
@@ -411,9 +457,9 @@
                 id="filter-frontend"
                 data-filter="frontend"
               />
-              <label class="case-filter-label" for="filter-frontend"
-                >Front-End</label
-              >
+              <label class="case-filter-label" for="filter-frontend">
+                Front-End
+              </label>
 
               <input
                 class="case-filter-input"
@@ -422,9 +468,29 @@
                 id="filter-fullstack"
                 data-filter="fullstack"
               />
-              <label class="case-filter-label" for="filter-fullstack"
-                >Full Stack</label
-              >
+              <label class="case-filter-label" for="filter-fullstack">
+                Full Stack
+              </label>
+            </div>
+
+            <!-- Mobile dropdown filter -->
+            <div class="case-filter-mobile">
+              <label class="case-filter-mobile-label" for="caseFilterMobile">
+                Filter projects
+              </label>
+
+              <div class="case-filter-select-wrap">
+                <select
+                  class="case-filter-select"
+                  id="caseFilterMobile"
+                  aria-label="Filter case studies"
+                >
+                  <option value="all">All projects</option>
+                  <option value="uxui">UX / UI</option>
+                  <option value="frontend">Front-End</option>
+                  <option value="fullstack">Full Stack</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -442,6 +508,7 @@
     <main class="case-page">
       <section class="case-hero">
         <h1>Case Studies</h1>
+
         <p class="lead">
           Explore my design and web projects across UX, UI, research-led
           concepts, and front-end development.
@@ -454,7 +521,9 @@
             class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4"
             id="caseGrid"
           >
-            <!-- 1. Filí App -->
+            <!-- =====================================================
+                 1. FILÍ APP — UX / UI
+                 ===================================================== -->
             <div class="col" data-tags="uxui">
               <article class="case-card">
                 <div class="case-image-wrap">
@@ -464,24 +533,32 @@
                     alt="Filí App mobile case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">UX / UI / Research</p>
+
                   <h3 class="case-title">Filí App</h3>
+
                   <p class="case-summary">
                     A mobile app concept for an Irish-language rhyming
                     dictionary designed to support creative learning, vocabulary
                     retention, and sound-based exploration.
                   </p>
+
                   <div class="case-tags">
-                    <span>#Figma</span><span>#Mobile</span
-                    ><span>#Research</span>
+                    <span>#Figma</span>
+                    <span>#Mobile</span>
+                    <span>#Research</span>
                   </div>
-                  <a href="filiapp.html" class="case-btn">View Project</a>
+
+                  <a href="filiapp.html" class="case-btn"> View Project </a>
                 </div>
               </article>
             </div>
 
-            <!-- 2. Tóggo -->
+            <!-- =====================================================
+                 2. TÓGGO — UX / UI
+                 ===================================================== -->
             <div class="col" data-tags="uxui">
               <article class="case-card">
                 <div class="case-image-wrap">
@@ -491,25 +568,33 @@
                     alt="Tóggo UX and interaction design case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">UX / Interaction Design</p>
+
                   <h3 class="case-title">Tóggo</h3>
+
                   <p class="case-summary">
                     A UX and interaction design case study focused on shaping a
                     clearer digital experience through research, user flows,
                     interface design, and prototype thinking.
                   </p>
+
                   <div class="case-tags">
-                    <span>#UX</span><span>#Interaction Design</span
-                    ><span>#Prototype</span>
+                    <span>#UX</span>
+                    <span>#Interaction Design</span>
+                    <span>#Prototype</span>
                   </div>
-                  <a href="toggo.html" class="case-btn">View Project</a>
+
+                  <a href="toggo.html" class="case-btn"> View Project </a>
                 </div>
               </article>
             </div>
 
-            <!-- 3. Bua Sports -->
-            <div class="col" data-tags="uxui frontend fullstack">
+            <!-- =====================================================
+                 3. BUA SPORTS — FULL STACK
+                 ===================================================== -->
+            <div class="col" data-tags="fullstack">
               <article class="case-card">
                 <div class="case-image-wrap">
                   <img
@@ -518,24 +603,33 @@
                     alt="Bua Sports Web Application case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">UX / UI / Full Stack</p>
+
                   <h3 class="case-title">Bua Sports</h3>
+
                   <p class="case-summary">
                     A sports performance web application designed to help
                     athletes and coaches track progress, set goals, and analyse
                     results.
                   </p>
+
                   <div class="case-tags">
-                    <span>#UX</span><span>#UI</span><span>#Full Stack</span>
+                    <span>#UX</span>
+                    <span>#UI</span>
+                    <span>#Full Stack</span>
                   </div>
-                  <a href="buasports.html" class="case-btn">View Project</a>
+
+                  <a href="buasports.html" class="case-btn"> View Project </a>
                 </div>
               </article>
             </div>
 
-            <!-- 4. Filí Web Application -->
-            <div class="col" data-tags="uxui frontend fullstack">
+            <!-- =====================================================
+                 4. FILÍ WEB APPLICATION — FULL STACK
+                 ===================================================== -->
+            <div class="col" data-tags="fullstack">
               <article class="case-card">
                 <div class="case-image-wrap">
                   <img
@@ -544,24 +638,33 @@
                     alt="Filí Web Application case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">UX / UI / Full Stack</p>
+
                   <h3 class="case-title">Filí Web Application</h3>
+
                   <p class="case-summary">
                     A full-stack Irish-language rhyming dictionary web app with
                     authentication, rhyme search logic, learning games, and
                     community features.
                   </p>
+
                   <div class="case-tags">
-                    <span>#UX</span><span>#UI</span><span>#Full Stack</span>
+                    <span>#UX</span>
+                    <span>#UI</span>
+                    <span>#Full Stack</span>
                   </div>
-                  <a href="filiappweb.html" class="case-btn">View Project</a>
+
+                  <a href="filiappweb.html" class="case-btn"> View Project </a>
                 </div>
               </article>
             </div>
 
-            <!-- 5. Carpooling in Ireland -->
-            <div class="col" data-tags="uxui frontend">
+            <!-- =====================================================
+                 5. CARPOOLING IN IRELAND — ALL ONLY
+                 ===================================================== -->
+            <div class="col" data-tags="">
               <article class="case-card">
                 <div class="case-image-wrap">
                   <img
@@ -570,29 +673,37 @@
                     alt="A Legal Case for Carpooling in Ireland case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">Research / Front-End / Live Data</p>
+
                   <h3 class="case-title">
                     A Legal Case for Carpooling in Ireland
                   </h3>
+
                   <p class="case-summary">
                     An informative public-facing website exploring the case for
                     carpooling in Ireland, supported by public opinion survey
                     data and live data visualisation.
                   </p>
+
                   <div class="case-tags">
-                    <span>#Research</span><span>#Survey</span
-                    ><span>#Live Data</span>
+                    <span>#Research</span>
+                    <span>#Survey</span>
+                    <span>#Live Data</span>
                   </div>
-                  <a href="carpool-survey.html" class="case-btn"
-                    >View Project</a
-                  >
+
+                  <a href="carpool-survey.html" class="case-btn">
+                    View Project
+                  </a>
                 </div>
               </article>
             </div>
 
-            <!-- 6. TrailPulse -->
-            <div class="col" data-tags="uxui frontend fullstack">
+            <!-- =====================================================
+                 6. TRAILPULSE — FULL STACK
+                 ===================================================== -->
+            <div class="col" data-tags="fullstack">
               <article class="case-card">
                 <div class="case-image-wrap">
                   <img
@@ -601,23 +712,32 @@
                     alt="TrailPulse Web Application case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">UX / UI / Full Stack</p>
+
                   <h3 class="case-title">TrailPulse</h3>
+
                   <p class="case-summary">
                     A web application for outdoor trail discovery and activity
                     tracking, built around intuitive navigation and
                     community-driven content.
                   </p>
+
                   <div class="case-tags">
-                    <span>#UX</span><span>#UI</span><span>#Full Stack</span>
+                    <span>#UX</span>
+                    <span>#UI</span>
+                    <span>#Full Stack</span>
                   </div>
-                  <a href="trailpulse.html" class="case-btn">View Project</a>
+
+                  <a href="trailpulse.html" class="case-btn"> View Project </a>
                 </div>
               </article>
             </div>
 
-            <!-- 7. Zenify -->
+            <!-- =====================================================
+                 7. ZENIFY — UX / UI
+                 ===================================================== -->
             <div class="col" data-tags="uxui">
               <article class="case-card">
                 <div class="case-image-wrap">
@@ -627,24 +747,33 @@
                     alt="Zenify case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">UX / UI Concept</p>
+
                   <h3 class="case-title">Zenify</h3>
+
                   <p class="case-summary">
                     A wellbeing-focused concept across web and mobile, aiming to
                     create calmer, clearer and more supportive digital
                     interactions.
                   </p>
+
                   <div class="case-tags">
-                    <span>#UX</span><span>#UI</span><span>#App Design</span>
+                    <span>#UX</span>
+                    <span>#UI</span>
+                    <span>#App Design</span>
                   </div>
-                  <a href="zenify.html" class="case-btn">View Project</a>
+
+                  <a href="zenify.html" class="case-btn"> View Project </a>
                 </div>
               </article>
             </div>
 
-            <!-- 8. EdHub -->
-            <div class="col" data-tags="uxui frontend">
+            <!-- =====================================================
+                 8. EDHUB — UX / UI
+                 ===================================================== -->
+            <div class="col" data-tags="uxui">
               <article class="case-card">
                 <div class="case-image-wrap">
                   <img
@@ -653,24 +782,32 @@
                     alt="EdHub case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">UX / UI / Front-End</p>
+
                   <h3 class="case-title">EdHub</h3>
+
                   <p class="case-summary">
                     An AI-assisted lesson-planning concept shaped through
                     research, accessibility thinking, interface design, and
                     product strategy.
                   </p>
+
                   <div class="case-tags">
-                    <span>#Research</span><span>#Accessibility</span
-                    ><span>#EdTech</span>
+                    <span>#Research</span>
+                    <span>#Accessibility</span>
+                    <span>#EdTech</span>
                   </div>
-                  <a href="edhub.html" class="case-btn">View Project</a>
+
+                  <a href="edhub.html" class="case-btn"> View Project </a>
                 </div>
               </article>
             </div>
 
-            <!-- 9. Friendly Bean -->
+            <!-- =====================================================
+                 9. FRIENDLY BEAN — FRONT-END
+                 ===================================================== -->
             <div class="col" data-tags="frontend">
               <article class="case-card">
                 <div class="case-image-wrap">
@@ -680,26 +817,34 @@
                     alt="Friendly Bean case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">Front-End / Live</p>
+
                   <h3 class="case-title">Friendly Bean</h3>
+
                   <p class="case-summary">
                     A café-style web project combining front-end development
                     with a stronger visual hierarchy and a more polished
                     presentation.
                   </p>
+
                   <div class="case-tags">
-                    <span>#Live Site</span><span>#Front-End</span
-                    ><span>#Branding</span>
+                    <span>#Live Site</span>
+                    <span>#Front-End</span>
+                    <span>#Branding</span>
                   </div>
-                  <a href="link-to-case-study-10" class="case-btn"
-                    >View Project</a
-                  >
+
+                  <a href="friendlybean.html" class="case-btn">
+                    View Project
+                  </a>
                 </div>
               </article>
             </div>
 
-            <!-- 10. Killenard Community Centre -->
+            <!-- =====================================================
+                 10. KILLENARD COMMUNITY CENTRE — FRONT-END
+                 ===================================================== -->
             <div class="col" data-tags="frontend">
               <article class="case-card">
                 <div class="case-image-wrap">
@@ -709,19 +854,25 @@
                     alt="Killenard Community Centre case study"
                   />
                 </div>
+
                 <div class="case-panel">
                   <p class="case-eyebrow">Front-End / Live / Community</p>
+
                   <h3 class="case-title">Killenard Community Centre</h3>
+
                   <p class="case-summary">
                     A community website project designed to improve clarity,
                     usability, and access to local information for a
                     public-facing audience.
                   </p>
+
                   <div class="case-tags">
-                    <span>#Community</span><span>#Live Site</span
-                    ><span>#Front-End</span>
+                    <span>#Community</span>
+                    <span>#Live Site</span>
+                    <span>#Front-End</span>
                   </div>
-                  <a href="killenardcc.html" class="case-btn">View Project</a>
+
+                  <a href="killenardcc.html" class="case-btn"> View Project </a>
                 </div>
               </article>
             </div>
@@ -730,20 +881,25 @@
       </section>
     </main>
 
+    <!-- FOOTER -->
     <div id="footer-placeholder"></div>
 
+    <!-- SCRIPTS -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="assets/nav.js" defer></script>
     <script src="js/animation.js"></script>
 
     <script>
-      /* Filter logic only — sticky behaviour is pure CSS */
+      /* Filter logic — desktop radio buttons + mobile dropdown */
       (function () {
         "use strict";
 
         const grid = document.getElementById("caseGrid");
         const radios = document.querySelectorAll(".case-filter-input");
+        const mobileSelect = document.getElementById("caseFilterMobile");
         const countEl = document.getElementById("resultCount");
+
+        const validFilters = new Set(["all", "uxui", "frontend", "fullstack"]);
 
         function parseTags(attr) {
           return (attr || "")
@@ -752,13 +908,21 @@
             .filter(Boolean);
         }
 
+        function normaliseFilter(filter) {
+          const value = (filter || "all").toLowerCase();
+
+          return validFilters.has(value) ? value : "all";
+        }
+
         function applyFilter(filter) {
-          filter = filter || "all";
-          const required = filter === "all" ? [] : [filter.toLowerCase()];
+          filter = normaliseFilter(filter);
+
+          const required = filter === "all" ? [] : [filter];
+
           let visible = 0;
 
           grid.querySelectorAll(":scope > .col").forEach((col) => {
-            /* Keep hidden cards hidden, even when filters change */
+            /* Keep intentionally hidden cards hidden */
             if (col.dataset.hidden === "true") {
               col.classList.add("case-hidden");
               col.classList.remove("d-none");
@@ -766,45 +930,74 @@
             }
 
             const tags = parseTags(col.dataset.tags);
+
             const show =
-              required.length === 0 || required.every((t) => tags.includes(t));
+              required.length === 0 ||
+              required.every((tag) => tags.includes(tag));
 
             col.classList.toggle("d-none", !show);
 
-            if (show) visible++;
+            if (show) {
+              visible++;
+            }
           });
 
+          /* Update result count */
           countEl.textContent = visible;
 
+          /* Keep desktop radio filter in sync */
           const radio = document.querySelector(
             '.case-filter-input[data-filter="' + filter + '"]'
           );
 
-          if (radio) radio.checked = true;
+          if (radio) {
+            radio.checked = true;
+          }
 
-          const usp = new URLSearchParams(window.location.search);
-          filter === "all" ? usp.delete("type") : usp.set("type", filter);
+          /* Keep mobile dropdown in sync */
+          if (mobileSelect) {
+            mobileSelect.value = filter;
+          }
+
+          /* Keep selected filter in URL */
+          const params = new URLSearchParams(window.location.search);
+
+          if (filter === "all") {
+            params.delete("type");
+          } else {
+            params.set("type", filter);
+          }
 
           history.replaceState(
             null,
             "",
             window.location.pathname +
-              (usp.toString() ? "?" + usp.toString() : "") +
+              (params.toString() ? "?" + params.toString() : "") +
               window.location.hash
           );
         }
 
-        radios.forEach((r) =>
-          r.addEventListener("change", function () {
+        /* Desktop buttons */
+        radios.forEach((radio) => {
+          radio.addEventListener("change", function () {
             applyFilter(this.dataset.filter);
-          })
-        );
+          });
+        });
 
+        /* Mobile dropdown */
+        if (mobileSelect) {
+          mobileSelect.addEventListener("change", function () {
+            applyFilter(this.value);
+          });
+        }
+
+        /* Load filter from URL if present */
         applyFilter(
           new URLSearchParams(window.location.search).get("type") || "all"
         );
       })();
     </script>
+
     <script src="assets/footer.js" defer></script>
   </body>
 </html>
