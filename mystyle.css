@@ -83,7 +83,46 @@ body {
   height: 100vh;
   pointer-events: none;
 }
+/* =========================================================
+   HOMEPAGE HERO
+   Separates top spacing from logo-to-text spacing
+   ========================================================= */
 
+   .hero-logo-area {
+    min-height: 40vh;
+  
+    /* Keeps breathing room below navbar */
+    padding-top: 40px;
+  
+    /* Removes unnecessary empty space below logo */
+    padding-bottom: 0;
+  }
+  
+  
+  /* Control this separately from the logo */
+  .hero-intro {
+    margin-top: -25px;
+    margin-bottom: 40px;
+  }
+  
+  
+  /* MOBILE */
+  @media (max-width: 767.98px) {
+  
+    .hero-logo-area {
+      min-height: auto;
+  
+      /* Maintain good distance from navbar */
+      padding-top: 45px;
+  
+      padding-bottom: 0;
+    }
+  
+    .hero-intro {
+      margin-top: -20px;
+      margin-bottom: 35px;
+    }
+  }
 /* Ensure Body & HTML Allow Scrolling */
 html, body {
   height: 100%; /* Ensure the full document takes up space */
@@ -344,6 +383,120 @@ html, body {
   }
   .card-link:hover {
     color: inherit;
+  }
+/* =========================================================
+   HOMEPAGE — QUALIFICATION SUMMARY
+   Typography inherits from existing .lead and p styles
+   ========================================================= */
+
+   .hero-qualifications {
+    width: 90%;
+    max-width: 1700px;
+    margin: -20px auto 60px;
+    padding: 0 20px;
+  }
+  
+  .hero-qualifications__credentials {
+    margin: 0 0 12px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  
+  .hero-qualifications__divider {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .hero-qualifications__roles {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  
+  
+  /* MOBILE */
+  @media (max-width: 768px) {
+  
+    .hero-qualifications {
+      width: 100%;
+      margin-top: -15px;
+      margin-bottom: 45px;
+      padding: 0 15px;
+    }
+  
+    .hero-qualifications__divider {
+      display: block;
+      height: 6px;
+      margin: 0;
+      font-size: 0;
+    }
+  
+    .hero-qualifications__roles {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 768px) {
+  
+    .hero-qualifications {
+      width: 100%;
+      margin-top: -15px;
+      margin-bottom: 45px;
+      padding: 0 15px;
+    }
+  
+    /*
+      Put each qualification onto its own line.
+      This prevents the credentials becoming cramped.
+    */
+    .hero-qualifications__divider {
+      display: block;
+      height: 6px;
+      margin: 0;
+      font-size: 0;
+    }
+  
+    /*
+      Your global p becomes 12px below 768px.
+      That's fine elsewhere, but slightly small for this
+      important homepage statement.
+    */
+    .hero-qualifications__roles {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  
+  
+  /* MOBILE */
+  @media screen and (max-width: 575.98px) {
+  
+    .hero-qualifications {
+      width: 100%;
+      margin-top: -0.5rem;
+      margin-bottom: 3rem;
+      padding: 0 12px;
+    }
+  
+    .hero-qualifications__credentials {
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+  
+    .hero-qualifications__divider {
+      display: block;
+      height: 0.3rem;
+      font-size: 0;
+    }
+  
+    .hero-qualifications__roles {
+      font-size: 0.95rem;
+    }
   }
 
 /* =========================================================

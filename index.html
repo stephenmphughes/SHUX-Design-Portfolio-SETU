@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="debug-mobile" >
+<html lang="en" class="debug-mobile">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta
       name="author"
@@ -15,324 +15,378 @@
     <!-- Custom styles for this template -->
     <link href="mystyle.css" rel="stylesheet" />
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       /* Change of navbar icon color - THIS COULD BE DELETED */
     </style>
   </head>
-  
+
   <!-- Body Begins -->
   <body>
-      <!-- DEBUG: temporary border so you can see the placeholder position -->
-      <!-- Navbar-->
-      <div id="navbar-placeholder"></div>
+    <!-- DEBUG: temporary border so you can see the placeholder position -->
+    <!-- Navbar-->
+    <div id="navbar-placeholder"></div>
     <div class="page-background"></div>
-  
 
-    <!-- Hero Section - WITH LOGO ANIMATION-->
+    <!-- =========================================================
+     HERO SECTION - LOGO ANIMATION
+     ========================================================= -->
     <div class="container-fluid text-center">
       <div
-        class="d-flex justify-content-center align-items-center"
-        style="height: 45vh"
+        class="hero-logo-area d-flex justify-content-center align-items-center"
       >
-      <div class="d-none d-md-block">
-        <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-          <image
-            href="images/Asset 2Logos.svg"
-            x="50"
-            y="50"
-            height="200"
-            width="200"
-          >
-            <animateTransform
-              attributeName="transform"
-              begin="0s"
-              dur="20s"
-              type="rotate"
-              from="0 150 150"
-              to="360 150 150"
-              repeatCount="indefinite"
+        <!-- Desktop Logo -->
+        <div class="d-none d-md-block">
+          <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+            <image
+              href="images/Asset 2Logos.svg"
+              x="50"
+              y="50"
+              height="200"
+              width="200"
+            >
+              <animateTransform
+                attributeName="transform"
+                begin="0s"
+                dur="20s"
+                type="rotate"
+                from="0 150 150"
+                to="360 150 150"
+                repeatCount="indefinite"
+              />
+            </image>
+          </svg>
+
+          <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+            <image
+              href="images/Asset 3Logosfont.svg"
+              x="0"
+              y="0"
+              height="300"
+              width="300"
             />
-          </image>
-        </svg>
-        <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-          <image
-            href="images/Asset 3Logosfont.svg"
-            x="0"
-            y="0"
-            height="300"
-            width="300"
-          />
-        </svg>
+          </svg>
+        </div>
+
+        <!-- Mobile Logo -->
+        <div class="d-block d-md-none">
+          <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+            <image
+              href="images/shuxlogomobile.svg"
+              x="0"
+              y="0"
+              height="300"
+              width="300"
+            />
+          </svg>
+        </div>
       </div>
-      <div class="d-block d-md-none">
-        <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-          <image
-            href="images/shuxlogomobile.svg"
-            x="0"
-            y="0"
-            height="300"
-            width="300"
-          />
-        </svg>
-      </div>
-      </div>
-    <!-- Hero Text -->
-    <div class="starter-template text-center my-5">
-      <h1> STEPHEN HUGHES // USER EXPERIENCE</h1>
-      <h2>Junior UX/UI designer and Web Developer.</h2>
-      <p class="lead my-5">
-        First Class Honours graduate in Web Development and First Class–bracket results in UX Design. <br/>
-        Currently seeking an internship or junior role as I complete my MA in Interaction Design.
+    </div>
+
+    <!-- =========================================================
+     HERO INTRO
+     ========================================================= -->
+    <div class="starter-template hero-intro text-center">
+      <h1>STEPHEN HUGHES // USER EXPERIENCE</h1>
+
+      <h2>
+        UX/UI &amp; Interaction Designer combining research-led design with
+        front-end development.
+      </h2>
+    </div>
+
+    <!-- =========================================================
+     QUALIFICATIONS
+     ========================================================= -->
+    <div class="hero-qualifications text-center">
+      <p class="lead hero-qualifications__credentials">
+        MA in Interaction Design — NFQ Level 9
+
+        <span class="hero-qualifications__divider">•</span>
+
+        First Class Honours Higher Diploma in Web Development — NFQ Level 8
+
+        <span class="hero-qualifications__divider">•</span>
+
+        Certificate in User Experience Design — NFQ Level 7
+      </p>
+
+      <p class="hero-qualifications__roles">
+        Seeking junior roles and graduate opportunities across UX/UI, Product
+        Design, UX/UI Engineering and Front-End Development.
       </p>
     </div>
-<!-- Runner / Skills Ticker -->
-<div class="spotrun" role="marquee" aria-label="Skills ticker">
-  <div class="spotrun__track">
-    <!-- Set 1 -->
-    <ul class="spotrun__items">
-      <li>USER CENTRED DESIGN</li>
-      <li>FIGMA</li>
-      <li>RESEARCH</li>
-      <li>PROTOTYPING</li>
-      <li>WIREFRAMING</li>
-      <li>HTML / CSS</li>
-      <li>JAVASCRIPT</li>
-      <li>REACT.JS</li>
-      <li>NODE.JS</li>
-      <li>AWS</li>
-      <li>RUBY ON RAILS</li>
-      <li>JAVA</li>
-      <li>DATABASES</li>
-      <li>SQL</li>
-      <li>MSSQL</li>
-      <li>SQL SERVER</li>
-      <li>DEVOPS</li>
-      <li>CIRCLECI</li>
-      <li>GIT</li>
-      <li>MOCKUPS</li>
-      <li>TESTING</li>
-      <li>INFORMATION ARCHITECTURE</li>
-      <li>USER FLOWS</li>
-      <li>USER STORIES</li>
-      <li>USER PERSONAS</li>
-      <li>JOURNEY MAPPING</li>
-    </ul>
+    <!-- Runner / Skills Ticker -->
+    <div class="spotrun" role="marquee" aria-label="Skills ticker">
+      <div class="spotrun__track">
+        <!-- Set 1 -->
+        <ul class="spotrun__items">
+          <li>USER CENTRED DESIGN</li>
+          <li>FIGMA</li>
+          <li>RESEARCH</li>
+          <li>PROTOTYPING</li>
+          <li>WIREFRAMING</li>
+          <li>HTML / CSS</li>
+          <li>JAVASCRIPT</li>
+          <li>REACT.JS</li>
+          <li>NODE.JS</li>
+          <li>AWS</li>
+          <li>RUBY ON RAILS</li>
+          <li>JAVA</li>
+          <li>DATABASES</li>
+          <li>SQL</li>
+          <li>MSSQL</li>
+          <li>SQL SERVER</li>
+          <li>DEVOPS</li>
+          <li>CIRCLECI</li>
+          <li>GIT</li>
+          <li>MOCKUPS</li>
+          <li>TESTING</li>
+          <li>INFORMATION ARCHITECTURE</li>
+          <li>USER FLOWS</li>
+          <li>USER STORIES</li>
+          <li>USER PERSONAS</li>
+          <li>JOURNEY MAPPING</li>
+        </ul>
 
-    <!-- Set 2 (duplicate for seamless loop) -->
-    <ul class="spotrun__items" aria-hidden="true">
-      <li>USER CENTRED DESIGN</li>
-      <li>FIGMA</li>
-      <li>RESEARCH</li>
-      <li>PROTOTYPING</li>
-      <li>WIREFRAMING</li>
-      <li>HTML / CSS</li>
-      <li>JAVASCRIPT</li>
-      <li>REACT.JS</li>
-      <li>NODE.JS</li>
-      <li>AWS</li>
-      <li>RUBY ON RAILS</li>
-      <li>JAVA</li>
-      <li>DATABASES</li>
-      <li>SQL</li>
-      <li>MSSQL</li>
-      <li>SQL SERVER</li>
-      <li>DEVOPS</li>
-      <li>CIRCLECI</li>
-      <li>GIT</li>
-      <li>MOCKUPS</li>
-      <li>TESTING</li>
-      <li>INFORMATION ARCHITECTURE</li>
-      <li>USER FLOWS</li>
-      <li>USER STORIES</li>
-      <li>USER PERSONAS</li>
-      <li>JOURNEY MAPPING</li>
-    </ul>
-  </div>
-</div>
-
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <ul class="spotrun__items" aria-hidden="true">
+          <li>USER CENTRED DESIGN</li>
+          <li>FIGMA</li>
+          <li>RESEARCH</li>
+          <li>PROTOTYPING</li>
+          <li>WIREFRAMING</li>
+          <li>HTML / CSS</li>
+          <li>JAVASCRIPT</li>
+          <li>REACT.JS</li>
+          <li>NODE.JS</li>
+          <li>AWS</li>
+          <li>RUBY ON RAILS</li>
+          <li>JAVA</li>
+          <li>DATABASES</li>
+          <li>SQL</li>
+          <li>MSSQL</li>
+          <li>SQL SERVER</li>
+          <li>DEVOPS</li>
+          <li>CIRCLECI</li>
+          <li>GIT</li>
+          <li>MOCKUPS</li>
+          <li>TESTING</li>
+          <li>INFORMATION ARCHITECTURE</li>
+          <li>USER FLOWS</li>
+          <li>USER STORIES</li>
+          <li>USER PERSONAS</li>
+          <li>JOURNEY MAPPING</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Main Content -->
     <main class="container">
       <div class="starter-template text-center">
         <h1>THE PROCESS</h1>
         <p class="lead">
-          Explore my Figma prototypes, dive into case studies showing my design and development process, and view my web projects — from brochure sites (via links) to full-stack builds available for download.
+          Explore my Figma prototypes, dive into case studies showing my design
+          and development process, and view my web projects — from brochure
+          sites (via links) to full-stack builds available for download.
         </p>
       </div>
-<!-- =========================
+      <!-- =========================
      PROCESS NAVIGATION CARDS
      ========================= -->
-     <div class="process-cards text-center">
+      <div class="process-cards text-center">
+        <div class="row g-4 mt-4">
+          <!-- PROTOTYPES -->
+          <div class="col-12 col-md-4">
+            <a href="prototypes.html" class="text-decoration-none card-link">
+              <div class="card process-card">
+                <img
+                  src="images/Prototypecard.svg"
+                  class="card-img-top"
+                  alt="Prototype"
+                />
+                <div class="card-body img-fluid">
+                  <p class="card-text">
+                    Hi-fidelity prototypes and mock ups in Figma.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
 
-      <div class="row g-4 mt-4">
-    
-        <!-- PROTOTYPES -->
-        <div class="col-12 col-md-4">
-          <a href="prototypes.html" class="text-decoration-none card-link">
-            <div class="card process-card">
-              <img
-                src="images/Prototypecard.svg"
-                class="card-img-top"
-                alt="Prototype"
-              >
-              <div class="card-body img-fluid">
-                <p class="card-text">
-                  Hi-fidelity prototypes and mock ups in Figma.
-                </p>
+          <!-- CASE STUDIES -->
+          <div class="col-12 col-md-4">
+            <a href="case-studies.html" class="text-decoration-none card-link">
+              <div class="card process-card">
+                <img
+                  src="images/Casestudycard.svg"
+                  class="card-img-top"
+                  alt="Case Study"
+                />
+                <div class="card-body img-fluid">
+                  <p class="card-text">
+                    Find out about my research & design process through my case
+                    studies.
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
-    
-        <!-- CASE STUDIES -->
-        <div class="col-12 col-md-4">
-          <a href="case-studies.html" class="text-decoration-none card-link">
-            <div class="card process-card">
-              <img
-                src="images/Casestudycard.svg"
-                class="card-img-top"
-                alt="Case Study"
-              >
-              <div class="card-body img-fluid">
-                <p class="card-text">
-                  Find out about my research & design process through my case studies.
-                </p>
+            </a>
+          </div>
+
+          <!-- WEB DEVELOPMENT / DESIGN -->
+          <div class="col-12 col-md-4">
+            <a href="case-studies.html" class="text-decoration-none card-link">
+              <div class="card process-card">
+                <img
+                  src="images/WebdesignCard.svg"
+                  class="card-img-top"
+                  alt="Web Development and Design"
+                />
+                <div class="card-body img-fluid">
+                  <p class="card-text">
+                    Front-end and Full Stack Projects available to view and
+                    download on Github
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
-    
-        <!-- WEB DEVELOPMENT / DESIGN -->
-        <div class="col-12 col-md-4">
-          <a href="case-studies.html" class="text-decoration-none card-link">
-            <div class="card process-card">
-              <img
-                src="images/WebdesignCard.svg"
-                class="card-img-top"
-                alt="Web Development and Design"
-              >
-              <div class="card-body img-fluid">
-                <p class="card-text">
-                  Front-end and Full Stack Projects available to view and download on Github
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-    
       </div>
-    
-    </div>
       <div class="starter-template text-center">
         <h1>MY DESIGN AND DEVELOPMENT JOURNEY</h1>
         <p class="lead">
-          What began as a pivot in my career has become a purposeful path in UX and web development, from learning Figma while travelling to completing accredited university qualifications in design and development.
+          What began as a pivot in my career has become a purposeful path in UX
+          and web development, from learning Figma while travelling to
+          completing accredited university qualifications in design and
+          development.
         </p>
       </div>
       <div class="timeline">
-
         <!-- BEGINNING -->
         <div class="timeline-container left-container">
-          <img src="images/targetimage.svg" alt="Small timeline icon">
-      
+          <img src="images/targetimage.svg" alt="Small timeline icon" />
+
           <div class="text-box">
             <h2>The Beginning.</h2>
             <small>September 2022</small>
-      
+
             <p>
-              A shift in work life in Spain inspired me to upskill. While travelling,
-              I enrolled in the Google UX Design Professional Certificate, where I was
-              introduced to design thinking, user research and prototyping. At the
-              same time, I began learning Figma and creating my first interface
-              designs and interactive prototypes.
+              A shift in work life in Spain inspired me to upskill. While
+              travelling, I enrolled in the Google UX Design Professional
+              Certificate, where I was introduced to design thinking, user
+              research and prototyping. At the same time, I began learning Figma
+              and creating my first interface designs and interactive
+              prototypes.
             </p>
           </div>
         </div>
-      
-      
+
         <!-- UX DESIGN -->
         <div class="timeline-container right-container">
-          <img src="images/targetimage.svg" alt="Small timeline icon">
-      
+          <img src="images/targetimage.svg" alt="Small timeline icon" />
+
           <div class="text-box">
             <h2>Back to Ireland & 3rd Level Education.</h2>
             <small>January 2024 - February 2025</small>
-      
+
             <p>
-              Returning to Ireland, I joined DKIT’s UX Design programme to turn my
-              self-directed learning into an accredited qualification and explore
-              user experience through structured, project-based work. The programme
-              strengthened my approach to research, problem definition and
-              user-centred design, with results in the First Class Honours bracket.
+              Returning to Ireland, I joined DKIT’s UX Design programme to turn
+              my self-directed learning into an accredited qualification and
+              explore user experience through structured, project-based work.
+              The programme strengthened my approach to research, problem
+              definition and user-centred design, with results in the First
+              Class Honours bracket.
             </p>
           </div>
         </div>
-      
-      
+
         <!-- GRAPHIC DESIGN -->
         <div class="timeline-container left-container">
-          <img src="images/targetimage.svg" alt="Small timeline icon">
-      
+          <img src="images/targetimage.svg" alt="Small timeline icon" />
+
           <div class="text-box">
             <h2>Expanding Into Graphic Design.</h2>
             <small>March 2024 - June 2024</small>
-      
+
             <p>
-              Alongside UX, I completed UCD’s Professional Diploma in Graphic Design,
-              receiving a Merit. The programme expanded my visual communication
-              skills through Illustrator, Photoshop and InDesign, covering areas such
-              as vector graphics, identity design, image editing and print-ready
-              layouts.
+              Alongside UX, I completed UCD’s Professional Diploma in Graphic
+              Design, receiving a Merit. The programme expanded my visual
+              communication skills through Illustrator, Photoshop and InDesign,
+              covering areas such as vector graphics, identity design, image
+              editing and print-ready layouts.
             </p>
           </div>
         </div>
-      
-      
+
         <!-- WEB DEVELOPMENT -->
         <div class="timeline-container right-container">
-          <img src="images/targetimage.svg" alt="Small timeline icon">
-      
+          <img src="images/targetimage.svg" alt="Small timeline icon" />
+
           <div class="text-box">
             <h2>Advancing in Web Development.</h2>
             <small>September 2024 - August 2025</small>
-      
+
             <p>
               I completed a Level 8 Higher Diploma in Science in Computing – Web
               Development at NCI, graduating with First Class Honours. Learning
               front-end and back-end development strengthened my position as a
-              designer-developer: I can consider both the user experience and the
-              technical reality behind it, design with implementation constraints in
-              mind, communicate more effectively with developers, and understand how
-              interfaces connect to application logic, data and underlying systems.
+              designer-developer: I can consider both the user experience and
+              the technical reality behind it, design with implementation
+              constraints in mind, communicate more effectively with developers,
+              and understand how interfaces connect to application logic, data
+              and underlying systems.
             </p>
           </div>
         </div>
-      
-      
+
         <!-- MA INTERACTION DESIGN -->
         <div class="timeline-container left-container">
-          <img src="images/targetimage.svg" alt="Small timeline icon">
-      
+          <img src="images/targetimage.svg" alt="Small timeline icon" />
+
           <div class="text-box">
-            <h2>Specialising Through an MA in Interaction Design.</h2>
-            <small>September 2025 – Present</small>
-      
+            <h2>Completing an MA in Interaction Design.</h2>
+            <small>September 2025 – August 2026</small>
+
             <p>
-              I am now completing my Master’s in Interaction Design at SETU Carlow.
-              Researching specialised design problems in greater depth has broadened
+              I completed my Master’s in Interaction Design at SETU Carlow.
+              Researching specialised design problems in greater depth broadened
               how I think about the role of design beyond the interface itself.
-              It has helped me understand how products and services operate within
-              wider legal, governmental, policy, taxation and safety constraints,
-              while also showing how design research can identify problems, reveal
-              user needs and provide evidence for improvements within those wider
-              systems.
+              It helped me understand how products and services operate within
+              wider legal, governmental, policy, taxation and safety
+              constraints, while also showing how design research can identify
+              problems, reveal user needs and provide evidence for improvements
+              within those wider systems.
             </p>
           </div>
         </div>
-      
+        <!-- PGDIP DIGITAL ENTREPRENEURSHIP -->
+        <div class="timeline-container right-container">
+          <img src="images/targetimage.svg" alt="Small timeline icon" />
+
+          <div class="text-box">
+            <h2>Building Business & Digital Entrepreneurship Skills.</h2>
+            <small>September 2026 – Present</small>
+
+            <p>
+              I have commenced a part-time Postgraduate Diploma in Business in
+              Digital Entrepreneurship at IADT, expanding my design and
+              technology background into the business side of digital products
+              and services. The programme explores areas including digital
+              innovation and entrepreneurship, digital design for business,
+              digital marketing, AI search and data analytics, and business
+              management. This is helping me develop a broader understanding of
+              how user-centred products move beyond the design stage into viable
+              digital businesses, connecting product thinking with strategy,
+              innovation, commercial awareness and emerging technology.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="starter-template text-center">
         <h1>Jump Straight In</h1>
@@ -340,328 +394,685 @@
           View a mix of my UX/UI design and Web Development Case studies
         </p>
       </div>
-<!-- ========================= DIAGONAL SLIDER (Brutalist Tilted Grid) ========================= -->
-<section class="container-fluid px-0">
-  <section id="diagonal-slider" class="slider slider-embedded" aria-label="Featured work slider">
-    <div class="nav" aria-hidden="false">
-      <button class="prev" aria-label="Previous slide" title="Previous"></button>
-      <button class="next" aria-label="Next slide" title="Next"></button>
-    </div>
-
-    <!-- Slide 1 -->
-    <div class="item is-active" role="group" aria-roledescription="slide" aria-label="1 of 9">
-      <a href="toggo.html" class="slider-link" aria-label="Open Tóggo case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title">Tóggo (UX)</span>
+      <!-- ========================= DIAGONAL SLIDER (Brutalist Tilted Grid) ========================= -->
+      <section class="container-fluid px-0">
+        <section
+          id="diagonal-slider"
+          class="slider slider-embedded"
+          aria-label="Featured work slider"
+        >
+          <div class="nav" aria-hidden="false">
+            <button
+              class="prev"
+              aria-label="Previous slide"
+              title="Previous"
+            ></button>
+            <button class="next" aria-label="Next slide" title="Next"></button>
           </div>
-        </div>
-      </a>
-      <a href="toggo.html" class="slider-link" aria-label="Open Tóggo case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/toggoportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/toggolandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/toggolandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/toggoportrait2.png" alt="" /></div>
+
+          <!-- Slide 1 -->
+          <div
+            class="item is-active"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="1 of 9"
+          >
+            <a
+              href="toggo.html"
+              class="slider-link"
+              aria-label="Open Tóggo case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title">Tóggo (UX)</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="toggo.html"
+              class="slider-link"
+              aria-label="Open Tóggo case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img src="images/indexcarousel/toggoportrait1.png" alt="" />
+                  </div>
+                  <div class="img img-2">
+                    <img
+                      src="images/indexcarousel/toggolandscape1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-3">
+                    <img
+                      src="images/indexcarousel/toggolandscape2.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-4">
+                    <img src="images/indexcarousel/toggoportrait2.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </a>
-    </div>
 
-    <!-- Slide 2 -->
-    <div class="item" role="group" aria-roledescription="slide" aria-label="2 of 9">
-      <a href="filiapp.html" class="slider-link" aria-label="Open Filí case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title">Filí (UX)</span>
+          <!-- Slide 2 -->
+          <div
+            class="item"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="2 of 9"
+          >
+            <a
+              href="filiapp.html"
+              class="slider-link"
+              aria-label="Open Filí case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title">Filí (UX)</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="filiapp.html"
+              class="slider-link"
+              aria-label="Open Filí case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img src="images/indexcarousel/filiportrait1.png" alt="" />
+                  </div>
+                  <div class="img img-2">
+                    <img src="images/indexcarousel/fililandscape1.png" alt="" />
+                  </div>
+                  <div class="img img-3">
+                    <img src="images/indexcarousel/fililandscape2.png" alt="" />
+                  </div>
+                  <div class="img img-4">
+                    <img src="images/indexcarousel/filiportrait2.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </a>
-      <a href="filiapp.html" class="slider-link" aria-label="Open Filí case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/filiportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/fililandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/fililandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/filiportrait2.png" alt="" /></div>
+
+          <!-- Slide 3 -->
+          <div
+            class="item"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="3 of 9"
+          >
+            <a
+              href="carpool-survey.html"
+              class="slider-link"
+              aria-label="Open Carpool Survey Site case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title stack-words"
+                    >Carpool Survey Site (DEV)</span
+                  >
+                </div>
+              </div>
+            </a>
+            <a
+              href="carpool-survey.html"
+              class="slider-link"
+              aria-label="Open Carpool Survey Site case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img
+                      src="images/indexcarousel/carpoolportrait1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-2">
+                    <img
+                      src="images/indexcarousel/carpoollandscape1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-3">
+                    <img
+                      src="images/indexcarousel/carpoollandscape2.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-4">
+                    <img
+                      src="images/indexcarousel/carpoolportrait2.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </a>
-    </div>
 
-    <!-- Slide 3 -->
-    <div class="item" role="group" aria-roledescription="slide" aria-label="3 of 9">
-      <a href="carpool-survey.html" class="slider-link" aria-label="Open Carpool Survey Site case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title stack-words">Carpool Survey Site (DEV)</span>
+          <!-- Slide 4 -->
+          <div
+            class="item"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="4 of 9"
+          >
+            <a
+              href="trailpulse.html"
+              class="slider-link"
+              aria-label="Open TrailPulse case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title">TrailPulse (DEV)</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="trailpulse.html"
+              class="slider-link"
+              aria-label="Open TrailPulse case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img
+                      src="images/indexcarousel/trailpulseportrait1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-2">
+                    <img
+                      src="images/indexcarousel/trailpulselandscape1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-3">
+                    <img
+                      src="images/indexcarousel/trailpulselandscape2.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-4">
+                    <img
+                      src="images/indexcarousel/trailpulseportrait2.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </a>
-      <a href="carpool-survey.html" class="slider-link" aria-label="Open Carpool Survey Site case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/carpoolportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/carpoollandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/carpoollandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/carpoolportrait2.png" alt="" /></div>
+
+          <!-- Slide 5 -->
+          <div
+            class="item"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="5 of 9"
+          >
+            <a
+              href="buasports.html"
+              class="slider-link"
+              aria-label="Open Bua Sports case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title">Bua Sports (DEV)</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="buasports.html"
+              class="slider-link"
+              aria-label="Open Bua Sports case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img src="images/indexcarousel/buaportrait1.png" alt="" />
+                  </div>
+                  <div class="img img-2">
+                    <img src="images/indexcarousel/bualandscape1.png" alt="" />
+                  </div>
+                  <div class="img img-3">
+                    <img src="images/indexcarousel/bualandscape2.png" alt="" />
+                  </div>
+                  <div class="img img-4">
+                    <img src="images/indexcarousel/buaportrait2.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </a>
-    </div>
 
-    <!-- Slide 4 -->
-    <div class="item" role="group" aria-roledescription="slide" aria-label="4 of 9">
-      <a href="trailpulse.html" class="slider-link" aria-label="Open TrailPulse case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title">TrailPulse (DEV)</span>
+          <!-- Slide 6 -->
+          <div
+            class="item"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="6 of 9"
+          >
+            <a
+              href="edhub.html"
+              class="slider-link"
+              aria-label="Open EdHub case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title">EdHub (UX)</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="edhub.html"
+              class="slider-link"
+              aria-label="Open EdHub case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img src="images/indexcarousel/edhubportrait1.png" alt="" />
+                  </div>
+                  <div class="img img-2">
+                    <img
+                      src="images/indexcarousel/edhublandscape1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-3">
+                    <img
+                      src="images/indexcarousel/edhublandscape2.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-4">
+                    <img src="images/indexcarousel/edhubportrait2.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </a>
-      <a href="trailpulse.html" class="slider-link" aria-label="Open TrailPulse case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/trailpulseportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/trailpulselandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/trailpulselandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/trailpulseportrait2.png" alt="" /></div>
+
+          <!-- Slide 7 -->
+          <div
+            class="item"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="7 of 9"
+          >
+            <a
+              href="killenardcc.html"
+              class="slider-link"
+              aria-label="Open Killenard CC case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title stack-words">Killenard CC (DEV)</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="killenardcc.html"
+              class="slider-link"
+              aria-label="Open Killenard CC case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img src="images/indexcarousel/KCCportrait1.png" alt="" />
+                  </div>
+                  <div class="img img-2">
+                    <img src="images/indexcarousel/KCClandscape1.png" alt="" />
+                  </div>
+                  <div class="img img-3">
+                    <img src="images/indexcarousel/KCClandscape2.png" alt="" />
+                  </div>
+                  <div class="img img-4">
+                    <img src="images/indexcarousel/KCCportrait2.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </a>
-    </div>
 
-    <!-- Slide 5 -->
-    <div class="item" role="group" aria-roledescription="slide" aria-label="5 of 9">
-      <a href="buasports.html" class="slider-link" aria-label="Open Bua Sports case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title">Bua Sports (DEV)</span>
+          <!-- Slide 8 -->
+          <div
+            class="item"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="8 of 9"
+          >
+            <a
+              href="zenify.html"
+              class="slider-link"
+              aria-label="Open Zenify case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title">Zenify (UX)</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="zenify.html"
+              class="slider-link"
+              aria-label="Open Zenify case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img
+                      src="images/indexcarousel/zenifyportrait1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-2">
+                    <img
+                      src="images/indexcarousel/zenifylandscape1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-3">
+                    <img
+                      src="images/indexcarousel/zenifylandscape2.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-4">
+                    <img
+                      src="images/indexcarousel/zenifyportrait2.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-        </div>
-      </a>
-      <a href="buasports.html" class="slider-link" aria-label="Open Bua Sports case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/buaportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/bualandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/bualandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/buaportrait2.png" alt="" /></div>
+
+          <!-- Slide 9 -->
+          <div
+            class="item"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="9 of 9"
+          >
+            <a
+              href="friendlybean.html"
+              class="slider-link"
+              aria-label="Open Friendly Bean case study"
+            >
+              <div class="content">
+                <div class="wrap">
+                  <span class="title">Friendly Bean (DEV)</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="friendlybean.html"
+              class="slider-link"
+              aria-label="Open Friendly Bean case study"
+            >
+              <div class="imgs">
+                <div class="grid" aria-hidden="true">
+                  <div class="img img-1">
+                    <img
+                      src="images/indexcarousel/friendlybeanportrait1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-2">
+                    <img
+                      src="images/indexcarousel/friendlybeanlandscape1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-3">
+                    <img
+                      src="images/indexcarousel/friendlybeanlandscape2.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="img img-4">
+                    <img
+                      src="images/indexcarousel/friendlybeanportrait2.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
+        </section>
+      </section>
+
+      <section class="diagonal-cta text-center">
+        <a href="case-studies.html" class="btn explore-btn" role="button">
+          Case Studies
+        </a>
+      </section>
+      <!-- ====================== /DIAGONAL SLIDER END ====================== -->
+
+      <!-- ===== MOBILE SCROLL-SNAP SLIDER (shows only < 600px) ===== -->
+      <section class="ss-wrap" aria-label="Mobile image slider">
+        <div
+          class="ss-viewport"
+          role="group"
+          aria-roledescription="carousel"
+          aria-live="polite"
+        >
+          <figure
+            class="ss-slide"
+            aria-label="1 of 9"
+            data-href="toggo.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/toggoScrollSnap.png"
+              alt="Tóggo – UX screen previews"
+            />
+            <figcaption class="visually-hidden">
+              Tóggo – UX screen previews
+            </figcaption>
+          </figure>
+
+          <figure
+            class="ss-slide"
+            aria-label="2 of 9"
+            data-href="filiapp.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/filiappScrollSnap.png"
+              alt="Filí – screen previews"
+            />
+            <figcaption class="visually-hidden">
+              Filí – screen previews
+            </figcaption>
+          </figure>
+
+          <figure
+            class="ss-slide"
+            aria-label="3 of 9"
+            data-href="carpool-survey.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/CarpoolSurveyScrollSnap.png"
+              alt="Carpool Survey Site – survey interface previews"
+            />
+            <figcaption class="visually-hidden">
+              Carpool Survey Site – survey interface previews
+            </figcaption>
+          </figure>
+
+          <figure
+            class="ss-slide"
+            aria-label="4 of 9"
+            data-href="trailpulse.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/TrailPulseScrollSnap.png"
+              alt="TrailPulse – charts and map"
+            />
+            <figcaption class="visually-hidden">
+              TrailPulse – charts and map
+            </figcaption>
+          </figure>
+
+          <figure
+            class="ss-slide"
+            aria-label="5 of 9"
+            data-href="buasports.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/BuaSportsScrollSnap.png"
+              alt="Bua Sports – admin UI"
+            />
+            <figcaption class="visually-hidden">
+              Bua Sports – admin UI
+            </figcaption>
+          </figure>
+
+          <figure
+            class="ss-slide"
+            aria-label="6 of 9"
+            data-href="edhub.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/EdHubScrollSnap.png"
+              alt="EdHub – lesson planning"
+            />
+            <figcaption class="visually-hidden">
+              EdHub – lesson planning
+            </figcaption>
+          </figure>
+
+          <figure
+            class="ss-slide"
+            aria-label="7 of 9"
+            data-href="killenardcc.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/KCCScrollSnap.png"
+              alt="Killenard CC – website previews"
+            />
+            <figcaption class="visually-hidden">
+              Killenard CC – website previews
+            </figcaption>
+          </figure>
+
+          <figure
+            class="ss-slide"
+            aria-label="8 of 9"
+            data-href="zenify.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/zenifyAppScrollSnap.png"
+              alt="Zenify – wellness UI"
+            />
+            <figcaption class="visually-hidden">
+              Zenify – wellness UI
+            </figcaption>
+          </figure>
+
+          <figure
+            class="ss-slide"
+            aria-label="9 of 9"
+            data-href="friendlybean.html"
+            role="link"
+            tabindex="0"
+          >
+            <img
+              src="images/ScrollSnapCarousel/FriendlyBeanScrollSnap.png"
+              alt="Friendly Bean – website previews"
+            />
+            <figcaption class="visually-hidden">
+              Friendly Bean – website previews
+            </figcaption>
+          </figure>
         </div>
-      </a>
-    </div>
 
-    <!-- Slide 6 -->
-    <div class="item" role="group" aria-roledescription="slide" aria-label="6 of 9">
-      <a href="edhub.html" class="slider-link" aria-label="Open EdHub case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title">EdHub (UX)</span>
-          </div>
-        </div>
-      </a>
-      <a href="edhub.html" class="slider-link" aria-label="Open EdHub case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/edhubportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/edhublandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/edhublandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/edhubportrait2.png" alt="" /></div>
-          </div>
-        </div>
-      </a>
-    </div>
+        <!-- optional dots will auto-highlight with the tiny JS below -->
+        <div class="ss-dots" aria-hidden="true"></div>
+      </section>
 
-    <!-- Slide 7 -->
-    <div class="item" role="group" aria-roledescription="slide" aria-label="7 of 9">
-      <a href="killenardcc.html" class="slider-link" aria-label="Open Killenard CC case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title stack-words">Killenard CC (DEV)</span>
-          </div>
-        </div>
-      </a>
-      <a href="killenardcc.html" class="slider-link" aria-label="Open Killenard CC case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/KCCportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/KCClandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/KCClandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/KCCportrait2.png" alt="" /></div>
-          </div>
-        </div>
-      </a>
-    </div>
+      <script src="js/mobile-scrollsnap.min.js"></script>
 
-    <!-- Slide 8 -->
-    <div class="item" role="group" aria-roledescription="slide" aria-label="8 of 9">
-      <a href="zenify.html" class="slider-link" aria-label="Open Zenify case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title">Zenify (UX)</span>
-          </div>
-        </div>
-      </a>
-      <a href="zenify.html" class="slider-link" aria-label="Open Zenify case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/zenifyportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/zenifylandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/zenifylandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/zenifyportrait2.png" alt="" /></div>
-          </div>
-        </div>
-      </a>
-    </div>
+      <script>
+        document.querySelectorAll(".ss-slide[data-href]").forEach((slide) => {
+          let startX = 0;
+          let startY = 0;
+          let wasDragged = false;
 
-    <!-- Slide 9 -->
-    <div class="item" role="group" aria-roledescription="slide" aria-label="9 of 9">
-      <a href="friendlybean.html" class="slider-link" aria-label="Open Friendly Bean case study">
-        <div class="content">
-          <div class="wrap">
-            <span class="title">Friendly Bean (DEV)</span>
-          </div>
-        </div>
-      </a>
-      <a href="friendlybean.html" class="slider-link" aria-label="Open Friendly Bean case study">
-        <div class="imgs">
-          <div class="grid" aria-hidden="true">
-            <div class="img img-1"><img src="images/indexcarousel/friendlybeanportrait1.png" alt="" /></div>
-            <div class="img img-2"><img src="images/indexcarousel/friendlybeanlandscape1.png" alt="" /></div>
-            <div class="img img-3"><img src="images/indexcarousel/friendlybeanlandscape2.png" alt="" /></div>
-            <div class="img img-4"><img src="images/indexcarousel/friendlybeanportrait2.png" alt="" /></div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-</section>
+          slide.addEventListener("pointerdown", (event) => {
+            startX = event.clientX;
+            startY = event.clientY;
+            wasDragged = false;
+          });
 
-<section class="diagonal-cta text-center">
-  <a href="case-studies.html" class="btn explore-btn" role="button">
-    Case Studies
-  </a>
-</section>
-<!-- ====================== /DIAGONAL SLIDER END ====================== -->
+          slide.addEventListener("pointermove", (event) => {
+            const movedX = Math.abs(event.clientX - startX);
+            const movedY = Math.abs(event.clientY - startY);
 
+            if (movedX > 10 || movedY > 10) {
+              wasDragged = true;
+            }
+          });
 
-<!-- ===== MOBILE SCROLL-SNAP SLIDER (shows only < 600px) ===== -->
-<section class="ss-wrap" aria-label="Mobile image slider">
-  <div class="ss-viewport" role="group" aria-roledescription="carousel" aria-live="polite">
+          slide.addEventListener("pointerup", (event) => {
+            const movedX = Math.abs(event.clientX - startX);
+            const movedY = Math.abs(event.clientY - startY);
 
-    <figure class="ss-slide" aria-label="1 of 9" data-href="toggo.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/toggoScrollSnap.png" alt="Tóggo – UX screen previews">
-      <figcaption class="visually-hidden">Tóggo – UX screen previews</figcaption>
-    </figure>
+            if (!wasDragged && movedX < 10 && movedY < 10) {
+              window.location.href = slide.dataset.href;
+            }
+          });
 
-    <figure class="ss-slide" aria-label="2 of 9" data-href="filiapp.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/filiappScrollSnap.png" alt="Filí – screen previews">
-      <figcaption class="visually-hidden">Filí – screen previews</figcaption>
-    </figure>
+          slide.addEventListener("pointercancel", () => {
+            wasDragged = true;
+          });
 
-    <figure class="ss-slide" aria-label="3 of 9" data-href="carpool-survey.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/CarpoolSurveyScrollSnap.png" alt="Carpool Survey Site – survey interface previews">
-      <figcaption class="visually-hidden">Carpool Survey Site – survey interface previews</figcaption>
-    </figure>
+          slide.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              window.location.href = slide.dataset.href;
+            }
+          });
+        });
+      </script>
 
-    <figure class="ss-slide" aria-label="4 of 9" data-href="trailpulse.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/TrailPulseScrollSnap.png" alt="TrailPulse – charts and map">
-      <figcaption class="visually-hidden">TrailPulse – charts and map</figcaption>
-    </figure>
+      <!-- ===== /MOBILE SCROLL-SNAP SLIDER END ===== -->
 
-    <figure class="ss-slide" aria-label="5 of 9" data-href="buasports.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/BuaSportsScrollSnap.png" alt="Bua Sports – admin UI">
-      <figcaption class="visually-hidden">Bua Sports – admin UI</figcaption>
-    </figure>
+      <!-- ===== MOBILE CTA (visible only on <600px) ===== -->
+      <section class="mobile-cta text-center">
+        <a href="case-studies.html" class="btn explore-btn" role="button">
+          Case Studies
+        </a>
+      </section>
+      <!-- ===== /MOBILE CTA END ===== -->
 
-    <figure class="ss-slide" aria-label="6 of 9" data-href="edhub.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/EdHubScrollSnap.png" alt="EdHub – lesson planning">
-      <figcaption class="visually-hidden">EdHub – lesson planning</figcaption>
-    </figure>
-
-    <figure class="ss-slide" aria-label="7 of 9" data-href="killenardcc.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/KCCScrollSnap.png" alt="Killenard CC – website previews">
-      <figcaption class="visually-hidden">Killenard CC – website previews</figcaption>
-    </figure>
-
-    <figure class="ss-slide" aria-label="8 of 9" data-href="zenify.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/zenifyAppScrollSnap.png" alt="Zenify – wellness UI">
-      <figcaption class="visually-hidden">Zenify – wellness UI</figcaption>
-    </figure>
-
-    <figure class="ss-slide" aria-label="9 of 9" data-href="friendlybean.html" role="link" tabindex="0">
-      <img src="images/ScrollSnapCarousel/FriendlyBeanScrollSnap.png" alt="Friendly Bean – website previews">
-      <figcaption class="visually-hidden">Friendly Bean – website previews</figcaption>
-    </figure>
-
-  </div>
-
-  <!-- optional dots will auto-highlight with the tiny JS below -->
-  <div class="ss-dots" aria-hidden="true"></div>
-</section>
-
-<script src="js/mobile-scrollsnap.min.js"></script>
-
-<script>
-  document.querySelectorAll('.ss-slide[data-href]').forEach((slide) => {
-    let startX = 0;
-    let startY = 0;
-    let wasDragged = false;
-
-    slide.addEventListener('pointerdown', (event) => {
-      startX = event.clientX;
-      startY = event.clientY;
-      wasDragged = false;
-    });
-
-    slide.addEventListener('pointermove', (event) => {
-      const movedX = Math.abs(event.clientX - startX);
-      const movedY = Math.abs(event.clientY - startY);
-
-      if (movedX > 10 || movedY > 10) {
-        wasDragged = true;
-      }
-    });
-
-    slide.addEventListener('pointerup', (event) => {
-      const movedX = Math.abs(event.clientX - startX);
-      const movedY = Math.abs(event.clientY - startY);
-
-      if (!wasDragged && movedX < 10 && movedY < 10) {
-        window.location.href = slide.dataset.href;
-      }
-    });
-
-    slide.addEventListener('pointercancel', () => {
-      wasDragged = true;
-    });
-
-    slide.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        window.location.href = slide.dataset.href;
-      }
-    });
-  });
-</script>
-
-<!-- ===== /MOBILE SCROLL-SNAP SLIDER END ===== -->
-
-
-<!-- ===== MOBILE CTA (visible only on <600px) ===== -->
-<section class="mobile-cta text-center">
-  <a href="case-studies.html" class="btn explore-btn" role="button">
-    Case Studies
-  </a>
-</section>
-<!-- ===== /MOBILE CTA END ===== -->
-  
-  <!-- Make sure your <head> has the correct viewport meta: -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-  
-
+      <!-- Make sure your <head> has the correct viewport meta: -->
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     </main>
     <div id="footer-placeholder"></div>
 
@@ -669,14 +1080,15 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Navbar injector lives in /assets/js/nav.js -->
     <script src="assets/nav.js" defer></script>
-<!-- Anime.js for the diagonal slider -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+    <!-- Anime.js for the diagonal slider -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+      defer
+    ></script>
 
     <!-- Link to your custom JavaScript file (animation.js) -->
     <script src="js/animation.js"></script>
     <script src="js/mobile-scrollsnap.js"></script>
     <script src="assets/footer.js" defer></script>
   </body>
-
-    
 </html>
